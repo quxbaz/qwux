@@ -32,3 +32,36 @@ describe("pick", () => {
   })
 
 })
+
+describe("times", () => {
+
+  const times = require('qux/lib/times').default
+
+  it("Calls a function N times.", () => {
+    let i = 0
+    const fn = () => i++
+    times(5, fn)
+    expect(i).toEqual(5)
+  })
+
+  it("Calls the function with the current iteration.", () => {
+    let i = 0
+    const fn = (n) => i += n
+    times(5, fn)
+    expect(i).toEqual(0 + 1 + 2 + 3 + 4)
+  })
+
+})
+
+describe("values", () => {
+
+  const values = require('qux/lib/values').default
+
+  it("Gets the values from an object.", () => {
+    expect(values({})).toEqual([])
+    expect(values({a:1})).toEqual([1])
+    expect(values({a:1, b:2})).toEqual([1, 2])
+    expect(values({1:'a', 2:'b'})).toEqual(['a', 'b'])
+  })
+
+})
