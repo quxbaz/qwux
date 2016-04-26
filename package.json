@@ -13,7 +13,7 @@
   "scripts": {
     "serve": "webpack-dev-server --content-base=public",
     "test": "webpack-dev-server --content-base=public_test --entry=tests",
-    "doc": "markdox ./lib/*.js"
+    "doc": "markdox ./lib/*.js && mv output.md doc.md"
   },
   "author": "quxbaz",
   "license": "MIT",
