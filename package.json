@@ -12,7 +12,8 @@
   },
   "scripts": {
     "serve": "webpack-dev-server --content-base=public",
-    "test": "webpack-dev-server --content-base=public_test --entry=tests"
+    "test": "webpack-dev-server --content-base=public_test --entry=tests",
+    "doc": "markdox ./lib/*.js"
   },
   "author": "quxbaz",
   "license": "MIT",
