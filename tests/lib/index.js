@@ -65,3 +65,30 @@ describe("values", () => {
   })
 
 })
+
+describe("each", () => {
+
+  const each = require('qux/lib/each').default
+
+  it("Iterates over an array.", () => {
+    let i = 0
+    each([0, 1, 2], (value, index) => {
+      i += value + index
+    })
+    expect(i).toEqual(6)
+  })
+
+  it("Iterates over an object.", () => {
+    let i = ''
+    each({a:1, b:2, c:3}, (value, key) => {
+      i += key + value
+    })
+    expect(i).toEqual('a1b2c3')
+  })
+
+  it("Returns the object passed in.", () => {
+    const list = [1, 2]
+    expect(each(list, () => {})).toBe(list)
+  })
+
+})
