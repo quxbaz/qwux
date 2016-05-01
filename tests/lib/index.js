@@ -132,9 +132,14 @@ describe("each", () => {
     expect(i).toEqual('a1b2c3')
   })
 
-  it("Returns the object passed in.", () => {
-    const list = [1, 2]
-    expect(each(list, () => {})).toBe(list)
+  it("Returns the results of the callback against an array.", () => {
+    const list = [1, 2, 3]
+    expect(each(list, (x) => x * 2)).toEqual([2, 4, 6])
+  })
+
+  it("Returns the results of the callback against an object.", () => {
+    const obj = {a:1, b:2, c:3}
+    expect(each(obj, (v, k) => k + v)).toEqual(['a1', 'b2', 'c3'])
   })
 
 })
