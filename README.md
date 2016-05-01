@@ -16,6 +16,23 @@ Capitalizes the first letter of a string.
 
 <!-- End lib/capitalize.js -->
 
+<!-- Start lib/constrain.js -->
+
+## constrain
+
+Constrains a value between [min, max]
+
+### Params:
+
+* *value* 
+* **array** *[min,* max]
+
+### Return:
+
+* constrained value
+
+<!-- End lib/constrain.js -->
+
 <!-- Start lib/each.js -->
 
 ## each

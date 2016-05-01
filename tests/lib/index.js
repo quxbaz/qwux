@@ -169,3 +169,31 @@ describe("capitalize()", () => {
   })
 
 })
+
+describe("constrain()", () => {
+
+  const constrain = require('qux/lib/constrain').default
+
+  describe("constrain()", () => {
+
+    it("returns a number within its proper range.", () => {
+      expect(
+        constrain(5, [0, 10])
+      ).toEqual(5)
+    })
+
+    it("forces a minimum.", () => {
+      expect(
+        constrain(-1, [0, 10])
+      ).toEqual(0)
+    })
+
+    it("forces a maximum.", () => {
+      expect(
+        constrain(100, [0, 10])
+      ).toEqual(10)
+    })
+
+  })
+
+})
