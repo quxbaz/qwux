@@ -97,6 +97,10 @@ describe("times", () => {
     expect(i).toEqual(0 + 1 + 2 + 3 + 4)
   })
 
+  it("Returns the results of the callbacks.", () => {
+    expect(times(5, (i) => i)).toEqual([0, 1, 2, 3, 4])
+  })
+
 })
 
 describe("values", () => {
