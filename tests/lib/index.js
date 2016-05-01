@@ -11,6 +11,8 @@ describe("omit", () => {
     expect(omit({a:1}, ['a'])).toEqual({})
     expect(omit({a:1, b:2}, ['a'])).toEqual({b:2})
     expect(omit({a:1, b:2}, ['a', 'b'])).toEqual({})
+    expect(omit({a:1, b:2}, 'a', 'b')).toEqual({})
+    expect(omit({a:1, b:2}, 'a', 'b', 'c')).toEqual({})
   })
 
 })
@@ -29,6 +31,8 @@ describe("pick", () => {
     expect(pick({a:1}, ['a'])).toEqual({a:1})
     expect(pick({a:1}, ['a', 'b'])).toEqual({a:1})
     expect(pick({a:1, b:2}, ['a', 'b'])).toEqual({a:1, b:2})
+    expect(pick({a:1, b:2}, 'a', 'b')).toEqual({a:1, b:2})
+    expect(pick({a:1, b:2}, 'a', 'b', 'c')).toEqual({a:1, b:2})
   })
 
 })
