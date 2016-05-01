@@ -88,6 +88,23 @@ Picks props from an object.
 
 <!-- End lib/pick.js -->
 
+<!-- Start lib/throttle.js -->
+
+## throttle
+
+Limits a function to be called at most N times/second
+
+### Params:
+
+* **function** *fn* 
+* **int** *ms* 
+
+### Return:
+
+* **function** 
+
+<!-- End lib/throttle.js -->
+
 <!-- Start lib/times.js -->
 
 ## times

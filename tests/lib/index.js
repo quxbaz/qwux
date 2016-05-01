@@ -197,3 +197,19 @@ describe("constrain()", () => {
   })
 
 })
+
+
+describe("throttle", () => {
+
+  const throttle = require('qux/lib/throttle').default
+
+  it("Calls a function twice in succession, but only executes it once.", () => {
+    let spy = 0
+    let fn = () => spy++
+    let fn2 = throttle(fn, 100)
+    fn2()
+    fn2()
+    expect(spy).toEqual(1)
+  })
+
+})
