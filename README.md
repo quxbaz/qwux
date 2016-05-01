@@ -1,19 +1,50 @@
 
 
+<!-- Start lib/capitalize.js -->
+
+## capitalize
+
+Capitalizes the first letter of a string.
+
+### Params:
+
+* **string** *s* 
+
+### Return:
+
+* **string** 
+
+<!-- End lib/capitalize.js -->
+
+<!-- Start lib/each.js -->
+
+## each
+
+Iterates over a list of items.
+
+### Params:
+
+* **array|object** *list* 
+* **function** *fn* 
+
+### Return:
+
+* **array** The result of the callbacks
+
+<!-- End lib/each.js -->
+
 <!-- Start lib/index.js -->
 
 <!-- End lib/index.js -->
 
 <!-- Start lib/omit.js -->
 
-## omit
-
 Omits props from an object.
 
 ### Params:
 
 * **object** *obj* 
-* **string|array** *props* 
+* **string|array|function** *props* 
 
 ### Return:
 
@@ -23,14 +54,12 @@ Omits props from an object.
 
 <!-- Start lib/pick.js -->
 
-## pick
-
 Picks props from an object.
 
 ### Params:
 
 * **object** *obj* 
-* **string|array** *props* 
+* **string|array|function** *props* 
 
 ### Return:
 
@@ -49,6 +78,10 @@ starting from 0.
 
 * **int** *n* 
 * **function** *fn* 
+
+### Return:
+
+* **array** The result of the callbacks
 
 <!-- End lib/times.js -->
 
