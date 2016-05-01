@@ -1,3 +1,4 @@
 import lib from './lib'
 
-export default {...lib}
+export {...lib}
+export default lib
