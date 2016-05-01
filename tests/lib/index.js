@@ -147,3 +147,25 @@ describe("each", () => {
   })
 
 })
+
+describe("capitalize()", () => {
+
+  const capitalize = require('qux/lib/capitalize').default
+
+  it("Does nothing when passed an empty string.", () => {
+    expect(capitalize('')).toEqual('')
+  })
+
+  it("Capitalizes a single letter.", () => {
+    expect(capitalize('a')).toEqual('A')
+  })
+
+  it("Capitalizes a string.", () => {
+    expect(capitalize('foo')).toEqual('Foo')
+  })
+
+  it("Capitalizes only the first character of a multi-word string.", () => {
+    expect(capitalize('foo foo')).toEqual('Foo foo')
+  })
+
+})
