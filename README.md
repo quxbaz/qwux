@@ -39,6 +39,8 @@ Iterates over a list of items.
 
 <!-- Start lib/omit.js -->
 
+## omit
+
 Omits props from an object.
 
 ### Params:
@@ -53,6 +55,8 @@ Omits props from an object.
 <!-- End lib/omit.js -->
 
 <!-- Start lib/pick.js -->
+
+## pick
 
 Picks props from an object.
 
