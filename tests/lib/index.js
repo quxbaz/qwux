@@ -15,6 +15,27 @@ describe("omit", () => {
     expect(omit({a:1, b:2}, 'a', 'b', 'c')).toEqual({})
   })
 
+  it("Can take a predicate argument.", () => {
+    expect(
+      omit({}, (v, k) => true)
+    ).toEqual({})
+    expect(
+      omit({}, (v, k) => false)
+    ).toEqual({})
+    expect(
+      omit({a:1, b:2}, (v, k) => false)
+    ).toEqual({a:1, b:2})
+    expect(
+      omit({a:1, b:2}, (v, k) => true)
+    ).toEqual({})
+    expect(
+      omit({a:1, b:2, c:3}, (v, k) => v > 1)
+    ).toEqual({a:1})
+    expect(
+      omit({a:1, b:2, c:3}, (v, k) => k === 'c')
+    ).toEqual({a:1, b:2})
+  })
+
 })
 
 
@@ -33,6 +54,27 @@ describe("pick", () => {
     expect(pick({a:1, b:2}, ['a', 'b'])).toEqual({a:1, b:2})
     expect(pick({a:1, b:2}, 'a', 'b')).toEqual({a:1, b:2})
     expect(pick({a:1, b:2}, 'a', 'b', 'c')).toEqual({a:1, b:2})
+  })
+
+  it("Can take a predicate argument.", () => {
+    expect(
+      pick({}, (v, k) => true)
+    ).toEqual({})
+    expect(
+      pick({}, (v, k) => false)
+    ).toEqual({})
+    expect(
+      pick({a:1, b:2, c:3}, (v, k) => false)
+    ).toEqual({})
+    expect(
+      pick({a:1, b:2, c:3}, (v, k) => true)
+    ).toEqual({a:1, b:2, c:3})
+    expect(
+      pick({a:1, b:2, c:3}, (v, k) => v > 1)
+    ).toEqual({b:2, c:3})
+    expect(
+      pick({a:1, b:2, c:3}, (v, k) => k !== 'c')
+    ).toEqual({a:1, b:2})
   })
 
 })
