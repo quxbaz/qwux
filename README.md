@@ -54,6 +54,22 @@ Iterates over a list of items.
 
 <!-- End lib/index.js -->
 
+<!-- Start lib/isNil.js -->
+
+## isNil
+
+Checks if a value is undefined or null.
+
+### Params:
+
+* **value** *value* 
+
+### Return:
+
+* **boolean** 
+
+<!-- End lib/isNil.js -->
+
 <!-- Start lib/omit.js -->
 
 ## omit
