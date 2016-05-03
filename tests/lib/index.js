@@ -213,3 +213,26 @@ describe("throttle", () => {
   })
 
 })
+
+describe("isNil", () => {
+
+  const isNil = require('qux/lib/isNil').default
+
+  it("Checks if a value is undefined.", () => {
+    expect(isNil(undefined)).toBe(true)
+    let a
+    expect(isNil(a)).toBe(true)
+    let d = {}
+    expect(isNil(d.foo)).toBe(true)
+    expect(isNil(d)).toBe(false)
+    expect(isNil(1)).toBe(false)
+    expect(isNil('a')).toBe(false)
+    expect(isNil('undefined')).toBe(false)
+    expect(isNil(0)).toBe(false)
+  })
+
+  it("Checks if a value is null.", () => {
+    expect(isNil(null)).toBe(true)
+  })
+
+})
