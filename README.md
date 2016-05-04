@@ -148,7 +148,7 @@ starting from 0.
 ### Params:
 
 * **int** *n* 
-* **function** *fn* 
+* **function|value** *fn* 
 
 ### Return:
 

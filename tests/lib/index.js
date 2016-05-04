@@ -101,6 +101,12 @@ describe("times", () => {
     expect(times(5, (i) => i)).toEqual([0, 1, 2, 3, 4])
   })
 
+  it("Returns a value N times.", () => {
+    expect(times(3, null)).toEqual([null, null, null])
+    expect(times(3, 'a')).toEqual(['a', 'a', 'a'])
+    expect(times(3, {a:1})).toEqual([{a:1}, {a:1}, {a:1}])
+  })
+
 })
 
 describe("values", () => {
