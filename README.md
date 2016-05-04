@@ -119,10 +119,6 @@ Compares two objects shallowly.
 
 * **boolean** 
 
-## if()
-
-Source: github.com/gaearon/react-pure-render/blob/master/src/shallowEqual.js
-
 <!-- End lib/shallowEqual.js -->
 
 <!-- Start lib/throttle.js -->
