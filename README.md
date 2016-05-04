@@ -104,6 +104,27 @@ Picks props from an object.
 
 <!-- End lib/pick.js -->
 
+<!-- Start lib/shallowEqual.js -->
+
+## shallowEqual
+
+Compares two objects shallowly.
+
+### Params:
+
+* **object** *objA* 
+* **object** *objB* 
+
+### Return:
+
+* **boolean** 
+
+## if()
+
+Source: github.com/gaearon/react-pure-render/blob/master/src/shallowEqual.js
+
+<!-- End lib/shallowEqual.js -->
+
 <!-- Start lib/throttle.js -->
 
 ## throttle
