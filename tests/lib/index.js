@@ -105,6 +105,7 @@ describe("times", () => {
     expect(times(3, null)).toEqual([null, null, null])
     expect(times(3, 'a')).toEqual(['a', 'a', 'a'])
     expect(times(3, {a:1})).toEqual([{a:1}, {a:1}, {a:1}])
+    expect(times(3, [1, 2])).toEqual([[1, 2], [1, 2], [1, 2]])
   })
 
 })
