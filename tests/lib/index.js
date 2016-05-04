@@ -236,3 +236,39 @@ describe("isNil", () => {
   })
 
 })
+
+describe("shallowEqual", () => {
+
+  const shallowEqual = require('qux/lib/shallowEqual').default
+
+  it("Checks if a value is undefined.", () => {
+
+    expect(shallowEqual([], [])).toBe(true)
+
+    var a = [1, 2]
+    var b = a
+    expect(shallowEqual(a, b)).toBe(true)
+
+    expect(shallowEqual(
+      [1, 2],
+      [1, 2]
+    )).toBe(true)
+
+    expect(shallowEqual(
+      {a:1, b:2},
+      {a:1, b:2}
+    )).toBe(true)
+
+    expect(shallowEqual(
+      {a:1, b:2, c:3},
+      {a:1, b:2}
+    )).toBe(false)
+
+    expect(shallowEqual(
+      {a:1, b:2, c:{c:3}},
+      {a:1, b:2, c:{c:3}}
+    )).toBe(false)
+
+  })
+
+})
