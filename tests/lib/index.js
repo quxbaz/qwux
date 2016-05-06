@@ -279,3 +279,16 @@ describe("shallowEqual", () => {
   })
 
 })
+
+describe("last", () => {
+
+  const last = require('qux/lib/last').default
+
+  it("Gets the last item in an array.", () => {
+    expect(last([])).toEqual(undefined)
+    expect(last([1])).toEqual(1)
+    expect(last([1, 2])).toEqual(2)
+    expect(last([1, 2, 3])).toEqual(3)
+  })
+
+})

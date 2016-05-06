@@ -70,6 +70,22 @@ Checks if a value is undefined or null.
 
 <!-- End lib/isNil.js -->
 
+<!-- Start lib/last.js -->
+
+## last
+
+Gets the last item in an array.
+
+### Params:
+
+* **array** *list* 
+
+### Return:
+
+* **value** 
+
+<!-- End lib/last.js -->
+
 <!-- Start lib/omit.js -->
 
 ## omit
