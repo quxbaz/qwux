@@ -172,6 +172,22 @@ starting from 0.
 
 <!-- End lib/times.js -->
 
+<!-- Start lib/toList.js -->
+
+## toList
+
+Converts an object to an array of the form [{key: value}, ...]
+
+### Params:
+
+* **object** *hash* 
+
+### Return:
+
+* **array** 
+
+<!-- End lib/toList.js -->
+
 <!-- Start lib/values.js -->
 
 ## values
