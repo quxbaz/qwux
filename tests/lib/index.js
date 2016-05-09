@@ -292,3 +292,17 @@ describe("last", () => {
   })
 
 })
+
+describe("toList", () => {
+
+  const toList = require('qux/lib/toList').default
+
+  it("Converts an object to an array.", () => {
+    expect(toList({})).toEqual([])
+    expect(toList({a:1})).toEqual([{a:1}])
+    expect(toList({a:1, b:2})).toEqual([{a:1}, {b:2}])
+    expect(toList({a:1, b:2, c:3})).toEqual([{a:1}, {b:2}, {c:3}])
+    expect(toList({a:1, b:{c:3}})).toEqual([{a:1}, {b:{c:3}}])
+  })
+
+})
