@@ -188,6 +188,22 @@ Converts an object to an array of the form [{key: value}, ...]
 
 <!-- End lib/toList.js -->
 
+<!-- Start lib/uniq.js -->
+
+## uniq
+
+Retains only unique values from an array.
+
+### Params:
+
+* **array** *array* 
+
+### Return:
+
+* **array** 
+
+<!-- End lib/uniq.js -->
+
 <!-- Start lib/values.js -->
 
 ## values

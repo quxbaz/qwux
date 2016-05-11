@@ -306,3 +306,24 @@ describe("toList", () => {
   })
 
 })
+
+describe("uniq", () => {
+
+  const uniq = require('qux/lib/uniq').default
+
+  it("Retains only unique items in an array.", () => {
+    expect(uniq([])).toEqual([])
+    expect(uniq([1])).toEqual([1])
+    expect(uniq([1, 2])).toEqual([1, 2])
+    expect(uniq([1, 1, 2])).toEqual([1, 2])
+    expect(uniq([1, 1, 2, 2, 3])).toEqual([1, 2, 3])
+    expect(uniq([1, 1, 1])).toEqual([1])
+    expect(uniq([{a:1}, {a:1}])).toEqual([{a:1}, {a:1}])
+  })
+
+  it("Returns the original array if items are already unique.", () => {
+    const arr = [1, 2, 3]
+    expect(uniq(arr)).toBe(arr)
+  })
+
+})
