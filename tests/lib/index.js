@@ -327,3 +327,30 @@ describe("uniq", () => {
   })
 
 })
+
+describe("without", () => {
+
+  const without = require('qux/lib/without').default
+
+  it("Returns an array with items filtered out.", () => {
+    expect(without([], '')).toEqual([])
+    expect(without([1, 2], 2)).toEqual([1])
+    expect(without([1, 2], 1, 2)).toEqual([])
+    expect(without([1, 2], [1])).toEqual([1, 2])
+    expect(without([[1], 2], [1])).toEqual([[1], 2])
+    expect(without([1, 2, 3], 1, 2, 3)).toEqual([])
+  })
+
+  it("Matches arrays and objects.", () => {
+    const arr = []
+    expect(without([arr], arr)).toEqual([])
+    const obj = {}
+    expect(without([obj, 'a'], obj)).toEqual(['a'])
+  })
+
+  it("Returns the original array if no change occurs.", () => {
+    const arr = [1, 2, 3]
+    expect(without(arr, 'foo')).toBe(arr)
+  })
+
+})

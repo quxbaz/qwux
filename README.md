@@ -220,3 +220,20 @@ Gets the values from an object.
 
 <!-- End lib/values.js -->
 
+<!-- Start lib/without.js -->
+
+## without
+
+Returns an array with items filtered out.
+
+### Params:
+
+* **array** *array* 
+* **values** *values* 
+
+### Return:
+
+* **array** 
+
+<!-- End lib/without.js -->
+
