@@ -370,3 +370,19 @@ describe("after", () => {
   })
 
 })
+
+describe("before", () => {
+
+  const before = require('qux/lib/before').default
+
+  it("Gets the item before an item in an array.", () => {
+    expect(before([1, 2, 3], 1)).toEqual(undefined)
+    expect(before([1, 2, 3], 2)).toEqual(1)
+    expect(before([1, 2, 3], 3)).toEqual(2)
+    expect(before([1, 2, 3], 42)).toEqual(undefined)
+    const o = {}
+    expect(before([1, o, 3], o)).toEqual(1)
+    expect(before([1, {}, 3], {})).toEqual(undefined)
+  })
+
+})

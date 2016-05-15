@@ -17,6 +17,23 @@ Gets the item after an item in an array.
 
 <!-- End lib/after.js -->
 
+<!-- Start lib/before.js -->
+
+## before
+
+Gets the item before an item in an array.
+
+### Params:
+
+* **array** *array* 
+* **value** *value* 
+
+### Return:
+
+* **value** 
+
+<!-- End lib/before.js -->
+
 <!-- Start lib/capitalize.js -->
 
 ## capitalize
