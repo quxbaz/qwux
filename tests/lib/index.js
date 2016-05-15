@@ -354,3 +354,19 @@ describe("without", () => {
   })
 
 })
+
+describe("after", () => {
+
+  const after = require('qux/lib/after').default
+
+  it("Gets the item after an item in an array.", () => {
+    expect(after([1, 2, 3], 1)).toEqual(2)
+    expect(after([1, 2, 3], 2)).toEqual(3)
+    expect(after([1, 2, 3], 3)).toEqual(undefined)
+    expect(after([1, 2, 3], 42)).toEqual(undefined)
+    const o = {}
+    expect(after([1, o, 3], o)).toEqual(3)
+    expect(after([1, {}, 3], {})).toEqual(undefined)
+  })
+
+})

@@ -1,5 +1,22 @@
 
 
+<!-- Start lib/after.js -->
+
+## after
+
+Gets the item after an item in an array.
+
+### Params:
+
+* **array** *array* 
+* **value** *value* 
+
+### Return:
+
+* **value** 
+
+<!-- End lib/after.js -->
+
 <!-- Start lib/capitalize.js -->
 
 ## capitalize
