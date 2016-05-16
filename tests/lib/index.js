@@ -398,4 +398,10 @@ describe("mapValues", () => {
     expect(mapValues({a:1, b:2}, (v, k) => k + v)).toEqual({a:'a1', b:'b2'})
   })
 
+  it("Does not alter the original object.", () => {
+    const o = {a:1}
+    expect(mapValues(o, (v) => v + 1)).toNotBe(o)
+    expect(o).toEqual({a:1})
+  })
+
 })
