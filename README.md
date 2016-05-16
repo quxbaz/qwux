@@ -120,6 +120,23 @@ Gets the last item in an array.
 
 <!-- End lib/last.js -->
 
+<!-- Start lib/mapValues.js -->
+
+## mapValues
+
+Maps each value in an object and returns a new object.
+
+### Params:
+
+* **object** *obj* 
+* **function** *fn* 
+
+### Return:
+
+* **object** 
+
+<!-- End lib/mapValues.js -->
+
 <!-- Start lib/omit.js -->
 
 ## omit

@@ -386,3 +386,16 @@ describe("before", () => {
   })
 
 })
+
+describe("mapValues", () => {
+
+  const mapValues = require('qux/lib/mapValues').default
+
+  it("Maps each value in an object and returns a new object.", () => {
+    expect(mapValues({}, (x) => x)).toEqual({})
+    expect(mapValues({a:1}, (v) => v * 2)).toEqual({a:2})
+    expect(mapValues({a:1, b:2}, (v) => v * 2)).toEqual({a:2, b:4})
+    expect(mapValues({a:1, b:2}, (v, k) => k + v)).toEqual({a:'a1', b:'b2'})
+  })
+
+})
