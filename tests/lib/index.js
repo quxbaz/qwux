@@ -405,3 +405,23 @@ describe("mapValues", () => {
   })
 
 })
+
+describe("move", () => {
+
+  const move = require('qux/lib/move').default
+
+  it("Maps each value in an object and returns a new object.", () => {
+    expect(move(['a', 'b', 'c'], 0, 1)).toEqual(['b', 'a', 'c'])
+    expect(move(['a', 'b', 'c'], 1, 0)).toEqual(['b', 'a', 'c'])
+    expect(move(['a', 'b', 'c'], 1, 2)).toEqual(['a', 'c', 'b'])
+    expect(move(['a', 'b', 'c'], 2, 1)).toEqual(['a', 'c', 'b'])
+    expect(move(['a', 'b', 'c'], 0, 2)).toEqual(['b', 'c', 'a'])
+    expect(move(['a', 'b', 'c'], 2, 0)).toEqual(['c', 'a', 'b'])
+  })
+
+  it("Does not alter the original object if passed in the same value for @src and @dest.", () => {
+    const arr = [1, 2, 3]
+    expect(move(arr, 1, 1)).toBe(arr)
+  })
+
+})

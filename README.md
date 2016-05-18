@@ -137,6 +137,25 @@ Maps each value in an object and returns a new object.
 
 <!-- End lib/mapValues.js -->
 
+<!-- Start lib/move.js -->
+
+## move
+
+Moves an item in an array to another position and returns the new
+array.
+
+### Params:
+
+* **array** *arr* 
+* **number** *src* 
+* **number** *dest* 
+
+### Return:
+
+* **array** 
+
+<!-- End lib/move.js -->
+
 <!-- Start lib/omit.js -->
 
 ## omit
