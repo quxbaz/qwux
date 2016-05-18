@@ -419,7 +419,7 @@ describe("move", () => {
     expect(move(['a', 'b', 'c'], 2, 0)).toEqual(['c', 'a', 'b'])
   })
 
-  it("Does not alter the original object if passed in the same value for @src and @dest.", () => {
+  it("Does not alter the original object if passed in the same value for @from and @to.", () => {
     const arr = [1, 2, 3]
     expect(move(arr, 1, 1)).toBe(arr)
   })
