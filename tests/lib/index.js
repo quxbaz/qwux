@@ -221,7 +221,7 @@ describe("throttle", () => {
 
 })
 
-describe.only("isEmpty", () => {
+describe("isEmpty", () => {
 
   const isEmpty = require('qux/lib/isEmpty').default
 
@@ -300,6 +300,33 @@ describe("shallowEqual", () => {
       {a:1, b:2, c:{c:3}}
     )).toBe(false)
 
+  })
+
+})
+
+describe("sortBy", () => {
+
+  const sortBy = require('qux/lib/sortBy').default
+
+  it("Returns an empty list.", () => {
+    expect(sortBy([])).toEqual([])
+  })
+
+  it("Sorts a list.", () => {
+    expect(sortBy([{a:1}])).toEqual([{a:1}])
+    expect(sortBy([{a:1}, {a:2}], 'a')).toEqual([{a:1}, {a:2}])
+    expect(sortBy([{a:2}, {a:1}], 'a')).toEqual([{a:1}, {a:2}])
+    expect(sortBy([{a:1}, {a:2}, {a:3}], 'a')).toEqual([{a:1}, {a:2}, {a:3}])
+    expect(sortBy([{a:2}, {a:1}, {a:3}], 'a')).toEqual([{a:1}, {a:2}, {a:3}])
+    expect(sortBy([{a:2}, {a:3}, {a:1}], 'a')).toEqual([{a:1}, {a:2}, {a:3}])
+    expect(sortBy([{a:4}, {a:3}, {a:2}, {a:1}], 'a')).toEqual([{a:1}, {a:2}, {a:3}, {a:4}])
+    expect(sortBy([{a:4}, {a:5}, {a:2}, {a:1}], 'a')).toEqual([{a:1}, {a:2}, {a:4}, {a:5}])
+  })
+
+  it("Returns a new list", () => {
+    const list = [{a:1}, {b:2}]
+    expect(sortBy(list)).toEqual([{a:1}, {b:2}])
+    expect(sortBy(list)).toNotBe(list)
   })
 
 })

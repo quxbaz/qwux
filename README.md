@@ -224,6 +224,23 @@ Compares two objects shallowly.
 
 <!-- End lib/shallowEqual.js -->
 
+<!-- Start lib/sortBy.js -->
+
+## sortBy
+
+Sorts a list of objects by a specific key and returns a new list.
+
+### Params:
+
+* **array** *list* 
+* **string** *key* 
+
+### Return:
+
+* **array** 
+
+<!-- End lib/sortBy.js -->
+
 <!-- Start lib/throttle.js -->
 
 ## throttle
