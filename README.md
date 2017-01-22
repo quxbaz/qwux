@@ -88,6 +88,23 @@ Iterates over a list of items.
 
 <!-- End lib/index.js -->
 
+<!-- Start lib/isEmpty.js -->
+
+## isEmpty
+
+Checks if a value is empty. A value is considered empty if it has
+no enumerabale properties.
+
+### Params:
+
+* **value** *value* 
+
+### Return:
+
+* **boolean** 
+
+<!-- End lib/isEmpty.js -->
+
 <!-- Start lib/isNil.js -->
 
 ## isNil
@@ -147,8 +164,8 @@ array.
 ### Params:
 
 * **array** *arr* 
-* **number** *src* 
-* **number** *dest* 
+* **number** *from* 
+* **number** *to* 
 
 ### Return:
 

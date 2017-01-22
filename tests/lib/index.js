@@ -221,6 +221,30 @@ describe("throttle", () => {
 
 })
 
+describe.only("isEmpty", () => {
+
+  const isEmpty = require('qux/lib/isEmpty').default
+
+  it("Checks if a value is empty.", () => {
+    expect(isEmpty(undefined)).toBe(true)
+    expect(isEmpty(null)).toBe(true)
+    expect(isEmpty(1)).toBe(true)
+    expect(isEmpty('')).toBe(true)
+    expect(isEmpty([])).toBe(true)
+    expect(isEmpty({})).toBe(true)
+  })
+
+  it("Checks if a value is not empty.", () => {
+    expect(isEmpty('a')).toBe(false)
+    expect(isEmpty('ab')).toBe(false)
+    expect(isEmpty([1])).toBe(false)
+    expect(isEmpty([1, 2])).toBe(false)
+    expect(isEmpty([{a: 1}])).toBe(false)
+    expect(isEmpty([{a: 1, b: 2}])).toBe(false)
+  })
+
+})
+
 describe("isNil", () => {
 
   const isNil = require('qux/lib/isNil').default
