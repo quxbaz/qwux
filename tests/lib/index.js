@@ -476,3 +476,25 @@ describe("move", () => {
   })
 
 })
+
+describe("uniqueId", () => {
+
+  const uniqueId = require('qux/lib/uniqueId').default
+
+  it("ids begin at 0.", () => {
+    expect(uniqueId()).toBe('0')
+  })
+
+  it("ids are string types.", () => {
+    expect(typeof uniqueId()).toBe('string')
+  })
+
+  it("Generates unique ids.", () => {
+    const ids = new Set()
+    for (let i=0; i < 1000; i++) {
+      ids.add(uniqueId())
+    }
+    expect(ids.size).toEqual(1000)
+  })
+
+})

@@ -308,6 +308,18 @@ Retains only unique values from an array.
 
 <!-- End lib/uniq.js -->
 
+<!-- Start lib/uniqueId.js -->
+
+## uniqueId
+
+Generates a unique id.
+
+### Return:
+
+* **string** 
+
+<!-- End lib/uniqueId.js -->
+
 <!-- Start lib/values.js -->
 
 ## values
