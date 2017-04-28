@@ -22,7 +22,6 @@
   "name": "qux",
   "version": "1.14.1",
   "description": "Minimalist set of utility functions for javascript",
-  "main": "index.js",
   "directories": {
     "test": "tests"
   },
