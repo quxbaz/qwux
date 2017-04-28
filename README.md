@@ -101,6 +101,23 @@ Checks if all elements of an array are truthy for the predicate.
 
 <!-- End lib/every.js -->
 
+<!-- Start lib/find.js -->
+
+## find
+
+Finds a value in the list given a condition.
+
+### Params:
+
+* **array** *list* 
+* **function** *cond* 
+
+### Return:
+
+* **value** 
+
+<!-- End lib/find.js -->
+
 <!-- Start lib/includes.js -->
 
 ## includes
