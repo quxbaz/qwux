@@ -498,3 +498,44 @@ describe("uniqueId", () => {
   })
 
 })
+
+describe("every", () => {
+
+  const every = require('qux/lib/every').default
+
+  it("Is true when empty.", () => {
+    expect(every([])).toBe(true)
+  })
+
+  it("Is true when cond is true for all items.", () => {
+    expect(every([true], Boolean)).toBe(true)
+    expect(every([1], Boolean)).toBe(true)
+    expect(every(['s'], Boolean)).toBe(true)
+    expect(every([1, 's'], Boolean)).toBe(true)
+    expect(every([1, 's', true], Boolean)).toBe(true)
+  })
+
+  it("Is false when cond is false for any item.", () => {
+    expect(every([false], Boolean)).toBe(false)
+    expect(every([1, 0], Boolean)).toBe(false)
+    expect(every(['s', 0], Boolean)).toBe(false)
+    expect(every([1, 's', false], Boolean)).toBe(false)
+    expect(every([1, 's', true, false], Boolean)).toBe(false)
+  })
+
+  it("Short circuits on hitting false.", () => {
+    let i = 0
+    const isTruthy = (v) => {
+      i++
+      return Boolean(v)
+    }
+    expect(every([true, true, false, true, true], isTruthy)).toBe(false)
+    expect(i).toEqual(3)
+  })
+
+  it("Only explicit false values returned from cond are considered false.", () => {
+    const cond = (val) => val
+    expect(every([null, undefined, 0], cond)).toBe(true)
+  })
+
+})

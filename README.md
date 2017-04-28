@@ -84,9 +84,22 @@ Iterates over a list of items.
 
 <!-- End lib/each.js -->
 
-<!-- Start lib/index.js -->
+<!-- Start lib/every.js -->
 
-<!-- End lib/index.js -->
+## every
+
+Checks if all elements of an array are truthy for the predicate.
+
+### Params:
+
+* **array** *list* 
+* **function** *cond* 
+
+### Return:
+
+* **boolean** 
+
+<!-- End lib/every.js -->
 
 <!-- Start lib/isEmpty.js -->
 
