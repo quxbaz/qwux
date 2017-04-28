@@ -101,6 +101,23 @@ Checks if all elements of an array are truthy for the predicate.
 
 <!-- End lib/every.js -->
 
+<!-- Start lib/includes.js -->
+
+## includes
+
+Checks if value is in array.
+
+### Params:
+
+* **array|object** *list* 
+* **value** *value* 
+
+### Return:
+
+* **boolean** 
+
+<!-- End lib/includes.js -->
+
 <!-- Start lib/isEmpty.js -->
 
 ## isEmpty

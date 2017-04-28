@@ -539,3 +539,23 @@ describe("every", () => {
   })
 
 })
+
+describe("includes", () => {
+
+  const includes = require('qux/lib/includes').default
+
+  it("Is true when value is in array.", () => {
+    expect(includes([1], 1)).toBe(true)
+    expect(includes([1, 2], 1)).toBe(true)
+    expect(includes([1, 2], 2)).toBe(true)
+    expect(includes([1, 2, 3], 3)).toBe(true)
+    expect(includes([1, 2, 3], 1)).toBe(true)
+  })
+
+  it("Is false when value is absent.", () => {
+    expect(includes([], 1)).toBe(false)
+    expect(includes([1], 2)).toBe(false)
+    expect(includes([1, 2], 3)).toBe(false)
+  })
+
+})
