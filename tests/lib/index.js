@@ -565,17 +565,18 @@ describe("find", () => {
   const find = require('qux/lib/find').default
   const isEven = x => x % 2 === 0
 
-  it("Is true when cond is true for an item.", () => {
-    expect(find([2], isEven)).toBe(true)
-    expect(find([1, 2], isEven)).toBe(true)
-    expect(find([1, 4], isEven)).toBe(true)
-    expect(find([1, 3, 2], isEven)).toBe(true)
+  it("Returns item where cond is true.", () => {
+    expect(find([2], isEven)).toBe(2)
+    expect(find([1, 2], isEven)).toBe(2)
+    expect(find([1, 4], isEven)).toBe(4)
+    expect(find([1, 3, 2], isEven)).toBe(2)
+    expect(find([4, 3, 2], isEven)).toBe(4)
   })
 
-  it("Is false when cond is false for all items.", () => {
-    expect(find([1], isEven)).toBe(false)
-    expect(find([1, 3], isEven)).toBe(false)
-    expect(find([1, 3, 5], isEven)).toBe(false)
+  it("Returns undefined where no items evaluate to true for the cond.", () => {
+    expect(find([1], isEven)).toBe(undefined)
+    expect(find([1, 3], isEven)).toBe(undefined)
+    expect(find([1, 3, 5], isEven)).toBe(undefined)
   })
 
 })
