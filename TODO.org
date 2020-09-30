@@ -1,1 +1,8 @@
-Todo
+TODO
+
+* TODO
+  - [ ] The primary interface should be importing the entire library with just import 'qux' like underscore instead of individual functions.
+
+* Functions
+  - [ ] Applier. (fn, ...args) -> fn()
+    Takes a function and args. Returns a zero-argument function that calls the provided function with the provided args. 
