@@ -24,7 +24,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "type-check-tsc": "tsc --watch",
+    "type-check-tsc": "tsc --watch --noEmit",
     "type-check-wds": "webpack-dev-server --env=development --port 5000",
     "test": "jest --watch"
   }
