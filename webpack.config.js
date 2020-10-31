@@ -3,9 +3,12 @@ var abs = (...args) => path.resolve(__dirname, ...args)
 
 modue.exports = (env='production') => ({
 
-  entry: abs('index.js'),
+  entry: abs('src/index.ts'),
 
-  output:{
+  output: env === 'development' ? {
+    filename: 'bundle.js',
+    publicPath: '/assets/',
+  } : {
     filename: 'qwux.js',
     library: 'qwux',
     path: abs('lib/'),
@@ -17,7 +20,7 @@ modue.exports = (env='production') => ({
   module: {
     rules: [
       {
-        test: /\.ts?$/,
+        test: /\.ts$/,
         use: 'ts-loader',
         include: [abs('src')],
       },
