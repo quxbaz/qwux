@@ -1,3 +1,7 @@
-test('test test', () => {
-  expect(1).toBe(1)
+import {after} from './index'
+
+test('after()', () => {
+  expect(
+    after([1, 2], 1)
+  ).toBe(2)
 })
