@@ -1,7 +1,7 @@
 var path = require('path')
 var abs = (...args) => path.resolve(__dirname, ...args)
 
-modue.exports = (env='production') => ({
+module.exports = (env='production') => ({
 
   entry: abs('src/index.ts'),
 
@@ -29,7 +29,7 @@ modue.exports = (env='production') => ({
 
   resolve: {
     alias: {
-      'qwux': resolve(__dirname)
+      'qwux': abs(__dirname),
     },
   },
 
