@@ -1,44 +1,33 @@
-require('es6-promise').polyfill()
 var path = require('path')
-var resolve = path.resolve
+var abs = (...args) => path.resolve(__dirname, ...args)
 
-var config = {
+modue.exports = (env='production') => ({
 
-  cache: true,
-  devtool: 'source-map',
-  entry: resolve(__dirname, 'index'),
+  entry: abs('index.js'),
 
-  output: {
-    filename: 'bundle.js',
-    publicPath: '/assets/'
+  output:{
+    filename: 'qwux.js',
+    library: 'qwux',
+    path: abs('lib/'),
+    libraryTarget: 'umd',
   },
 
+  devtool: 'source-map',
+
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.js$/,
-        loader: 'babel',
-        include: [
-          resolve(__dirname, 'index'),
-          resolve(__dirname, 'lib'),
-          resolve(__dirname, 'tests')
-        ],
-        query: {
-          presets: ['es2015'],
-          plugins: ['transform-object-rest-spread']
-        }
-      }
-    ]
+        test: /\.ts?$/,
+        use: 'ts-loader',
+        include: [abs('src')],
+      },
+    ],
   },
 
   resolve: {
-    root: resolve(__dirname),
-    extensions: ['', '.js'],
     alias: {
-      'qux': resolve(__dirname)
-    }
-  }
+      'qwux': resolve(__dirname)
+    },
+  },
 
-}
-
-module.exports = config
+})
