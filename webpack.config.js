@@ -3,7 +3,7 @@ var abs = (...args) => path.resolve(__dirname, ...args)
 
 module.exports = (env='production') => ({
 
-  // mode: env,
+  // mode: 'development',
   entry: abs('src/index.ts'),
   devtool: 'source-map',
 
@@ -19,12 +19,13 @@ module.exports = (env='production') => ({
       {
         test: /\.ts$/,
         use: 'ts-loader',
-        include: [abs('src')],
+        include: abs('src'),
       },
     ],
   },
 
   resolve: {
+    extensions: ['.js', '.ts'],
     alias: {
       'qwux': abs(__dirname),
     },
