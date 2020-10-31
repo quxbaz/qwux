@@ -3,19 +3,16 @@ var abs = (...args) => path.resolve(__dirname, ...args)
 
 module.exports = (env='production') => ({
 
+  // mode: env,
   entry: abs('src/index.ts'),
-
-  output: env === 'development' ? {
-    filename: 'bundle.js',
-    publicPath: '/assets/',
-  } : {
-    filename: 'qwux.js',
-    library: 'qwux',
-    path: abs('lib/'),
-    libraryTarget: 'umd',
-  },
-
   devtool: 'source-map',
+
+  output: env === 'production' ? {
+    filename: 'qwux.js',
+    path: abs('lib/'),
+    library: 'qwux',
+    libraryTarget: 'umd',
+  } : {},
 
   module: {
     rules: [
