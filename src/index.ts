@@ -1,6 +1,3 @@
-/* SECTION: Collections */
-
-
 /* SECTION: Array */
 
 /**
@@ -11,36 +8,32 @@
  *
  * @return {value}
  */
-// const after = (array, value) => {
-//   const index = array.indexOf(value)
-//   if (index === -1)
-//     return undefined
-//   return array[index + 1]
-// }
+const after = <T>(array:T[], value:T): T | undefined => {
+  const index = array.indexOf(value)
+  if (index === -1)
+    return undefined
+  return array[index + 1]
+}
 
 /**
  * Gets the item before an item in an array.
- *
  * @param {array} array
  * @param {value} value
- *
  * @return {value}
  */
-// const before = (array, value) => {
-//   const index = array.indexOf(value)
-//   if (index === -1)
-//     return undefined
-//   return array[index - 1]
-// }
+const before = <T>(array:T[], value:T): T | undefined => {
+  const index = array.indexOf(value)
+  if (index === -1)
+    return undefined
+  return array[index - 1]
+}
 
 /**
  * Gets the last item in an array.
- *
- * @param {array} list
- *
+ * @param {array} array
  * @return {value}
  */
-// const last = (list) => list[list.length - 1]
+const last = <T>(array:T[]): T | undefined => array[array.length - 1]
 
 /**
  * Returns an array with items filtered out.
@@ -50,15 +43,9 @@
  *
  * @return {array}
  */
-// const without = (array, ...values) => {
-//   const result = array.filter(
-//     (item) => !values.includes(item)
-//   )
-//   if (array.length === result.length)
-//     return array
-//   else
-//     return result
-// }
+const without = <T>(array:T[], ...values:T[]): T[] => (
+  array.filter(item => !values.includes(item))
+)
 
 /**
  * Retains only unique values from an array.
@@ -108,12 +95,19 @@
 
 /* SECTION: Object */
 
-interface Each {
+interface each {
   <T>(obj:Record<string, T>, fn:(value:T, key:string) => any): unknown[]
 }
 
-// Iterates over an object.
-const each:Each = (obj, fn) => {
+/**
+ * Iterates over an object.
+ *
+ * @param {object} obj
+ * @param {function} fn
+ *
+ * @return {array}
+ */
+const each:each = (obj, fn) => {
   const results = []
   for (let key in obj) {
     if (obj.hasOwnProperty(key))
@@ -298,18 +292,18 @@ const each:Each = (obj, fn) => {
 /* SECTION: Sorting */
 
 /**
- * Sorts a list of objects by a specific key and returns a new list.
+ * Sorts an array of objects by a specific key and returns a new array.
  *
- * @param {array} list
+ * @param {array} array
  * @param {string} key
  *
  * @return {array}
  */
-// const sortBy = (list, key) => {
-//   if (list.length === 0) {
+// const sortBy = (array, key) => {
+//   if (array.length === 0) {
 //     return []
 //   }
-//   const sorted = [...list].sort((a, b) => {
+//   const sorted = [...array].sort((a, b) => {
 //     if (a[key] < b[key]) {
 //       return -1
 //     } else if (a[key] > b[key]) {
@@ -359,33 +353,32 @@ const each:Each = (obj, fn) => {
 
 
 export {
-  // Collections
-  each,
-
   // Array
-  // after, before, last, without, uniq, move,
+  after, before, last, without,
+  //after, before, last, without, uniq, move,
 
   // Object
-  // values, pick, omit, mapValues, toList,
+  each,
+  //each, values, pick, omit, mapValues, toList,
 
   // String
-  // capitalize,
+  //capitalize,
 
   // Values
-  // isEmpty, isNil,
+  //isEmpty, isNil,
 
   // Math
-  // constrain,
+  //constrain,
 
   // Timing
-  // throttle,
+  //throttle,
 
   // Sorting
-  // sortBy,
+  //sortBy,
 
   // Functions
-  // times,
+  //times,
 
   // Misc
-  // uniqueId,
+  //uniqueId,
 }

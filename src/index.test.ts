@@ -1,8 +1,8 @@
 import {
-  // Collections
   each,
 
   // Array
+  after, before, last, without,
   // after, before, last, without, uniq, move,
 
   // // Object
@@ -31,68 +31,64 @@ import {
 } from './index'
 
 
-// describe("foo", () => {
-//   test("passes", () => {
-//     expect(1).toBe(1)
-//   })
-// })
-
-
 /* SECTION: Array */
 
-// describe("after", () => {
-//   test("Gets the item after an item in an array.", () => {
-//     expect(after([1, 2, 3], 1)).toEqual(2)
-//     expect(after([1, 2, 3], 2)).toEqual(3)
-//     expect(after([1, 2, 3], 3)).toEqual(undefined)
-//     expect(after([1, 2, 3], 42)).toEqual(undefined)
-//     const o = {}
-//     expect(after([1, o, 3], o)).toEqual(3)
-//     expect(after([1, {}, 3], {})).toEqual(undefined)
-//   })
-// })
+describe("after", () => {
+  test("Gets the item after an item in an array.", () => {
+    expect(after([1, 2, 3], 1)).toEqual(2)
+    expect(after([1, 2, 3], 2)).toEqual(3)
+    expect(after([1, 2, 3], 3)).toEqual(undefined)
+    expect(after([1, 2, 3], 42)).toEqual(undefined)
+    const o = {}
+    expect(after([1, o, 3], o)).toEqual(3)
+    expect(after([1, {}, 3], {})).toEqual(undefined)
+  })
+})
 
-// describe("before", () => {
-//   test("Gets the item before an item in an array.", () => {
-//     expect(before([1, 2, 3], 1)).toEqual(undefined)
-//     expect(before([1, 2, 3], 2)).toEqual(1)
-//     expect(before([1, 2, 3], 3)).toEqual(2)
-//     expect(before([1, 2, 3], 42)).toEqual(undefined)
-//     const o = {}
-//     expect(before([1, o, 3], o)).toEqual(1)
-//     expect(before([1, {}, 3], {})).toEqual(undefined)
-//   })
-// })
+describe("before", () => {
+  test("Gets the item before an item in an array.", () => {
+    expect(before([1, 2, 3], 1)).toEqual(undefined)
+    expect(before([1, 2, 3], 2)).toEqual(1)
+    expect(before([1, 2, 3], 3)).toEqual(2)
+    expect(before([1, 2, 3], 42)).toEqual(undefined)
+    const o = {}
+    expect(before([1, o, 3], o)).toEqual(1)
+    expect(before([1, {}, 3], {})).toEqual(undefined)
+  })
+})
 
-// describe("last", () => {
-//   test("Gets the last item in an array.", () => {
-//     expect(last([])).toEqual(undefined)
-//     expect(last([1])).toEqual(1)
-//     expect(last([1, 2])).toEqual(2)
-//     expect(last([1, 2, 3])).toEqual(3)
-//   })
-// })
+describe("last", () => {
+  test("Gets the last item in an array.", () => {
+    expect(last([])).toEqual(undefined)
+    expect(last([1])).toEqual(1)
+    expect(last([1, 2])).toEqual(2)
+    expect(last([1, 2, 3])).toEqual(3)
+  })
+})
 
-// describe("without", () => {
-//   test("Returns an array with items filtered out.", () => {
-//     expect(without([], '')).toEqual([])
-//     expect(without([1, 2], 2)).toEqual([1])
-//     expect(without([1, 2], 1, 2)).toEqual([])
-//     expect(without([1, 2], [1])).toEqual([1, 2])
-//     expect(without([[1], 2], [1])).toEqual([[1], 2])
-//     expect(without([1, 2, 3], 1, 2, 3)).toEqual([])
-//   })
-//   test("Matches arrays and objects.", () => {
-//     const arr = []
-//     expect(without([arr], arr)).toEqual([])
-//     const obj = {}
-//     expect(without([obj, 'a'], obj)).toEqual(['a'])
-//   })
-//   test("Returns the original array if no change occurs.", () => {
-//     const arr = [1, 2, 3]
-//     expect(without(arr, 'foo')).toBe(arr)
-//   })
-// })
+describe("without", () => {
+  test("Returns an array with items filtered out.", () => {
+    expect(without([], '')).toEqual([])
+    expect(without([1, 2], 2)).toEqual([1])
+    expect(without([1, 2], 1, 2)).toEqual([])
+    expect(without([[1], 2], [1])).toEqual([[1], 2])
+    expect(without([1, 2, 3], 1, 2, 3)).toEqual([])
+  })
+  test("Matches arrays and objects.", () => {
+    const arr:object = []
+    expect(without([arr], arr)).toEqual([])
+    const obj = {}
+    expect(without([obj, 'a'], obj)).toEqual(['a'])
+  })
+  test("Returns the same values if nothing was filtered out", () => {
+    const arr = [1, 2, 3]
+    expect(without(arr, 4)).toEqual([1, 2, 3])
+  })
+  test("Always returns a new array even if no change occurred.", () => {
+    const arr = [1, 2, 3]
+    expect(without(arr, 4)).not.toBe(arr)
+  })
+})
 
 // describe("uniq", () => {
 //   test("Retains only unique items in an array.", () => {
