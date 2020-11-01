@@ -1,3 +1,8 @@
+/* Useful Types */
+
+type Key = string | number
+type Dict<T> = Record<Key, T>
+
 /* SECTION: Array */
 
 /**
@@ -79,7 +84,7 @@ const move = <T>(array:T[], from:number, to:number): T[] => {
 /* SECTION: Object */
 
 interface each {
-  <T>(obj:Record<string, T>, fn:(value:T, key:string) => any): unknown[]
+  <T>(obj:Dict<T>, fn:(value:T, key:string) => any): unknown[]
 }
 
 /**
@@ -106,60 +111,40 @@ const each:each = (obj, fn) => {
  *
  * @return {array}
  */
-// const values = (obj) => Object.keys(obj).map(k => obj[k])
+const values = <T>(obj:Dict<T>): T[] => (
+  Object.keys(obj).map(k => obj[k])
+)
 
 /**
  * Picks props from an object.
  *
  * @param {object} obj
- * @param {string | array | function} props
+ * @param {...string} keys
  *
  * @return {object}
  */
-// const pick = (obj, ...props) => {
-//   props = [].concat(...props)
-//   const result = {}
-//   if (props.length === 1 && typeof props[0] === 'function') {
-//     const cond = props[0]
-//     each(obj, (value, key) => {
-//       if (cond(value, key))
-//         result[key] = value
-//     })
-//       }
-//   else {
-//     props.forEach((prop) => {
-//       if (obj.hasOwnProperty(prop))
-//         result[prop] = obj[prop]
-//     })
-//   }
-//   return result
-// }
+const pick = <T>(obj:Dict<T>, ...keys:Key[]): typeof obj => {
+  const o:typeof obj = {}
+  keys.forEach((k) => {
+    if (obj.hasOwnProperty(k))
+      o[k] = obj[k]
+  })
+  return o
+}
 
 /**
  * Omits props from an object.
  *
  * @param {object} obj
- * @param {string | array | function} props
+ * @param {...string} props
  *
  * @return {object}
  */
-// const omit = (obj, ...props) => {
-//   props = [].concat(...props)
-//   const result = {...obj}
-//   if (props.length === 1 && typeof props[0] === 'function') {
-//     const cond = props[0]
-//     each(obj, (value, key) => {
-//       if (cond(value, key))
-//         delete result[key]
-//     })
-//       }
-//   else {
-//     props.forEach((prop) => {
-//       delete result[prop]
-//     })
-//   }
-//   return result
-// }
+const omit = <T>(obj:Dict<T>, ...keys:Key[]): typeof obj => {
+  const o:typeof obj = {...obj}
+  keys.forEach(key => delete o[key])
+  return o
+}
 
 /**
  * Maps each value in an object and returns a new object.
@@ -340,7 +325,7 @@ export {
   after, before, last, without, uniq, move,
 
   // Object
-  each,
+  each, values, pick, omit,
   //each, values, pick, omit, mapValues, toList,
 
   // String

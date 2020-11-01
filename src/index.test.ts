@@ -1,31 +1,30 @@
 import {
-  each,
-
   // Array
-  after, before, last, without, uniq, move
+  after, before, last, without, uniq, move,
 
-  // // Object
-  // values, pick, omit, mapValues, toList,
+  // Object
+  each, values, pick, omit,
+  // each, values, pick, omit, mapValues, toList,
 
-  // // String
+  // String
   // capitalize,
 
-  // // Values
+  // Values
   // isEmpty, isNil,
 
-  // // Math
+  // Math
   // constrain,
 
-  // // Timing
+  // Timing
   // throttle,
 
-  // // Sorting
+  // Sorting
   // sortBy,
 
-  // // Functions
+  // Functions
   // times,
 
-  // // Misc
+  // Misc
   // uniqueId,
 } from './index'
 
@@ -131,82 +130,33 @@ describe("each", () => {
   })
 })
 
-// describe("values", () => {
-//   test("Gets the values from an object.", () => {
-//     expect(values({})).toEqual([])
-//     expect(values({a:1})).toEqual([1])
-//     expect(values({a:1, b:2})).toEqual([1, 2])
-//     expect(values({1:'a', 2:'b'})).toEqual(['a', 'b'])
-//   })
-// })
+describe("values", () => {
+  test("Gets the values from an object.", () => {
+    expect(values({})).toEqual([])
+    expect(values({a:1})).toEqual([1])
+    expect(values({a:1, b:2})).toEqual([1, 2])
+    expect(values({1:'a', 2:'b'})).toEqual(['a', 'b'])
+  })
+})
 
-// describe("pick", () => {
-//   test("Picks props from an object.", () => {
-//     expect(pick({}, 'a')).toEqual({})
-//     expect(pick({}, ['a'])).toEqual({})
-//     expect(pick({}, ['a', 'b'])).toEqual({})
-//     expect(pick({}, 1)).toEqual({})
-//     expect(pick({a:1}, 'a')).toEqual({a:1})
-//     expect(pick({a:1}, ['a'])).toEqual({a:1})
-//     expect(pick({a:1}, ['a', 'b'])).toEqual({a:1})
-//     expect(pick({a:1, b:2}, ['a', 'b'])).toEqual({a:1, b:2})
-//     expect(pick({a:1, b:2}, 'a', 'b')).toEqual({a:1, b:2})
-//     expect(pick({a:1, b:2}, 'a', 'b', 'c')).toEqual({a:1, b:2})
-//   })
-//   test("Can take a predicate argument.", () => {
-//     expect(
-//       pick({}, (v, k) => true)
-//     ).toEqual({})
-//     expect(
-//       pick({}, (v, k) => false)
-//     ).toEqual({})
-//     expect(
-//       pick({a:1, b:2, c:3}, (v, k) => false)
-//     ).toEqual({})
-//     expect(
-//       pick({a:1, b:2, c:3}, (v, k) => true)
-//     ).toEqual({a:1, b:2, c:3})
-//     expect(
-//       pick({a:1, b:2, c:3}, (v, k) => v > 1)
-//     ).toEqual({b:2, c:3})
-//     expect(
-//       pick({a:1, b:2, c:3}, (v, k) => k !== 'c')
-//     ).toEqual({a:1, b:2})
-//   })
-// })
+describe("pick", () => {
+  test("Picks props from an object.", () => {
+    expect(pick({}, 'a')).toEqual({})
+    expect(pick({}, 1)).toEqual({})
+    expect(pick({a:1, b:2}, 'a', 'b')).toEqual({a:1, b:2})
+    expect(pick({a:1, b:2}, 'a', 'b', 'c')).toEqual({a:1, b:2})
+  })
+})
 
-// describe("omit", () => {
-//   test("Omits props from an object.", () => {
-//     expect(omit({}, 'a')).toEqual({})
-//     expect(omit({a:1}, 'a')).toEqual({})
-//     expect(omit({a:1}, 'b')).toEqual({a:1})
-//     expect(omit({a:1}, ['a'])).toEqual({})
-//     expect(omit({a:1, b:2}, ['a'])).toEqual({b:2})
-//     expect(omit({a:1, b:2}, ['a', 'b'])).toEqual({})
-//     expect(omit({a:1, b:2}, 'a', 'b')).toEqual({})
-//     expect(omit({a:1, b:2}, 'a', 'b', 'c')).toEqual({})
-//   })
-//   test("Can take a predicate argument.", () => {
-//     expect(
-//       omit({}, (v, k) => true)
-//     ).toEqual({})
-//     expect(
-//       omit({}, (v, k) => false)
-//     ).toEqual({})
-//     expect(
-//       omit({a:1, b:2}, (v, k) => false)
-//     ).toEqual({a:1, b:2})
-//     expect(
-//       omit({a:1, b:2}, (v, k) => true)
-//     ).toEqual({})
-//     expect(
-//       omit({a:1, b:2, c:3}, (v, k) => v > 1)
-//     ).toEqual({a:1})
-//     expect(
-//       omit({a:1, b:2, c:3}, (v, k) => k === 'c')
-//     ).toEqual({a:1, b:2})
-//   })
-// })
+describe("omit", () => {
+  test("Omits props from an object.", () => {
+    expect(omit({}, 'a')).toEqual({})
+    expect(omit({a:1}, 'a')).toEqual({})
+    expect(omit({a:1}, 'b')).toEqual({a:1})
+    expect(omit({a:1, b:2}, 'a', 'b')).toEqual({})
+    expect(omit({a:1, b:2}, 'a', 'b', 'c')).toEqual({})
+  })
+})
 
 // describe("mapValues", () => {
 //   test("Maps each value in an object and returns a new object.", () => {
