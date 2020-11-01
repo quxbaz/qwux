@@ -54,24 +54,7 @@ const without = <T>(array:T[], ...values:T[]): T[] => (
  *
  * @return {array}
  */
-// const uniq = (array) => {
-//   const set = new Set(array)
-//   const uniques = Array.from(set)
-
-//   let isEqual = true
-//   if (array.length !== uniques.length) {
-//     isEqual = false
-//   } else {
-//     for (let i=0; i < array.length; i++) {
-//       if (array[i] !== uniques[i]) {
-//         isEqual = false
-//         break
-//       }
-//     }
-//   }
-
-//   return isEqual ? array : uniques
-// }
+const uniq = <T>(array:T[]): T[] => Array.from(new Set(array))
 
 /**
  * Moves an item in an array to another position and returns the new
@@ -354,7 +337,7 @@ const each:each = (obj, fn) => {
 
 export {
   // Array
-  after, before, last, without,
+  after, before, last, without, uniq,
   //after, before, last, without, uniq, move,
 
   // Object

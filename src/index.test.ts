@@ -2,7 +2,7 @@ import {
   each,
 
   // Array
-  after, before, last, without,
+  after, before, last, without, uniq,
   // after, before, last, without, uniq, move,
 
   // // Object
@@ -90,21 +90,17 @@ describe("without", () => {
   })
 })
 
-// describe("uniq", () => {
-//   test("Retains only unique items in an array.", () => {
-//     expect(uniq([])).toEqual([])
-//     expect(uniq([1])).toEqual([1])
-//     expect(uniq([1, 2])).toEqual([1, 2])
-//     expect(uniq([1, 1, 2])).toEqual([1, 2])
-//     expect(uniq([1, 1, 2, 2, 3])).toEqual([1, 2, 3])
-//     expect(uniq([1, 1, 1])).toEqual([1])
-//     expect(uniq([{a:1}, {a:1}])).toEqual([{a:1}, {a:1}])
-//   })
-//   test("Returns the original array if items are already unique.", () => {
-//     const arr = [1, 2, 3]
-//     expect(uniq(arr)).toBe(arr)
-//   })
-// })
+describe("uniq", () => {
+  test("Retains only unique items in an array.", () => {
+    expect(uniq([])).toEqual([])
+    expect(uniq([1])).toEqual([1])
+    expect(uniq([1, 2])).toEqual([1, 2])
+    expect(uniq([1, 1, 2])).toEqual([1, 2])
+    expect(uniq([1, 1, 2, 2, 3])).toEqual([1, 2, 3])
+    expect(uniq([1, 1, 1])).toEqual([1])
+    expect(uniq([{a:1}, {a:1}])).toEqual([{a:1}, {a:1}])
+  })
+})
 
 // describe("move", () => {
 //   test("Maps each value in an object and returns a new object.", () => {
