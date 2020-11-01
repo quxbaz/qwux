@@ -66,14 +66,14 @@ const uniq = <T>(array:T[]): T[] => Array.from(new Set(array))
  *
  * @return {array}
  */
-// const move = (arr, from, to) => {
-//   if (from === to)
-//     return arr
-//   const copy = [...arr]
-//   const item = copy.splice(from, 1)[0]
-//   copy.splice(to, 0, item)
-//   return copy
-// }
+const move = <T>(array:T[], from:number, to:number): T[] => {
+  const copy = [...array]
+  if (from === to)
+    return copy
+  const item = copy.splice(from, 1)[0]
+  copy.splice(to, 0, item)
+  return copy
+}
 
 
 /* SECTION: Object */
@@ -337,8 +337,7 @@ const each:each = (obj, fn) => {
 
 export {
   // Array
-  after, before, last, without, uniq,
-  //after, before, last, without, uniq, move,
+  after, before, last, without, uniq, move,
 
   // Object
   each,
