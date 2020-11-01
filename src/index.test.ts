@@ -3,8 +3,8 @@ import {
   after, before, last, without, uniq, move,
 
   // Object
-  each, values, pick, omit,
-  // each, values, pick, omit, mapValues, toList,
+  each, values, pick, omit, objectMap,
+  // each, values, pick, omit, objectMap, toList,
 
   // String
   // capitalize,
@@ -143,6 +143,8 @@ describe("pick", () => {
   test("Picks props from an object.", () => {
     expect(pick({}, 'a')).toEqual({})
     expect(pick({}, 1)).toEqual({})
+    expect(pick({a:1, b:2}, 'a', 'a')).toEqual({a:1})
+    expect(pick({1:'a', 2:'b'}, 1, 2)).toEqual({1:'a', 2:'b'})
     expect(pick({a:1, b:2}, 'a', 'b')).toEqual({a:1, b:2})
     expect(pick({a:1, b:2}, 'a', 'b', 'c')).toEqual({a:1, b:2})
   })
@@ -158,19 +160,19 @@ describe("omit", () => {
   })
 })
 
-// describe("mapValues", () => {
-//   test("Maps each value in an object and returns a new object.", () => {
-//     expect(mapValues({}, (x) => x)).toEqual({})
-//     expect(mapValues({a:1}, (v) => v * 2)).toEqual({a:2})
-//     expect(mapValues({a:1, b:2}, (v) => v * 2)).toEqual({a:2, b:4})
-//     expect(mapValues({a:1, b:2}, (v, k) => k + v)).toEqual({a:'a1', b:'b2'})
-//   })
-//   test("Does not alter the original object.", () => {
-//     const o = {a:1}
-//     expect(mapValues(o, (v) => v + 1)).toNotBe(o)
-//     expect(o).toEqual({a:1})
-//   })
-// })
+describe("objectMap", () => {
+  test("Maps each value in an object and returns a new object.", () => {
+    expect(objectMap({}, (x) => x)).toEqual({})
+    expect(objectMap({a:1}, (v) => v * 2)).toEqual({a:2})
+    expect(objectMap({a:1, b:2}, (v) => v * 2)).toEqual({a:2, b:4})
+    expect(objectMap({a:1, b:2}, (v, k) => (k as string) + v)).toEqual({a:'a1', b:'b2'})
+  })
+  test("Does not alter the original object.", () => {
+    const o = {a:1}
+    expect(objectMap(o, (v) => v + 1)).not.toBe(o)
+    expect(o).toEqual({a:1})
+  })
+})
 
 // describe("toList", () => {
 //   test("Converts an object to an array.", () => {
@@ -295,7 +297,7 @@ describe("omit", () => {
 //   test("Returns a new list", () => {
 //     const list = [{a:1}, {b:2}]
 //     expect(sortBy(list)).toEqual([{a:1}, {b:2}])
-//     expect(sortBy(list)).toNotBe(list)
+//     expect(sortBy(list)).not.toBe(list)
 //   })
 // })
 

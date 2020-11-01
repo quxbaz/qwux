@@ -1,7 +1,7 @@
 /* Useful Types */
 
 type Key = string | number
-type Dict<T> = Record<Key, T>
+type Dict<V> = Record<Key, V>
 
 /* SECTION: Array */
 
@@ -84,7 +84,7 @@ const move = <T>(array:T[], from:number, to:number): T[] => {
 /* SECTION: Object */
 
 interface each {
-  <T>(obj:Dict<T>, fn:(value:T, key:string) => any): unknown[]
+  <V>(obj:Dict<V>, fn:(value:V, key:string) => any): unknown[]
 }
 
 /**
@@ -111,7 +111,7 @@ const each:each = (obj, fn) => {
  *
  * @return {array}
  */
-const values = <T>(obj:Dict<T>): T[] => (
+const values = <V>(obj:Dict<V>): V[] => (
   Object.keys(obj).map(k => obj[k])
 )
 
@@ -123,7 +123,7 @@ const values = <T>(obj:Dict<T>): T[] => (
  *
  * @return {object}
  */
-const pick = <T>(obj:Dict<T>, ...keys:Key[]): typeof obj => {
+const pick = <V>(obj:Dict<V>, ...keys:Key[]): typeof obj => {
   const o:typeof obj = {}
   keys.forEach((k) => {
     if (obj.hasOwnProperty(k))
@@ -140,27 +140,28 @@ const pick = <T>(obj:Dict<T>, ...keys:Key[]): typeof obj => {
  *
  * @return {object}
  */
-const omit = <T>(obj:Dict<T>, ...keys:Key[]): typeof obj => {
+const omit = <V>(obj:Dict<V>, ...keys:Key[]): typeof obj => {
   const o:typeof obj = {...obj}
   keys.forEach(key => delete o[key])
   return o
 }
 
 /**
- * Maps each value in an object and returns a new object.
+ * Similar to Array.map. Maps each value in an object and returns a
+ * new object, maintaining its {key: value} structure.
  *
  * @param {object} obj
  * @param {function} fn
  *
  * @return {object}
  */
-// const mapValues = (obj, fn) => {
-//   const result = {}
-//   Object.keys(obj).forEach((key) => {
-//     result[key] = fn(obj[key], key)
-//   })
-//   return result
-// }
+const objectMap = <V, R>(obj:Dict<V>, fn:(value:V, key:Key) => R): Dict<R> => {
+  const o:Dict<R> = {}
+  each(obj, (v, k) => {
+    o[k] = (fn(v, k))
+  })
+  return o
+}
 
 /**
  * Converts an object to an array of the form [{key: value}, ...]
@@ -325,8 +326,8 @@ export {
   after, before, last, without, uniq, move,
 
   // Object
-  each, values, pick, omit,
-  //each, values, pick, omit, mapValues, toList,
+  each, values, pick, omit, objectMap,
+  //each, values, pick, omit, objectMap, toList,
 
   // String
   //capitalize,
