@@ -14,8 +14,8 @@ after (array, item) => item
 // @item An item in the array.
 // @return The item found, or undefined.
 ```
+`Example`
 ```js
-// Example:
 after(['a', 'b', 'c'], 'b') => 'b'
 ```
 
