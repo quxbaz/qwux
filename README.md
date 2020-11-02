@@ -10,11 +10,9 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
 ```js
 after (array, item) => item
 
-/*
-  @array The array to act on.
-  @item An item in the array.
-  @return The item found, or undefined.
-*/
+// @array The array to act on.
+// @item An item in the array.
+// @return The item found, or undefined.
 
 // Example:
 after(['a', 'b', 'c'], 'b') => 'b'
@@ -39,8 +37,47 @@ before(['a', 'b', 'c'], 'b') => 'a'
 last (array) => item
 
 // @array The array to act on.
-// @return The last item in @array.
+// @return The last item.
 
 // Example:
-before(['a', 'b', 'c'], 'b') => 'a'
+last(['a', 'b', 'c'], 'b') => 'c'
+```
+
+#### `without`
+* Returns an array with items filtered out.
+```js
+without (array, ...items) => array
+
+// @array The array to act on.
+// @items The items to filter out.
+// @return The array minus @items.
+
+// Example:
+without(['a', 'b', 'c'], 'c') => ['a', 'b']
+```
+
+#### `uniq`
+* Retains only unique values from an array.
+```js
+uniq (array) => array
+
+// @array The array to act on.
+// @return Unique values onlyl
+
+// Example:
+uniq(['a', 'a', 'b'], 'c') => ['a', 'b']
+```
+
+#### `insert`
+* Inserts an item into the array at a position. If the position exceeds the length of the array, append the item.
+```js
+insert (array, i, ...items) => array
+
+// @array The array to act on.
+// @i The position to insert the item(s).
+// @items Any number of items to insert at @i.
+// @return The array with the items inserted at position @i.
+
+// Example:
+insert(['a', 'c', 'd'], 1, 'b') => ['a', 'b', 'c', 'd']
 ```

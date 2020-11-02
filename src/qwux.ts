@@ -26,12 +26,12 @@ const after = <T>(array:T[], item:T): T | undefined => {
  * Gets the item before an item in an array.
  *
  * @param {array} array
- * @param {value} value
+ * @param {value} item
  *
  * @return {value}
  */
-const before = <T>(array:T[], value:T): T | undefined => {
-  const index = array.indexOf(value)
+const before = <T>(array:T[], item:T): T | undefined => {
+  const index = array.indexOf(item)
   if (index === -1)
     return undefined
   return array[index - 1]
@@ -48,12 +48,12 @@ const last = <T>(array:T[]): T | undefined => array[array.length - 1]
  * Returns an array with items filtered out.
  *
  * @param {array} array
- * @param {...values} values
+ * @param {...values} items
  *
  * @return {array}
  */
-const without = <T>(array:T[], ...values:T[]): T[] => (
-  array.filter(item => !values.includes(item))
+const without = <T>(array:T[], ...items:T[]): T[] => (
+  array.filter(item => !items.includes(item))
 )
 
 /**
@@ -66,7 +66,7 @@ const without = <T>(array:T[], ...values:T[]): T[] => (
 const uniq = <T>(array:T[]): T[] => Array.from(new Set(array))
 
 /**
- * Inserts an item into an array at a position. If the position
+ * Inserts an item into the array at a position. If the position
  * exceeds the length of the array, append the item.
  *
  * @param {array} array
