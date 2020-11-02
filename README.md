@@ -31,7 +31,7 @@ before (array, item) => item
 */
 ```
 ```js
-// Example:
+// Example
 before(['a', 'b', 'c'], 'b') => 'a'
 ```
 
@@ -45,7 +45,7 @@ last (array) => item
 */
 ```
 ```js
-// Example:
+// Example
 last(['a', 'b', 'c'], 'b') => 'c'
 ```
 
@@ -60,7 +60,7 @@ without (array, ...items) => array
 */
 ```
 ```js
-// Example:
+// Example
 without(['a', 'b', 'c'], 'c') => ['a', 'b']
 ```
 
@@ -74,7 +74,7 @@ uniq (array) => array
 */
 ```
 ```js
-// Example:
+// Example
 uniq(['a', 'a', 'b'], 'c') => ['a', 'b']
 ```
 
@@ -90,6 +90,6 @@ insert (array, i, ...items) => array
 */
 ```
 ```js
-// Example:
-insert(['a', 'c', 'd'], 1, 'b') => ['a', 'b', 'c', 'd']
+// Example
+insert(['a', 'c'], 1, 'b') => ['a', 'b', 'c']
 ```
