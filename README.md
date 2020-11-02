@@ -4,7 +4,17 @@
 Minimal set of utility functions written in TypeScript. Mostly for personal use. I only include the functions I actually need here. Does not duplicate native javascript functions.
 
 ## Table of contents
-- [Arrays](#array-functions)
+- [Arrays](#arrays)
+  [`after`](#after)
+  [`before`](#before)
+  [`last`](#last)
+  [`without`](#without)
+  [`uniq`](#uniq)
+  [`insert`](#insert)
+  [`move`](#move)
+  [`divide`](#divide)
+  [`getRandomItem`](#getRandomItem)
+- [Arrays](#arrays)
    - [`after`](#after)
    - [`before`](#before)
    - [`last`](#last)
@@ -14,33 +24,33 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
    - [`move`](#move)
    - [`divide`](#divide)
    - [`getRandomItem`](#getRandomItem)
-- [Objects](#object-functions)
+- [Objects](#objects)
    - [`each`](#each)
    - [`values`](#values)
    - [`picks`](#picks)
    - [`omit`](#omit)
    - [`objectMap`](#objectMap)
    - [`toArray`](#toArray)
-- [Strings][#string-functions]
+- [Strings](#strings)
    - [`capitalize`](#capitalize)
-- [Values](#)
+- [Values](#values)
    - [`isEmpty`](#isEmpty)
    - [`isNil`](#isNil)
-- [Math](#)
+- [Math](#math)
    - [`constrain`](#constrain)
-- [Timing](#)
+- [Timing](#timing)
    - [`throttled`](#throttled)
-- [Sorting](#)
+- [Sorting](#sorting)
    - [`sortByKey`](#sortByKey)
-- [Functions](#)
+- [Functions](#functions)
    - [`noop`](#noop)
    - [`identity`](#identity)
    - [`compose`](#compose)
    - [`repeat`](#repeat)
-- [Misc](#)
+- [Misc](#misc)
    - [`uniqId`](#uniqId)
 
-## Array functions
+## Arrays
 
 #### `after`
 * Gets the item after an item in an array.
