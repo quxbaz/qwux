@@ -9,7 +9,9 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
 Gets the item after an item in an array.
 
 > `@array` The array to act on.
+>
 > `@item` Any item in the array.
+>
 > `@return` The item found, or undefined.
 
 
