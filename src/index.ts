@@ -62,6 +62,22 @@ const without = <T>(array:T[], ...values:T[]): T[] => (
 const uniq = <T>(array:T[]): T[] => Array.from(new Set(array))
 
 /**
+ * Inserts an item into an array at a position. If the position
+ * exceeds the length of the array, append the item.
+ *
+ * @param {array} array
+ * @param {number} i
+ * @param {value} item
+ *
+ * @return {array}
+ */
+const insert = <T>(array:T[], i:number, ...items:T[]): T[] => ([
+  ...array.slice(0, i),
+  ...items,
+  ...array.slice(i),
+])
+
+/**
  * Moves an item in an array to another position and returns the new
  * array.
  *
@@ -325,7 +341,7 @@ const uniqId = (() => {
 
 export {
   // Array
-  after, before, last, without, uniq, move,
+  after, before, last, without, uniq, insert, move,
 
   // Object
   each, values, pick, omit, objectMap, toArray,

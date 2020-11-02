@@ -1,6 +1,6 @@
 import {
   // Array
-  after, before, last, without, uniq, move,
+  after, before, last, without, uniq, insert, move,
 
   // Object
   each, values, pick, omit, objectMap, toArray,
@@ -96,6 +96,33 @@ describe("uniq", () => {
     expect(uniq([1, 1, 2, 2, 3])).toEqual([1, 2, 3])
     expect(uniq([1, 1, 1])).toEqual([1])
     expect(uniq([{a:1}, {a:1}])).toEqual([{a:1}, {a:1}])
+  })
+})
+
+describe("insert", () => {
+  test("Inserts a value into an array at a position.", () => {
+    expect(insert([], 0, 99)).toEqual([99])
+    expect(insert([], 1, 99)).toEqual([99])
+    expect(insert([], 2, 99)).toEqual([99])
+    expect(insert([0], 2, 99)).toEqual([0, 99])
+    expect(insert([0], 0, 99)).toEqual([99, 0])
+    expect(insert([0], 1, 99)).toEqual([0, 99])
+    expect(insert([0], 2, 99)).toEqual([0, 99])
+    expect(insert([0, 1], 0, 99)).toEqual([99, 0, 1])
+    expect(insert([0, 1], 1, 99)).toEqual([0, 99, 1])
+    expect(insert([0, 1], 2, 99)).toEqual([0, 1, 99])
+    expect(insert([0, 1, 2], 0, 99)).toEqual([99, 0, 1, 2])
+    expect(insert([0, 1, 2], 1, 99)).toEqual([0, 99, 1, 2])
+    expect(insert([0, 1, 2], 2, 99)).toEqual([0, 1, 99, 2])
+    expect(insert([0, 1, 2], 3, 99)).toEqual([0, 1, 2, 99])
+    expect(insert([0, 1, 2], 4, 99)).toEqual([0, 1, 2, 99])
+  })
+  test('Inserts multiple values', () => {
+    expect(insert([] as number[], 0, 1, 2)).toEqual([1, 2])
+    expect(insert([] as number[], 0, 1, 2, 3)).toEqual([1, 2, 3])
+    expect(insert([0, 4], 1, 1, 2, 3)).toEqual([0, 1, 2, 3, 4])
+    expect(insert([] as number[], 4, 1, 2)).toEqual([1, 2])
+    expect(insert([0], 4, 1, 2)).toEqual([0, 1, 2])
   })
 })
 
