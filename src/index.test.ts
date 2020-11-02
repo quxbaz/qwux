@@ -21,7 +21,7 @@ import {
   sortByKey,
 
   // Functions
-  // times,
+  repeat,
 
   // Misc
   // uniqueId,
@@ -299,29 +299,29 @@ describe("sortBykey", () => {
 
 /* SECTION: Functions */
 
-// describe("times", () => {
-//   test("Calls a function N times.", () => {
-//     let i = 0
-//     const fn = () => i++
-//     times(5, fn)
-//     expect(i).toEqual(5)
-//   })
-//   test("Calls the function with the current iteration.", () => {
-//     let i = 0
-//     const fn = (n) => i += n
-//     times(5, fn)
-//     expect(i).toEqual(0 + 1 + 2 + 3 + 4)
-//   })
-//   test("Returns the results of the callbacks.", () => {
-//     expect(times(5, (i) => i)).toEqual([0, 1, 2, 3, 4])
-//   })
-//   test("Returns a value N times.", () => {
-//     expect(times(3, null)).toEqual([null, null, null])
-//     expect(times(3, 'a')).toEqual(['a', 'a', 'a'])
-//     expect(times(3, {a:1})).toEqual([{a:1}, {a:1}, {a:1}])
-//     expect(times(3, [1, 2])).toEqual([[1, 2], [1, 2], [1, 2]])
-//   })
-// })
+describe("repeat", () => {
+  test("Calls a function N times.", () => {
+    let i = 0
+    const fn = () => i++
+    repeat(5, fn)
+    expect(i).toEqual(5)
+  })
+  test("Calls the function with the current iteration.", () => {
+    let i = 0
+    const fn = (n:number) => i += n
+    repeat(5, fn)
+    expect(i).toEqual(0 + 1 + 2 + 3 + 4)
+  })
+  test("Returns the results of the callbacks.", () => {
+    expect(repeat(5, (i:number) => i)).toEqual([0, 1, 2, 3, 4])
+  })
+  test("Returns a value N times.", () => {
+    expect(repeat(3, null)).toEqual([null, null, null])
+    expect(repeat(3, 'a')).toEqual(['a', 'a', 'a'])
+    expect(repeat(3, {a:1})).toEqual([{a:1}, {a:1}, {a:1}])
+    expect(repeat(3, [1, 2])).toEqual([[1, 2], [1, 2], [1, 2]])
+  })
+})
 
 
 /* Section: Misc */

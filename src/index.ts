@@ -290,25 +290,24 @@ const sortByKey = <T>(array:Obj<T>[], key:Key): typeof array => {
 /* SECTION: Functions */
 
 /**
- * Calls a function N times. @fn is called with the current iteration
- * starting from 0.
+ * Repeats a value or calls a function N times.
  *
  * @param {int} n
- * @param {function | value} fn
+ * @param {value | function} value
  *
  * @return {array} The result of the callbacks
  */
-// const times = (n, fn) => {
-//   const results = []
-//   if (typeof fn === 'function') {
-//     for (let i=0; i < n; i++)
-//       results.push(fn(i))
-//   } else {
-//     for (let i=0; i < n; i++)
-//       results.push(fn)
-//   }
-//   return results
-// }
+const repeat = (n:number, value:unknown): unknown[] => {
+  const results = []
+  if (typeof value === 'function') {
+    for (let i=0; i < n; i++)
+      results.push(value(i))
+  } else {
+    for (let i=0; i < n; i++)
+      results.push(value)
+  }
+  return results
+}
 
 
 /* SECTION: Misc */
@@ -347,7 +346,7 @@ export {
   sortByKey,
 
   // Functions
-  //times,
+  repeat,
 
   // Misc
   //uniqueId,
