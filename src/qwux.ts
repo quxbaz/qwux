@@ -5,7 +5,7 @@ type Obj<T> = Record<Key, T>;
 type Collection<T> = T[] | Obj<T>
 
 
-/* SECTION: Array */
+/* SECTION: Arrays */
 
 /**
  * Gets the item afterr an item in an array.
@@ -122,7 +122,7 @@ const getRandomItem = <T>(array:T[]): T => (
 )
 
 
-/* SECTION: Object */
+/* SECTION: Objects */
 
 interface each {
   <T>(obj:Obj<T>, fn:(value:T, key:string) => any): unknown[]
@@ -219,7 +219,7 @@ const toArray =<T>(obj:Obj<T>): Obj<T>[] => (
 )
 
 
-/* SECTION: String */
+/* SECTION: Strings */
 
 /**
  * Capitalizes the first letter of a string.
@@ -260,6 +260,55 @@ const isEmpty = <T>(col: Collection<T> | string): boolean => {
  * @return {boolean}
  */
 const isNil = (value:unknown): boolean => value === undefined || value === null
+
+
+/* SECTION: Functions */
+
+/**
+ * Returns undefined.
+ */
+const noop = () => {}
+
+/**
+ * Returns the given value.
+ *
+ * @param {any} value
+ *
+ * @return {any} value
+ */
+const identity = <T>(value:T) => value
+
+/**
+ * Composes multiple functions against a value.
+ *
+ * @param {...functions} ...fns
+ * @param {any} value
+ *
+ * @return {any} The result of the function composition.
+ */
+const compose = (...fns:Function[]) => (value:unknown): unknown => (
+  fns.reduceRight((acc, fn) => fn(acc), value)
+)
+
+/**
+ * Repeats a value or calls a function N times.
+ *
+ * @param {int} n
+ * @param {value | function} value
+ *
+ * @return {array} The result of the callbacks
+ */
+const repeat = (n:number, value:unknown): unknown[] => {
+  const results = []
+  if (typeof value === 'function') {
+    for (let i=0; i < n; i++)
+      results.push(value(i))
+  } else {
+    for (let i=0; i < n; i++)
+      results.push(value)
+  }
+  return results
+}
 
 
 /* SECTION: Math */
@@ -328,55 +377,6 @@ const sortByKey = <T>(array:Obj<T>[], key:Key): typeof array => {
 }
 
 
-/* SECTION: Functions */
-
-/**
- * Returns undefined.
- */
-const noop = () => {}
-
-/**
- * Returns the given value.
- *
- * @param {any} value
- *
- * @return {any} value
- */
-const identity = <T>(value:T) => value
-
-/**
- * Composes multiple functions against a value.
- *
- * @param {...functions} ...fns
- * @param {any} value
- *
- * @return {any} The result of the function composition.
- */
-const compose = (...fns:Function[]) => (value:unknown): unknown => (
-  fns.reduceRight((acc, fn) => fn(acc), value)
-)
-
-/**
- * Repeats a value or calls a function N times.
- *
- * @param {int} n
- * @param {value | function} value
- *
- * @return {array} The result of the callbacks
- */
-const repeat = (n:number, value:unknown): unknown[] => {
-  const results = []
-  if (typeof value === 'function') {
-    for (let i=0; i < n; i++)
-      results.push(value(i))
-  } else {
-    for (let i=0; i < n; i++)
-      results.push(value)
-  }
-  return results
-}
-
-
 /* SECTION: Misc */
 
 /**
@@ -404,6 +404,9 @@ export {
   // Values
   isEmpty, isNil,
 
+  // Functions
+  noop, identity, compose, repeat,
+
   // Math
   constrain,
 
@@ -412,9 +415,6 @@ export {
 
   // Sorting
   sortByKey,
-
-  // Functions
-  noop, identity, compose, repeat,
 
   // Misc
   uniqId,

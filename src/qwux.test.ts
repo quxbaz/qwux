@@ -1,16 +1,19 @@
 import {
-  // Array
+  // Arrays
   after, before, last, without, uniq, insert, move,
   divide, getRandomItem,
 
-  // Object
+  // Objects
   each, values, pick, omit, objectMap, toArray,
 
-  // String
+  // Strings
   capitalize,
 
   // Values
   isEmpty, isNil,
+
+  // Functions
+  noop, identity, compose, repeat,
 
   // Math
   constrain,
@@ -21,15 +24,12 @@ import {
   // Sorting
   sortByKey,
 
-  // Functions
-  noop, identity, compose, repeat,
-
   // Misc
   uniqId,
 } from './qwux'
 
 
-/* SECTION: Array */
+/* SECTION: Arrays */
 
 describe("after", () => {
   test("Gets the item after an item in an array.", () => {
@@ -165,7 +165,7 @@ describe("getRandomItem", () => {
   })
 })
 
-/* SECTION: Object */
+/* SECTION: Objects */
 
 describe("each", () => {
   test("Iterates over an object.", () => {
@@ -238,7 +238,7 @@ describe("toArray", () => {
 })
 
 
-/* SECTION: string */
+/* SECTION: Strings */
 
 describe("capitalize()", () => {
   test("Does nothing when passed an empty string.", () => {
@@ -256,7 +256,7 @@ describe("capitalize()", () => {
 })
 
 
-/* SECTION: values */
+/* SECTION: Valuess */
 
 describe("isEmpty", () => {
   test("Checks if a value is empty.", () => {
@@ -288,6 +288,61 @@ describe("isNil", () => {
   })
   test("Checks if a value is null.", () => {
     expect(isNil(null)).toBe(true)
+  })
+})
+
+
+/* SECTION: Functions */
+
+describe("noop", () => {
+  test("Returns void", () => {
+    expect(noop()).toBe(undefined)
+  })
+})
+
+describe("identity", () => {
+  test("Returns the given value.", () => {
+    expect(identity(1)).toBe(1)
+    expect(identity(2)).toBe(2)
+    const arr:any = []
+    expect(identity(arr)).toBe(arr)
+    expect(identity('string')).toBe('string')
+  })
+})
+
+describe("compose", () => {
+  test("Composes function calls together against a value.", () => {
+    const add1 = (array:number[]) => array.map(x => x + 1)
+    const mult2 = (array:number[]) => array.map(x => x * 2)
+    const under10 = (array:number[]) => array.filter(x => x < 10)
+    expect(compose(add1)([1, 2, 3])).toEqual([2, 3, 4])
+    expect(
+      compose(under10, mult2, add1, identity, values)({a:1, b:2, c:3, d:4, e:5})
+    ).toEqual([4, 6, 8])
+  })
+})
+
+describe("repeat", () => {
+  test("Calls a function N times.", () => {
+    let i = 0
+    const fn = () => i++
+    repeat(5, fn)
+    expect(i).toEqual(5)
+  })
+  test("Calls the function with the current iteration.", () => {
+    let i = 0
+    const fn = (n:number) => i += n
+    repeat(5, fn)
+    expect(i).toEqual(0 + 1 + 2 + 3 + 4)
+  })
+  test("Returns the results of the callbacks.", () => {
+    expect(repeat(5, (i:number) => i)).toEqual([0, 1, 2, 3, 4])
+  })
+  test("Returns a value N times.", () => {
+    expect(repeat(3, null)).toEqual([null, null, null])
+    expect(repeat(3, 'a')).toEqual(['a', 'a', 'a'])
+    expect(repeat(3, {a:1})).toEqual([{a:1}, {a:1}, {a:1}])
+    expect(repeat(3, [1, 2])).toEqual([[1, 2], [1, 2], [1, 2]])
   })
 })
 
@@ -347,61 +402,6 @@ describe("sortBykey", () => {
     const list = [{a:1}, {b:2}]
     expect(sortByKey(list, 'none')).toEqual([{a:1}, {b:2}])
     expect(sortByKey(list, 'none')).not.toBe(list)
-  })
-})
-
-
-/* SECTION: Functions */
-
-describe("noop", () => {
-  test("Returns void", () => {
-    expect(noop()).toBe(undefined)
-  })
-})
-
-describe("identity", () => {
-  test("Returns the given value.", () => {
-    expect(identity(1)).toBe(1)
-    expect(identity(2)).toBe(2)
-    const arr:any = []
-    expect(identity(arr)).toBe(arr)
-    expect(identity('string')).toBe('string')
-  })
-})
-
-describe("compose", () => {
-  test("Composes function calls together against a value.", () => {
-    const add1 = (array:number[]) => array.map(x => x + 1)
-    const mult2 = (array:number[]) => array.map(x => x * 2)
-    const under10 = (array:number[]) => array.filter(x => x < 10)
-    expect(compose(add1)([1, 2, 3])).toEqual([2, 3, 4])
-    expect(
-      compose(under10, mult2, add1, identity, values)({a:1, b:2, c:3, d:4, e:5})
-    ).toEqual([4, 6, 8])
-  })
-})
-
-describe("repeat", () => {
-  test("Calls a function N times.", () => {
-    let i = 0
-    const fn = () => i++
-    repeat(5, fn)
-    expect(i).toEqual(5)
-  })
-  test("Calls the function with the current iteration.", () => {
-    let i = 0
-    const fn = (n:number) => i += n
-    repeat(5, fn)
-    expect(i).toEqual(0 + 1 + 2 + 3 + 4)
-  })
-  test("Returns the results of the callbacks.", () => {
-    expect(repeat(5, (i:number) => i)).toEqual([0, 1, 2, 3, 4])
-  })
-  test("Returns a value N times.", () => {
-    expect(repeat(3, null)).toEqual([null, null, null])
-    expect(repeat(3, 'a')).toEqual(['a', 'a', 'a'])
-    expect(repeat(3, {a:1})).toEqual([{a:1}, {a:1}, {a:1}])
-    expect(repeat(3, [1, 2])).toEqual([[1, 2], [1, 2], [1, 2]])
   })
 })
 
