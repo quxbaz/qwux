@@ -110,6 +110,15 @@ const divide = <T>(array:T[], i:number): [T[], T[]] => (
   [array.slice(0, i), array.slice(i)]
 )
 
+/**
+ * Gets a random item from an array.
+ *
+ * @param {array} array
+ */
+const getRandomItem = <T>(array:T[]): T => (
+  array[Math.floor(Math.random() * array.length)]
+)
+
 
 /* SECTION: Object */
 
@@ -360,7 +369,8 @@ const uniqId = (() => {
 
 export {
   // Array
-  after, before, last, without, uniq, insert, move, divide,
+  after, before, last, without, uniq, insert, move,
+  divide, getRandomItem,
 
   // Object
   each, values, pick, omit, objectMap, toArray,
