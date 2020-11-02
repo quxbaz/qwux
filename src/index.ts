@@ -317,7 +317,7 @@ const repeat = (n:number, value:unknown): unknown[] => {
  *
  * @return {string}
  */
-const uniqueId = (() => {
+const uniqId = (() => {
   let id = 0
   return () => ((id++).toString())
 })()
@@ -349,5 +349,5 @@ export {
   repeat,
 
   // Misc
-  uniqueId,
+  uniqId,
 }

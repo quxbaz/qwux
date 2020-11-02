@@ -24,7 +24,7 @@ import {
   repeat,
 
   // Misc
-  uniqueId,
+  uniqId,
 } from './index'
 
 
@@ -328,15 +328,15 @@ describe("repeat", () => {
 
 describe("uniqueId", () => {
   test("ids begin at 0.", () => {
-    expect(uniqueId()).toBe('0')
+    expect(uniqId()).toBe('0')
   })
   test("ids are string types.", () => {
-    expect(typeof uniqueId()).toBe('string')
+    expect(typeof uniqId()).toBe('string')
   })
   test("Generates unique ids.", () => {
     const ids = new Set()
     for (let i=0; i < 1000; i++) {
-      ids.add(uniqueId())
+      ids.add(uniqId())
     }
     expect(ids.size).toEqual(1000)
   })
