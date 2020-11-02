@@ -8,15 +8,15 @@ type Collection<T> = T[] | Obj<T>
 /* SECTION: Array */
 
 /**
- * Gets the item after an item in an array.
+ * Gets the item afterr an item in an array.
  *
  * @param {array} array
- * @param {value} value
+ * @param {value} item
  *
  * @return {value}
  */
-const after = <T>(array:T[], value:T): T | undefined => {
-  const index = array.indexOf(value)
+const after = <T>(array:T[], item:T): T | undefined => {
+  const index = array.indexOf(item)
   if (index === -1)
     return undefined
   return array[index + 1]
