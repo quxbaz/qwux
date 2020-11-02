@@ -1,4 +1,4 @@
-/* Useful Types */
+/* Useful types */
 
 type Key = string | number
 type Obj<T> = Record<Key, T>;
