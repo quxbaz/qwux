@@ -1,7 +1,7 @@
 /* Useful Types */
 
 type Key = string | number
-type Obj<V> = Record<Key, V>;
+type Obj<T> = Record<Key, T>;
 type Collection<T> = T[] | Obj<T>
 
 
@@ -125,7 +125,7 @@ const getRandomItem = <T>(array:T[]): T => (
 /* SECTION: Object */
 
 interface each {
-  <V>(obj:Obj<V>, fn:(value:V, key:string) => any): unknown[]
+  <T>(obj:Obj<T>, fn:(value:T, key:string) => any): unknown[]
 }
 
 /**
@@ -152,7 +152,7 @@ const each:each = (obj, fn) => {
  *
  * @return {array}
  */
-const values = <V>(obj:Obj<V>): V[] => (
+const values = <T>(obj:Obj<T>): T[] => (
   Object.keys(obj).map(k => obj[k])
 )
 
@@ -164,7 +164,7 @@ const values = <V>(obj:Obj<V>): V[] => (
  *
  * @return {object}
  */
-const pick = <V>(obj:Obj<V>, ...keys:Key[]): typeof obj => {
+const pick = <T>(obj:Obj<T>, ...keys:Key[]): typeof obj => {
   const o:typeof obj = {}
   keys.forEach((k) => {
     if (obj.hasOwnProperty(k))
@@ -181,7 +181,7 @@ const pick = <V>(obj:Obj<V>, ...keys:Key[]): typeof obj => {
  *
  * @return {object}
  */
-const omit = <V>(obj:Obj<V>, ...keys:Key[]): typeof obj => {
+const omit = <T>(obj:Obj<T>, ...keys:Key[]): typeof obj => {
   const o:typeof obj = {...obj}
   keys.forEach(key => delete o[key])
   return o
@@ -196,7 +196,7 @@ const omit = <V>(obj:Obj<V>, ...keys:Key[]): typeof obj => {
  *
  * @return {object}
  */
-const objectMap = <V, R>(obj:Obj<V>, fn:(value:V, key:Key) => R): Obj<R> => {
+const objectMap = <T, R>(obj:Obj<T>, fn:(value:T, key:Key) => R): Obj<R> => {
   const o:Obj<R> = {}
   each(obj, (v, k) => {
     o[k] = (fn(v, k))
@@ -212,7 +212,7 @@ const objectMap = <V, R>(obj:Obj<V>, fn:(value:V, key:Key) => R): Obj<R> => {
  *
  * @return {array}
  */
-const toArray =<V>(obj:Obj<V>): Obj<V>[] => (
+const toArray =<T>(obj:Obj<T>): Obj<T>[] => (
   Object.keys(obj).map(key => ({
     [key]: obj[key],
   }))
