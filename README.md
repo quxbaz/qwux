@@ -24,11 +24,13 @@ after(['a', 'b', 'c'], 'b') => 'b'
 * Gets the item before an item in an array.
 ```js
 before (array, item) => item
-
-// @array The array to act on.
-// @item An item in the array.
-// @return The item found, or undefined.
-
+/*
+@array The array to act on.
+@item An item in the array.
+@return The item found, or undefined.
+*/
+```
+```js
 // Example:
 before(['a', 'b', 'c'], 'b') => 'a'
 ```
@@ -37,10 +39,12 @@ before(['a', 'b', 'c'], 'b') => 'a'
 * Gets the last item in an array.
 ```js
 last (array) => item
-
-// @array The array to act on.
-// @return The last item.
-
+/*
+@array The array to act on.
+@return The last item.
+*/
+```
+```js
 // Example:
 last(['a', 'b', 'c'], 'b') => 'c'
 ```
@@ -49,11 +53,13 @@ last(['a', 'b', 'c'], 'b') => 'c'
 * Returns an array with items filtered out.
 ```js
 without (array, ...items) => array
-
-// @array The array to act on.
-// @items The items to filter out.
-// @return The array minus @items.
-
+/*
+@array The array to act on.
+@items The items to filter out.
+@return The array minus @items.
+*/
+```
+```js
 // Example:
 without(['a', 'b', 'c'], 'c') => ['a', 'b']
 ```
@@ -62,10 +68,12 @@ without(['a', 'b', 'c'], 'c') => ['a', 'b']
 * Retains only unique values from an array.
 ```js
 uniq (array) => array
-
-// @array The array to act on.
-// @return Unique values onlyl
-
+/*
+@array The array to act on.
+@return The array with unique values only.
+*/
+```
+```js
 // Example:
 uniq(['a', 'a', 'b'], 'c') => ['a', 'b']
 ```
@@ -74,12 +82,14 @@ uniq(['a', 'a', 'b'], 'c') => ['a', 'b']
 * Inserts an item into the array at a position. If the position exceeds the length of the array, append the item.
 ```js
 insert (array, i, ...items) => array
-
-// @array The array to act on.
-// @i The position to insert the item(s).
-// @items Any number of items to insert at @i.
-// @return The array with the items inserted at position @i.
-
+/*
+@array The array to act on.
+@i The position to insert the item(s).
+@items Any number of items to insert at @i.
+@return The array with the items inserted at position @i.
+*/
+```
+```js
 // Example:
 insert(['a', 'c', 'd'], 1, 'b') => ['a', 'b', 'c', 'd']
 ```
