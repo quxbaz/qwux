@@ -9,6 +9,7 @@ import {
   capitalize,
 
   // Values
+  isEmpty,
   // isEmpty, isNil,
 
   // Math
@@ -204,24 +205,20 @@ describe("capitalize()", () => {
 
 /* SECTION: values */
 
-// describe("isEmpty", () => {
-//   test("Checks if a value is empty.", () => {
-//     expect(isEmpty(undefined)).toBe(true)
-//     expect(isEmpty(null)).toBe(true)
-//     expect(isEmpty(1)).toBe(true)
-//     expect(isEmpty('')).toBe(true)
-//     expect(isEmpty([])).toBe(true)
-//     expect(isEmpty({})).toBe(true)
-//   })
-//   test("Checks if a value is not empty.", () => {
-//     expect(isEmpty('a')).toBe(false)
-//     expect(isEmpty('ab')).toBe(false)
-//     expect(isEmpty([1])).toBe(false)
-//     expect(isEmpty([1, 2])).toBe(false)
-//     expect(isEmpty([{a: 1}])).toBe(false)
-//     expect(isEmpty([{a: 1, b: 2}])).toBe(false)
-//   })
-// })
+describe("isEmpty", () => {
+  test("Checks if a value is empty.", () => {
+    expect(isEmpty('')).toBe(true)
+    expect(isEmpty([])).toBe(true)
+    expect(isEmpty({})).toBe(true)
+  })
+  test("Checks if a value is not empty.", () => {
+    expect(isEmpty('foo')).toBe(false)
+    expect(isEmpty([1])).toBe(false)
+    expect(isEmpty([1, 2])).toBe(false)
+    expect(isEmpty([{a: 1}])).toBe(false)
+    expect(isEmpty([{a: 1, b: 2}])).toBe(false)
+  })
+})
 
 // describe("isNil", () => {
 //   test("Checks if a value is undefined.", () => {

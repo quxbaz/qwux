@@ -1,7 +1,8 @@
 /* Useful Types */
 
 type Key = string | number
-type Dict<V> = Record<Key, V>
+type Dict<V> = Record<Key, V>;
+type Collection<T> = T[] | Dict<T>
 
 /* SECTION: Array */
 
@@ -195,24 +196,21 @@ const capitalize = (s:string): string => (
 /* SECTION: Values */
 
 /**
- * Checks if a value is empty. A value is considered empty if it has
- * no enumerabale properties.
+ * Checks if a value is empty. A value is considered empty if it
+ * either has no enumerabale properties or length 0.
  *
- * @param {value} value
+ * @param {array | object | string}  col
  *
  * @return {boolean}
  */
-// const isEmpty = (value) => {
-//   if (value == null) {
-//     return true
-//   }
-//   if (typeof value === 'string' || Array.isArray(value)) {
-//     return value.length === 0
-//   } else if (typeof value === 'object') {
-//     return Object.keys(value).length === 0
-//   }
-//   return false
-// }
+const isEmpty = <T>(col: Collection<T> | string): boolean => {
+  if (typeof col === 'string' || Array.isArray(col))
+    return col.length === 0
+  else if (typeof col === 'object')
+    return Object.keys(col).length === 0
+  else
+    return true
+}
 
 /**
  * Checks if a value is undefined or null.
@@ -333,6 +331,7 @@ export {
   capitalize,
 
   // Values
+  isEmpty,
   // isEmpty, isNil,
 
   // Math
