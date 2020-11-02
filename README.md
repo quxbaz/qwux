@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/stateful-router.svg)](https://badge.fury.io/js/qwux)
+
 SECTION: Array
 
 ## after
