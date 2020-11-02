@@ -5,8 +5,8 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
 
 ## Table of contents
 1. [Array functions](array-functions)
-  1.1. [`after`](#after)
-  1.1 [`before`](#before)
+  i. [`after`](#after)
+  i. [`before`](#before)
 
 ## Array functions
 
