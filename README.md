@@ -8,7 +8,7 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
 #### `after`
 * Gets the item after an item in an array.
 ```js
-(array, item) => item
+after (array, item) => item
 
 // @array The array to act on.
 // @item Any item in the array.
