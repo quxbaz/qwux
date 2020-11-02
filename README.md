@@ -3,16 +3,17 @@
 # qwux
 Minimal set of utility functions written in TypeScript. Mostly for personal use. I only include the functions I actually need here. Does not duplicate native javascript functions.
 
-## Array functions
+### Array functions
 
-#### `after <T>(array:T[], value:T) => T | undefined`
+#### `after (array, value) => value`
 Gets the item after an item in an array.
-> `array` array
-> `value` any
 
-### Return:
+> `@array` The array to act on.
 
-* **value**
+> `@value` Any value in the array.
+
+> `@return` The value found
+
 
 ## before
 
