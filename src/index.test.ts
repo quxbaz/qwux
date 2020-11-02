@@ -22,7 +22,7 @@ import {
   sortByKey,
 
   // Functions
-  noop, identity, repeat,
+  noop, identity, compose, repeat,
 
   // Misc
   uniqId,
@@ -369,17 +369,17 @@ describe("identity", () => {
   })
 })
 
-// chain(lists)
-//     .values()
-//     .filter(cond)
-//     .sortBy('title')
-//     .get()
-
-// describe("compose", () => {
-//   test("Composes function calls together against a value.", () => {
-//     compose(sortBy, filter, identity)({a:1, b:2, c:3})
-//   })
-// })
+describe("compose", () => {
+  test("Composes function calls together against a value.", () => {
+    const add1 = (array:number[]) => array.map(x => x + 1)
+    const mult2 = (array:number[]) => array.map(x => x * 2)
+    const under10 = (array:number[]) => array.filter(x => x < 10)
+    expect(compose(add1)([1, 2, 3])).toEqual([2, 3, 4])
+    expect(
+      compose(under10, mult2, add1, identity, values)({a:1, b:2, c:3, d:4, e:5})
+    ).toEqual([4, 6, 8])
+  })
+})
 
 describe("repeat", () => {
   test("Calls a function N times.", () => {

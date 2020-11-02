@@ -345,6 +345,18 @@ const noop = () => {}
 const identity = <T>(value:T) => value
 
 /**
+ * Composes multiple functions against a value.
+ *
+ * @param {...functions} ...fns
+ * @param {any} value
+ *
+ * @return {any} The result of the function composition.
+ */
+const compose = (...fns:Function[]) => (value:unknown): unknown => (
+  fns.reduceRight((acc, fn) => fn(acc), value)
+)
+
+/**
  * Repeats a value or calls a function N times.
  *
  * @param {int} n
@@ -364,8 +376,6 @@ const repeat = (n:number, value:unknown): unknown[] => {
   return results
 }
 
-// const compose = (...fns:Function[]) => (value:unknown) => {
-// }
 
 /* SECTION: Misc */
 
@@ -404,7 +414,7 @@ export {
   sortByKey,
 
   // Functions
-  noop, identity, repeat,
+  noop, identity, compose, repeat,
 
   // Misc
   uniqId,
