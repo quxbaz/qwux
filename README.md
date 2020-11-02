@@ -18,6 +18,9 @@ after (array, item) => item
 after(['a', 'b', 'c'], 'b') => 'b'
 ```
 
+
+
+
 #### `before`
 * Gets the item before an item in an array.
 ```js
