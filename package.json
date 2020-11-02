@@ -29,6 +29,7 @@
     "type-check-tsc": "tsc --watch --noEmit",
     "type-check-wds": "webpack-dev-server --env=development --port 5000",
     "test": "jest --watch",
+    "build": "tsc",
     "doc": "markdox ./src/index.ts -o README.md"
   }
 }
