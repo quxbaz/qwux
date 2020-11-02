@@ -3,17 +3,15 @@
 # qwux
 Minimal set of utility functions written in TypeScript. Mostly for personal use. I only include the functions I actually need here. Does not duplicate native javascript functions.
 
-@ol[](false)
 1. Item1
    1. subitem1
    1. subitem2
-1. Item2
-@olend 
+1. Item2 
 
 ## Table of contents
 1. [Array functions](array-functions)
-  i. [`after`](#after)
-  i. [`before`](#before)
+   1. [`after`](#after)
+   1. [`before`](#before)
 
 ## Array functions
 
