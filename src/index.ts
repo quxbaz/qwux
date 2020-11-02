@@ -1,7 +1,9 @@
 /* Useful Types */
+
 type Key = string | number
 type Obj<V> = Record<Key, V>;
 type Collection<T> = T[] | Obj<T>
+
 
 /* SECTION: Array */
 
@@ -95,6 +97,18 @@ const move = <T>(array:T[], from:number, to:number): T[] => {
   copy.splice(to, 0, item)
   return copy
 }
+
+/**
+ * Divides an array into two parts at a position.
+ *
+ * @param {array} array
+ * @param {number} i
+ *
+ * @return {array} [leftArray, rightArray]
+ */
+const divide = <T>(array:T[], i:number): [T[], T[]] => (
+  [array.slice(0, i), array.slice(i)]
+)
 
 
 /* SECTION: Object */
@@ -346,7 +360,7 @@ const uniqId = (() => {
 
 export {
   // Array
-  after, before, last, without, uniq, insert, move,
+  after, before, last, without, uniq, insert, move, divide,
 
   // Object
   each, values, pick, omit, objectMap, toArray,

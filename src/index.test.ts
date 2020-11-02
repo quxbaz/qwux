@@ -1,6 +1,6 @@
 import {
   // Array
-  after, before, last, without, uniq, insert, move,
+  after, before, last, without, uniq, insert, move, divide,
 
   // Object
   each, values, pick, omit, objectMap, toArray,
@@ -134,6 +134,17 @@ describe("move", () => {
     expect(move(['a', 'b', 'c'], 2, 1)).toEqual(['a', 'c', 'b'])
     expect(move(['a', 'b', 'c'], 0, 2)).toEqual(['b', 'c', 'a'])
     expect(move(['a', 'b', 'c'], 2, 0)).toEqual(['c', 'a', 'b'])
+  })
+})
+
+describe("divide", () => {
+  test("Divides an array into two parts.", () => {
+    expect(divide([1, 2, 3], 0)).toEqual([[], [1, 2, 3]])
+    expect(divide([1, 2, 3], 1)).toEqual([[1], [2, 3]])
+    expect(divide([1, 2, 3], 2)).toEqual([[1, 2], [3]])
+    expect(divide([1, 2, 3], 3)).toEqual([[1, 2, 3], []])
+    expect(divide([1, 2, 3], 4)).toEqual([[1, 2, 3], []])
+    expect(divide([1, 2, 3], 5)).toEqual([[1, 2, 3], []])
   })
 })
 
