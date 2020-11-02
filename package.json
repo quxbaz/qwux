@@ -1,7 +1,7 @@
 {
   "name": "qwux",
   "version": "1.0.0",
-  "description": "Small set of utility functions.",
+  "description": "Minimal set of utility functions written in TypeScript.",
   "author": "quxbaz",
   "license": "MIT",
   "homepage": "https://github.com/quxbaz/qwux",
