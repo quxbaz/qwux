@@ -5,14 +5,14 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
 
 ### Array functions
 
-#### `after (array, value) => value`
+#### `after (array, item) => value`
 Gets the item after an item in an array.
 
 > `@array` The array to act on.
-
-> `@value` Any value in the array.
-
-> `@return` The value found
+>
+> `@item` Any item in the array.
+>
+> `@return` The item found, or undefined.
 
 
 ## before
