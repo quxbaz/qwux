@@ -19,10 +19,7 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
 - [Sorting](#sorting)
    - [`sortByKey`](#sortByKey)
 - [Functions](#functions)
-   - [`noop`](#noop)
-   - [`identity`](#identity)
-   - [`compose`](#compose)
-   - [`repeat`](#repeat)
+   - [`noop`](#noop) [`identity`](#identity) [`compose`](#compose) [`repeat`](#repeat)
 - [Misc](#misc)
    - [`uniqId`](#uniqId)
 
