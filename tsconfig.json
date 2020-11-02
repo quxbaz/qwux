@@ -6,10 +6,12 @@
     "module": "es6",
     "moduleResolution": "node",
     "noImplicitAny": true,
+    "outDir": "lib/",
     "sourceMap": true,
     "strictNullChecks": true,
     "target": "es5",
   },
+  "files": ["src/qwux.ts"],
   "include": ["src"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "src/*.test.ts"],
 }
