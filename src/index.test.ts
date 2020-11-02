@@ -24,7 +24,7 @@ import {
   repeat,
 
   // Misc
-  // uniqueId,
+  uniqueId,
 } from './index'
 
 
@@ -326,18 +326,18 @@ describe("repeat", () => {
 
 /* Section: Misc */
 
-// describe("uniqueId", () => {
-//   test("ids begin at 0.", () => {
-//     expect(uniqueId()).toBe('0')
-//   })
-//   test("ids are string types.", () => {
-//     expect(typeof uniqueId()).toBe('string')
-//   })
-//   test("Generates unique ids.", () => {
-//     const ids = new Set()
-//     for (let i=0; i < 1000; i++) {
-//       ids.add(uniqueId())
-//     }
-//     expect(ids.size).toEqual(1000)
-//   })
-// })
+describe("uniqueId", () => {
+  test("ids begin at 0.", () => {
+    expect(uniqueId()).toBe('0')
+  })
+  test("ids are string types.", () => {
+    expect(typeof uniqueId()).toBe('string')
+  })
+  test("Generates unique ids.", () => {
+    const ids = new Set()
+    for (let i=0; i < 1000; i++) {
+      ids.add(uniqueId())
+    }
+    expect(ids.size).toEqual(1000)
+  })
+})
