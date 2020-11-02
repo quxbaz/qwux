@@ -9,8 +9,7 @@ import {
   capitalize,
 
   // Values
-  isEmpty,
-  // isEmpty, isNil,
+  isEmpty, isNil,
 
   // Math
   // constrain,
@@ -220,23 +219,23 @@ describe("isEmpty", () => {
   })
 })
 
-// describe("isNil", () => {
-//   test("Checks if a value is undefined.", () => {
-//     expect(isNil(undefined)).toBe(true)
-//     let a
-//     expect(isNil(a)).toBe(true)
-//     let d = {}
-//     expect(isNil(d.foo)).toBe(true)
-//     expect(isNil(d)).toBe(false)
-//     expect(isNil(1)).toBe(false)
-//     expect(isNil('a')).toBe(false)
-//     expect(isNil('undefined')).toBe(false)
-//     expect(isNil(0)).toBe(false)
-//   })
-//   test("Checks if a value is null.", () => {
-//     expect(isNil(null)).toBe(true)
-//   })
-// })
+describe("isNil", () => {
+  test("Checks if a value is undefined.", () => {
+    expect(isNil(undefined)).toBe(true)
+    let a
+    expect(isNil(a)).toBe(true)
+    let d:any = {}
+    expect(isNil(d.foo)).toBe(true)
+    expect(isNil(d)).toBe(false)
+    expect(isNil(1)).toBe(false)
+    expect(isNil('a')).toBe(false)
+    expect(isNil('undefined')).toBe(false)
+    expect(isNil(0)).toBe(false)
+  })
+  test("Checks if a value is null.", () => {
+    expect(isNil(null)).toBe(true)
+  })
+})
 
 
 /* SECTION: Math */

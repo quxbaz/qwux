@@ -219,7 +219,7 @@ const isEmpty = <T>(col: Collection<T> | string): boolean => {
  *
  * @return {boolean}
  */
-// const isNil = (value) => value === undefined || value === null
+const isNil = (value:unknown): boolean => value === undefined || value === null
 
 
 /* SECTION: Math */
@@ -331,8 +331,7 @@ export {
   capitalize,
 
   // Values
-  isEmpty,
-  // isEmpty, isNil,
+  isEmpty, isNil,
 
   // Math
   //constrain,
