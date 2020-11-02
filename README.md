@@ -5,8 +5,7 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
 
 ### Array functions
 
-> #### `after`
->
+#### `after`
 > Gets the item after an item in an array.
 ```js
 after (array, item) => item
