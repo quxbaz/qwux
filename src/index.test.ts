@@ -18,7 +18,7 @@ import {
   throttled,
 
   // Sorting
-  // sortBy,
+  sortByKey,
 
   // Functions
   // times,
@@ -273,28 +273,28 @@ describe("throttled", () => {
 })
 
 
-/* SECTION: Sorting*/
+/* SECTION: Sorting */
 
-// describe("sortBy", () => {
-//   test("Returns an empty list.", () => {
-//     expect(sortBy([])).toEqual([])
-//   })
-//   test("Sorts a list.", () => {
-//     expect(sortBy([{a:1}])).toEqual([{a:1}])
-//     expect(sortBy([{a:1}, {a:2}], 'a')).toEqual([{a:1}, {a:2}])
-//     expect(sortBy([{a:2}, {a:1}], 'a')).toEqual([{a:1}, {a:2}])
-//     expect(sortBy([{a:1}, {a:2}, {a:3}], 'a')).toEqual([{a:1}, {a:2}, {a:3}])
-//     expect(sortBy([{a:2}, {a:1}, {a:3}], 'a')).toEqual([{a:1}, {a:2}, {a:3}])
-//     expect(sortBy([{a:2}, {a:3}, {a:1}], 'a')).toEqual([{a:1}, {a:2}, {a:3}])
-//     expect(sortBy([{a:4}, {a:3}, {a:2}, {a:1}], 'a')).toEqual([{a:1}, {a:2}, {a:3}, {a:4}])
-//     expect(sortBy([{a:4}, {a:5}, {a:2}, {a:1}], 'a')).toEqual([{a:1}, {a:2}, {a:4}, {a:5}])
-//   })
-//   test("Returns a new list", () => {
-//     const list = [{a:1}, {b:2}]
-//     expect(sortBy(list)).toEqual([{a:1}, {b:2}])
-//     expect(sortBy(list)).not.toBe(list)
-//   })
-// })
+describe("sortBykey", () => {
+  test("Returns an empty list.", () => {
+    expect(sortByKey([], 'none')).toEqual([])
+  })
+  test("Sorts a list.", () => {
+    expect(sortByKey([{a:1}], 'none')).toEqual([{a:1}])
+    expect(sortByKey([{a:1}, {a:2}], 'a')).toEqual([{a:1}, {a:2}])
+    expect(sortByKey([{a:2}, {a:1}], 'a')).toEqual([{a:1}, {a:2}])
+    expect(sortByKey([{a:1}, {a:2}, {a:3}], 'a')).toEqual([{a:1}, {a:2}, {a:3}])
+    expect(sortByKey([{a:2}, {a:1}, {a:3}], 'a')).toEqual([{a:1}, {a:2}, {a:3}])
+    expect(sortByKey([{a:2}, {a:3}, {a:1}], 'a')).toEqual([{a:1}, {a:2}, {a:3}])
+    expect(sortByKey([{a:4}, {a:3}, {a:2}, {a:1}], 'a')).toEqual([{a:1}, {a:2}, {a:3}, {a:4}])
+    expect(sortByKey([{a:4}, {a:5}, {a:2}, {a:1}], 'a')).toEqual([{a:1}, {a:2}, {a:4}, {a:5}])
+  })
+  test("Returns a new list", () => {
+    const list = [{a:1}, {b:2}]
+    expect(sortByKey(list, 'none')).toEqual([{a:1}, {b:2}])
+    expect(sortByKey(list, 'none')).not.toBe(list)
+  })
+})
 
 
 /* SECTION: Functions */

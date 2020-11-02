@@ -1,7 +1,7 @@
 /* Useful Types */
 type Key = string | number
-type Dict<V> = Record<Key, V>;
-type Collection<T> = T[] | Dict<T>
+type Obj<V> = Record<Key, V>;
+type Collection<T> = T[] | Obj<T>
 
 /* SECTION: Array */
 
@@ -84,7 +84,7 @@ const move = <T>(array:T[], from:number, to:number): T[] => {
 /* SECTION: Object */
 
 interface each {
-  <V>(obj:Dict<V>, fn:(value:V, key:string) => any): unknown[]
+  <V>(obj:Obj<V>, fn:(value:V, key:string) => any): unknown[]
 }
 
 /**
@@ -111,7 +111,7 @@ const each:each = (obj, fn) => {
  *
  * @return {array}
  */
-const values = <V>(obj:Dict<V>): V[] => (
+const values = <V>(obj:Obj<V>): V[] => (
   Object.keys(obj).map(k => obj[k])
 )
 
@@ -123,7 +123,7 @@ const values = <V>(obj:Dict<V>): V[] => (
  *
  * @return {object}
  */
-const pick = <V>(obj:Dict<V>, ...keys:Key[]): typeof obj => {
+const pick = <V>(obj:Obj<V>, ...keys:Key[]): typeof obj => {
   const o:typeof obj = {}
   keys.forEach((k) => {
     if (obj.hasOwnProperty(k))
@@ -140,7 +140,7 @@ const pick = <V>(obj:Dict<V>, ...keys:Key[]): typeof obj => {
  *
  * @return {object}
  */
-const omit = <V>(obj:Dict<V>, ...keys:Key[]): typeof obj => {
+const omit = <V>(obj:Obj<V>, ...keys:Key[]): typeof obj => {
   const o:typeof obj = {...obj}
   keys.forEach(key => delete o[key])
   return o
@@ -155,8 +155,8 @@ const omit = <V>(obj:Dict<V>, ...keys:Key[]): typeof obj => {
  *
  * @return {object}
  */
-const objectMap = <V, R>(obj:Dict<V>, fn:(value:V, key:Key) => R): Dict<R> => {
-  const o:Dict<R> = {}
+const objectMap = <V, R>(obj:Obj<V>, fn:(value:V, key:Key) => R): Obj<R> => {
+  const o:Obj<R> = {}
   each(obj, (v, k) => {
     o[k] = (fn(v, k))
   })
@@ -171,7 +171,7 @@ const objectMap = <V, R>(obj:Dict<V>, fn:(value:V, key:Key) => R): Dict<R> => {
  *
  * @return {array}
  */
-const toArray =<V>(obj:Dict<V>): Dict<V>[] => (
+const toArray =<V>(obj:Obj<V>): Obj<V>[] => (
   Object.keys(obj).map(key => ({
     [key]: obj[key],
   }))
@@ -272,20 +272,19 @@ const throttled = (fn:Function, ms:number) => {
  *
  * @return {array}
  */
-// const sortBy = (array, key) => {
-//   if (array.length === 0) {
-//     return []
-//   }
-//   const sorted = [...array].sort((a, b) => {
-//     if (a[key] < b[key]) {
-//       return -1
-//     } else if (a[key] > b[key]) {
-//       return 1
-//     }
-//     return 0
-//   })
-//   return sorted
-// }
+const sortByKey = <T>(array:Obj<T>[], key:Key): typeof array => {
+  if (array.length === 0)
+    return []
+  else if (array.length === 1)
+    return [...array]
+  return [...array].sort((a:Obj<T>, b:Obj<T>) => {
+    if (a[key] < b[key])
+      return -1
+    else if (a[key] > b[key])
+      return 1
+    return 0
+  })
+}
 
 
 /* SECTION: Functions */
@@ -345,7 +344,7 @@ export {
   throttled,
 
   // Sorting
-  //sortBy,
+  sortByKey,
 
   // Functions
   //times,
