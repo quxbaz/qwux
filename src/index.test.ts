@@ -15,7 +15,7 @@ import {
   constrain,
 
   // Timing
-  // throttle,
+  throttled,
 
   // Sorting
   // sortBy,
@@ -261,16 +261,16 @@ describe("constrain()", () => {
 
 /* SECTION: Timing */
 
-// describe("throttle", () => {
-//   test("Calls a function twice in succession, but only executes it once.", () => {
-//     let spy = 0
-//     let fn = () => spy++
-//     let fn2 = throttle(fn, 100)
-//     fn2()
-//     fn2()
-//     expect(spy).toEqual(1)
-//   })
-// })
+describe("throttled", () => {
+  test("Calls a function twice in succession, but only executes it once.", () => {
+    let spy = 0
+    let fn = () => spy++
+    let fn2 = throttled(fn, 100)
+    fn2()
+    fn2()
+    expect(spy).toEqual(1)
+  })
+})
 
 
 /* SECTION: Sorting*/

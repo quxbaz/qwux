@@ -1,5 +1,4 @@
 /* Useful Types */
-
 type Key = string | number
 type Dict<V> = Record<Key, V>;
 type Collection<T> = T[] | Dict<T>
@@ -240,23 +239,27 @@ const constrain = (value:number, [min, max]:[number, number]): number => (
 /* SECTION: Timing */
 
 /**
- * Limits a function to be called at most N times/second
+ * Limits a function to be called at most N times/second.
  *
  * @param {function} fn
- * @param {int} ms
+ * @param {number} ms
  *
  * @return {function}
  */
-// const throttle = (fn, ms) => {
-//   let lastCalled = 0
-//   return (...args) => {
-//     const time = performance.now()
-//     if ((time - lastCalled) > ms) {
-//       fn(...args)
-//       lastCalled = time
-//     }
-//   }
-// }
+const throttled = (fn:Function, ms:number) => {
+  let lastCalled = 0
+  return (...args:unknown[]) => {
+    const time = typeof performance !== 'undefined'
+          ? performance.now()
+          : Date.now()
+    if (time - lastCalled > ms) {
+      const ret = fn(...args)
+      lastCalled = time
+      return ret
+    }
+    return undefined
+  }
+}
 
 
 /* SECTION: Sorting */
@@ -339,7 +342,7 @@ export {
   constrain,
 
   // Timing
-  //throttle,
+  throttled,
 
   // Sorting
   //sortBy,
