@@ -336,6 +336,15 @@ const sortByKey = <T>(array:Obj<T>[], key:Key): typeof array => {
 const noop = () => {}
 
 /**
+ * Returns the given value.
+ *
+ * @param {any} value
+ *
+ * @return {any} value
+ */
+const identity = <T>(value:T) => value
+
+/**
  * Repeats a value or calls a function N times.
  *
  * @param {int} n
@@ -355,6 +364,8 @@ const repeat = (n:number, value:unknown): unknown[] => {
   return results
 }
 
+// const compose = (...fns:Function[]) => (value:unknown) => {
+// }
 
 /* SECTION: Misc */
 
@@ -393,7 +404,7 @@ export {
   sortByKey,
 
   // Functions
-  noop, repeat,
+  noop, identity, repeat,
 
   // Misc
   uniqId,

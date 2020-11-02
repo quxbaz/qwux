@@ -22,7 +22,7 @@ import {
   sortByKey,
 
   // Functions
-  noop, repeat,
+  noop, identity, repeat,
 
   // Misc
   uniqId,
@@ -358,6 +358,28 @@ describe("noop", () => {
     expect(noop()).toBe(undefined)
   })
 })
+
+describe("identity", () => {
+  test("Returns the given value.", () => {
+    expect(identity(1)).toBe(1)
+    expect(identity(2)).toBe(2)
+    const arr:any = []
+    expect(identity(arr)).toBe(arr)
+    expect(identity('string')).toBe('string')
+  })
+})
+
+// chain(lists)
+//     .values()
+//     .filter(cond)
+//     .sortBy('title')
+//     .get()
+
+// describe("compose", () => {
+//   test("Composes function calls together against a value.", () => {
+//     compose(sortBy, filter, identity)({a:1, b:2, c:3})
+//   })
+// })
 
 describe("repeat", () => {
   test("Calls a function N times.", () => {
