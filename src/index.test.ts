@@ -3,8 +3,7 @@ import {
   after, before, last, without, uniq, move,
 
   // Object
-  each, values, pick, omit, objectMap,
-  // each, values, pick, omit, objectMap, toList,
+  each, values, pick, omit, objectMap, toArray,
 
   // String
   // capitalize,
@@ -174,15 +173,15 @@ describe("objectMap", () => {
   })
 })
 
-// describe("toList", () => {
-//   test("Converts an object to an array.", () => {
-//     expect(toList({})).toEqual([])
-//     expect(toList({a:1})).toEqual([{a:1}])
-//     expect(toList({a:1, b:2})).toEqual([{a:1}, {b:2}])
-//     expect(toList({a:1, b:2, c:3})).toEqual([{a:1}, {b:2}, {c:3}])
-//     expect(toList({a:1, b:{c:3}})).toEqual([{a:1}, {b:{c:3}}])
-//   })
-// })
+describe("toArray", () => {
+  test("Converts an object to an array.", () => {
+    expect(toArray({})).toEqual([])
+    expect(toArray({a:1})).toEqual([{a:1}])
+    expect(toArray({a:1, b:2})).toEqual([{a:1}, {b:2}])
+    expect(toArray({a:1, b:2, c:3})).toEqual([{a:1}, {b:2}, {c:3}])
+    expect(toArray({a:1, b:{c:3}})).toEqual([{a:1}, {b:{c:3}}])
+  })
+})
 
 
 /* SECTION: string */

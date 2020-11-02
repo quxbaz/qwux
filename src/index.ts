@@ -147,8 +147,8 @@ const omit = <V>(obj:Dict<V>, ...keys:Key[]): typeof obj => {
 }
 
 /**
- * Similar to Array.map. Maps each value in an object and returns a
- * new object, maintaining its {key: value} structure.
+ * Similar to Array.map, but for objects. Maps each value in an object
+ * and returns a new object, maintaining its {key: value} structure.
  *
  * @param {object} obj
  * @param {function} fn
@@ -164,19 +164,18 @@ const objectMap = <V, R>(obj:Dict<V>, fn:(value:V, key:Key) => R): Dict<R> => {
 }
 
 /**
- * Converts an object to an array of the form [{key: value}, ...]
+ * Converts an object to an array of the form
+ * [{key: value}, {key: value}, ...]
  *
- * @param {object} hash
+ * @param {object} obj
  *
  * @return {array}
  */
-// const toList = (hash) => (
-//   Object.keys(hash).map(
-//     key => (
-//       {[key]: hash[key]}
-//     )
-//   )
-// )
+const toArray =<V>(obj:Dict<V>): Dict<V>[] => (
+  Object.keys(obj).map(key => ({
+    [key]: obj[key],
+  }))
+)
 
 
 /* SECTION: String */
@@ -326,8 +325,7 @@ export {
   after, before, last, without, uniq, move,
 
   // Object
-  each, values, pick, omit, objectMap,
-  //each, values, pick, omit, objectMap, toList,
+  each, values, pick, omit, objectMap, toArray,
 
   // String
   //capitalize,
