@@ -21,7 +21,7 @@ import {
   sortByKey,
 
   // Functions
-  repeat,
+  noop, repeat,
 
   // Misc
   uniqId,
@@ -325,6 +325,12 @@ describe("sortBykey", () => {
 
 
 /* SECTION: Functions */
+
+describe("noop", () => {
+  test("Returns void", () => {
+    expect(noop()).toBe(undefined)
+  })
+})
 
 describe("repeat", () => {
   test("Calls a function N times.", () => {

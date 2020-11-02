@@ -306,6 +306,11 @@ const sortByKey = <T>(array:Obj<T>[], key:Key): typeof array => {
 /* SECTION: Functions */
 
 /**
+ * Returns undefined.
+ */
+const noop = () => {}
+
+/**
  * Repeats a value or calls a function N times.
  *
  * @param {int} n
@@ -362,7 +367,7 @@ export {
   sortByKey,
 
   // Functions
-  repeat,
+  noop, repeat,
 
   // Misc
   uniqId,
