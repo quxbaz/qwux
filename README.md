@@ -1,9 +1,3 @@
-
-
-<!-- Start src/qwux.ts -->
-
-Useful Types
-
 SECTION: Array
 
 ## after
@@ -12,12 +6,12 @@ Gets the item after an item in an array.
 
 ### Params:
 
-* **array** *array* 
-* **value** *value* 
+* **array** *array*
+* **value** *value*
 
 ### Return:
 
-* **value** 
+* **value**
 
 ## before
 
@@ -25,12 +19,12 @@ Gets the item before an item in an array.
 
 ### Params:
 
-* **array** *array* 
-* **value** *value* 
+* **array** *array*
+* **value** *value*
 
 ### Return:
 
-* **value** 
+* **value**
 
 ## last
 
@@ -38,11 +32,11 @@ Gets the last item in an array.
 
 ### Params:
 
-* **array** *array* 
+* **array** *array*
 
 ### Return:
 
-* **value** 
+* **value**
 
 ## without
 
@@ -50,12 +44,12 @@ Returns an array with items filtered out.
 
 ### Params:
 
-* **array** *array* 
-* **values** *values* 
+* **array** *array*
+* **values** *values*
 
 ### Return:
 
-* **array** 
+* **array**
 
 ## uniq
 
@@ -63,11 +57,11 @@ Retains only unique values from an array.
 
 ### Params:
 
-* **array** *array* 
+* **array** *array*
 
 ### Return:
 
-* **array** 
+* **array**
 
 ## insert
 
@@ -76,13 +70,13 @@ exceeds the length of the array, append the item.
 
 ### Params:
 
-* **array** *array* 
-* **number** *i* 
-* **value** *item* 
+* **array** *array*
+* **number** *i*
+* **value** *item*
 
 ### Return:
 
-* **array** 
+* **array**
 
 ## move
 
@@ -91,13 +85,13 @@ array.
 
 ### Params:
 
-* **array** *arr* 
-* **number** *from* 
-* **number** *to* 
+* **array** *arr*
+* **number** *from*
+* **number** *to*
 
 ### Return:
 
-* **array** 
+* **array**
 
 ## divide
 
@@ -105,8 +99,8 @@ Divides an array into two parts at a position.
 
 ### Params:
 
-* **array** *array* 
-* **number** *i* 
+* **array** *array*
+* **number** *i*
 
 ### Return:
 
@@ -118,7 +112,7 @@ Gets a random item from an array.
 
 ### Params:
 
-* **array** *array* 
+* **array** *array*
 
 SECTION: Object
 
@@ -126,12 +120,12 @@ Iterates over an object.
 
 ### Params:
 
-* **object** *obj* 
-* **function** *fn* 
+* **object** *obj*
+* **function** *fn*
 
 ### Return:
 
-* **array** 
+* **array**
 
 ## values
 
@@ -139,11 +133,11 @@ Gets the values from an object.
 
 ### Params:
 
-* **object** *obj* 
+* **object** *obj*
 
 ### Return:
 
-* **array** 
+* **array**
 
 ## pick
 
@@ -151,12 +145,12 @@ Picks props from an object.
 
 ### Params:
 
-* **object** *obj* 
-* **string** *keys* 
+* **object** *obj*
+* **string** *keys*
 
 ### Return:
 
-* **object** 
+* **object**
 
 ## omit
 
@@ -164,12 +158,12 @@ Omits props from an object.
 
 ### Params:
 
-* **object** *obj* 
-* **string** *props* 
+* **object** *obj*
+* **string** *props*
 
 ### Return:
 
-* **object** 
+* **object**
 
 ## objectMap
 
@@ -178,12 +172,12 @@ and returns a new object, maintaining its {key: value} structure.
 
 ### Params:
 
-* **object** *obj* 
-* **function** *fn* 
+* **object** *obj*
+* **function** *fn*
 
 ### Return:
 
-* **object** 
+* **object**
 
 ## toArray
 
@@ -192,11 +186,11 @@ Converts an object to an array of the form
 
 ### Params:
 
-* **object** *obj* 
+* **object** *obj*
 
 ### Return:
 
-* **array** 
+* **array**
 
 SECTION: String
 
@@ -206,11 +200,11 @@ Capitalizes the first letter of a string.
 
 ### Params:
 
-* **string** *s* 
+* **string** *s*
 
 ### Return:
 
-* **string** 
+* **string**
 
 SECTION: Values
 
@@ -221,11 +215,11 @@ either has no enumerabale properties or length 0.
 
 ### Params:
 
-* **array|object|string** *col* 
+* **array|object|string** *col*
 
 ### Return:
 
-* **boolean** 
+* **boolean**
 
 ## isNil
 
@@ -233,11 +227,11 @@ Checks if a value is undefined or null.
 
 ### Params:
 
-* **value** *value* 
+* **value** *value*
 
 ### Return:
 
-* **boolean** 
+* **boolean**
 
 SECTION: Math
 
@@ -247,7 +241,7 @@ Constrains a value between [min, max]
 
 ### Params:
 
-* *value* 
+* *value*
 * **array** *[min,* max]
 
 ### Return:
@@ -262,12 +256,12 @@ Limits a function to be called at most N times/second.
 
 ### Params:
 
-* **function** *fn* 
-* **number** *ms* 
+* **function** *fn*
+* **number** *ms*
 
 ### Return:
 
-* **function** 
+* **function**
 
 SECTION: Sorting
 
@@ -277,12 +271,12 @@ Sorts an array of objects by a specific key and returns a new array.
 
 ### Params:
 
-* **array** *array* 
-* **string** *key* 
+* **array** *array*
+* **string** *key*
 
 ### Return:
 
-* **array** 
+* **array**
 
 SECTION: Functions
 
@@ -296,7 +290,7 @@ Returns the given value.
 
 ### Params:
 
-* **any** *value* 
+* **any** *value*
 
 ### Return:
 
@@ -308,8 +302,8 @@ Composes multiple functions against a value.
 
 ### Params:
 
-* **functions** *...fns* 
-* **any** *value* 
+* **functions** *...fns*
+* **any** *value*
 
 ### Return:
 
@@ -321,8 +315,8 @@ Repeats a value or calls a function N times.
 
 ### Params:
 
-* **int** *n* 
-* **value|function** *value* 
+* **int** *n*
+* **value|function** *value*
 
 ### Return:
 
@@ -336,7 +330,4 @@ Generates a unique id.
 
 ### Return:
 
-* **string** 
-
-<!-- End src/qwux.ts -->
-
+* **string**
