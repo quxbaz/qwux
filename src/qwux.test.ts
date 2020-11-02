@@ -26,7 +26,7 @@ import {
 
   // Misc
   uniqId,
-} from './index'
+} from './qwux'
 
 
 /* SECTION: Array */
