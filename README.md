@@ -5,16 +5,7 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
 
 ## Table of contents
 - [Arrays](#arrays)
-
-[`after`](#after)
-[`before`](#before)
-[`last`](#last)
-[`without`](#without)
-[`uniq`](#uniq)
-[`insert`](#insert)
-[`move`](#move)
-[`divide`](#divide)
-[`getRandomItem`](#getRandomItem)
+   - [`after`](#after) [`before`](#before) [`last`](#last) [`without`](#without) [`uniq`](#uniq) [`insert`](#insert) [`move`](#move) [`divide`](#divide) [`getRandomItem`](#getRandomItem)
 - [Arrays](#arrays)
    - [`after`](#after)
    - [`before`](#before)
