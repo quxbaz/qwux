@@ -6,7 +6,7 @@ import {
   each, values, pick, omit, objectMap, toArray,
 
   // String
-  // capitalize,
+  capitalize,
 
   // Values
   // isEmpty, isNil,
@@ -186,20 +186,20 @@ describe("toArray", () => {
 
 /* SECTION: string */
 
-// describe("capitalize()", () => {
-//   test("Does nothing when passed an empty string.", () => {
-//     expect(capitalize('')).toEqual('')
-//   })
-//   test("Capitalizes a single letter.", () => {
-//     expect(capitalize('a')).toEqual('A')
-//   })
-//   test("Capitalizes a string.", () => {
-//     expect(capitalize('foo')).toEqual('Foo')
-//   })
-//   test("Capitalizes only the first character of a multi-word string.", () => {
-//     expect(capitalize('foo foo')).toEqual('Foo foo')
-//   })
-// })
+describe("capitalize()", () => {
+  test("Does nothing when passed an empty string.", () => {
+    expect(capitalize('')).toEqual('')
+  })
+  test("Capitalizes a single letter.", () => {
+    expect(capitalize('a')).toEqual('A')
+  })
+  test("Capitalizes a string.", () => {
+    expect(capitalize('foo')).toEqual('Foo')
+  })
+  test("Capitalizes only the first character of a multi-word string.", () => {
+    expect(capitalize('foo foo')).toEqual('Foo foo')
+  })
+})
 
 
 /* SECTION: values */

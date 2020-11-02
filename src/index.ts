@@ -187,7 +187,9 @@ const toArray =<V>(obj:Dict<V>): Dict<V>[] => (
  *
  * @return {string}
  */
-// const capitalize = (s) => s.substring(0, 1).toUpperCase() + s.substring(1)
+const capitalize = (s:string): string => (
+  s.substring(0, 1).toUpperCase() + s.substring(1)
+)
 
 
 /* SECTION: Values */
@@ -328,10 +330,10 @@ export {
   each, values, pick, omit, objectMap, toArray,
 
   // String
-  //capitalize,
+  capitalize,
 
   // Values
-  //isEmpty, isNil,
+  // isEmpty, isNil,
 
   // Math
   //constrain,
