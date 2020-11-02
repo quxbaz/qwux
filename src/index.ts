@@ -24,8 +24,10 @@ const after = <T>(array:T[], value:T): T | undefined => {
 
 /**
  * Gets the item before an item in an array.
+ *
  * @param {array} array
  * @param {value} value
+ *
  * @return {value}
  */
 const before = <T>(array:T[], value:T): T | undefined => {
