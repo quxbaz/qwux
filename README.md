@@ -9,11 +9,11 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
 * Gets the item after an item in an array.
 ```js
 after (array, item) => item
-
 // @array The array to act on.
 // @item An item in the array.
 // @return The item found, or undefined.
-
+```
+```js
 // Example
 after(['a', 'b', 'c'], 'b') => 'b'
 ```
