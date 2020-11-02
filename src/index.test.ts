@@ -12,7 +12,7 @@ import {
   isEmpty, isNil,
 
   // Math
-  // constrain,
+  constrain,
 
   // Timing
   // throttle,
@@ -240,23 +240,23 @@ describe("isNil", () => {
 
 /* SECTION: Math */
 
-// describe("constrain()", () => {
-//   test("returns a number within its proper range.", () => {
-//     expect(
-//       constrain(5, [0, 10])
-//     ).toEqual(5)
-//   })
-//   test("forces a minimum.", () => {
-//     expect(
-//       constrain(-1, [0, 10])
-//     ).toEqual(0)
-//   })
-//   test("forces a maximum.", () => {
-//     expect(
-//       constrain(100, [0, 10])
-//     ).toEqual(10)
-//   })
-// })
+describe("constrain()", () => {
+  test("returns a number within its proper range.", () => {
+    expect(
+      constrain(5, [0, 10])
+    ).toEqual(5)
+  })
+  test("forces a minimum.", () => {
+    expect(
+      constrain(-1, [0, 10])
+    ).toEqual(0)
+  })
+  test("forces a maximum.", () => {
+    expect(
+      constrain(100, [0, 10])
+    ).toEqual(10)
+  })
+})
 
 
 /* SECTION: Timing */

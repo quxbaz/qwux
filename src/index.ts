@@ -232,7 +232,9 @@ const isNil = (value:unknown): boolean => value === undefined || value === null
  *
  * @return constrained value
  */
-// const constrain = (value, [min, max]) => Math.min(Math.max(value, min), max)
+const constrain = (value:number, [min, max]:[number, number]): number => (
+  Math.min(Math.max(value, min), max)
+)
 
 
 /* SECTION: Timing */
@@ -334,7 +336,7 @@ export {
   isEmpty, isNil,
 
   // Math
-  //constrain,
+  constrain,
 
   // Timing
   //throttle,
