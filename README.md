@@ -1,6 +1,10 @@
 
 
-<!-- Start lib/after.js -->
+<!-- Start src/qwux.ts -->
+
+Useful Types
+
+SECTION: Array
 
 ## after
 
@@ -15,10 +19,6 @@ Gets the item after an item in an array.
 
 * **value** 
 
-<!-- End lib/after.js -->
-
-<!-- Start lib/before.js -->
-
 ## before
 
 Gets the item before an item in an array.
@@ -32,176 +32,57 @@ Gets the item before an item in an array.
 
 * **value** 
 
-<!-- End lib/before.js -->
-
-<!-- Start lib/capitalize.js -->
-
-## capitalize
-
-Capitalizes the first letter of a string.
-
-### Params:
-
-* **string** *s* 
-
-### Return:
-
-* **string** 
-
-<!-- End lib/capitalize.js -->
-
-<!-- Start lib/constrain.js -->
-
-## constrain
-
-Constrains a value between [min, max]
-
-### Params:
-
-* *value* 
-* **array** *[min,* max]
-
-### Return:
-
-* constrained value
-
-<!-- End lib/constrain.js -->
-
-<!-- Start lib/each.js -->
-
-## each
-
-Iterates over a list of items.
-
-### Params:
-
-* **array|object** *list* 
-* **function** *fn* 
-
-### Return:
-
-* **array** The result of the callbacks
-
-<!-- End lib/each.js -->
-
-<!-- Start lib/every.js -->
-
-## every
-
-Checks if all elements of an array are truthy for the predicate.
-
-### Params:
-
-* **array** *list* 
-* **function** *cond* 
-
-### Return:
-
-* **boolean** 
-
-<!-- End lib/every.js -->
-
-<!-- Start lib/find.js -->
-
-## find
-
-Finds a value in the list given a condition.
-
-### Params:
-
-* **array** *list* 
-* **function** *cond* 
-
-### Return:
-
-* **value** 
-
-<!-- End lib/find.js -->
-
-<!-- Start lib/includes.js -->
-
-## includes
-
-Checks if value is in array.
-
-### Params:
-
-* **array|object** *list* 
-* **value** *value* 
-
-### Return:
-
-* **boolean** 
-
-<!-- End lib/includes.js -->
-
-<!-- Start lib/isEmpty.js -->
-
-## isEmpty
-
-Checks if a value is empty. A value is considered empty if it has
-no enumerabale properties.
-
-### Params:
-
-* **value** *value* 
-
-### Return:
-
-* **boolean** 
-
-<!-- End lib/isEmpty.js -->
-
-<!-- Start lib/isNil.js -->
-
-## isNil
-
-Checks if a value is undefined or null.
-
-### Params:
-
-* **value** *value* 
-
-### Return:
-
-* **boolean** 
-
-<!-- End lib/isNil.js -->
-
-<!-- Start lib/last.js -->
-
 ## last
 
 Gets the last item in an array.
 
 ### Params:
 
-* **array** *list* 
+* **array** *array* 
 
 ### Return:
 
 * **value** 
 
-<!-- End lib/last.js -->
+## without
 
-<!-- Start lib/mapValues.js -->
-
-## mapValues
-
-Maps each value in an object and returns a new object.
+Returns an array with items filtered out.
 
 ### Params:
 
-* **object** *obj* 
-* **function** *fn* 
+* **array** *array* 
+* **values** *values* 
 
 ### Return:
 
-* **object** 
+* **array** 
 
-<!-- End lib/mapValues.js -->
+## uniq
 
-<!-- Start lib/move.js -->
+Retains only unique values from an array.
+
+### Params:
+
+* **array** *array* 
+
+### Return:
+
+* **array** 
+
+## insert
+
+Inserts an item into an array at a position. If the position
+exceeds the length of the array, append the item.
+
+### Params:
+
+* **array** *array* 
+* **number** *i* 
+* **value** *item* 
+
+### Return:
+
+* **array** 
 
 ## move
 
@@ -218,156 +99,39 @@ array.
 
 * **array** 
 
-<!-- End lib/move.js -->
+## divide
 
-<!-- Start lib/omit.js -->
-
-## omit
-
-Omits props from an object.
+Divides an array into two parts at a position.
 
 ### Params:
 
-* **object** *obj* 
-* **string|array|function** *props* 
+* **array** *array* 
+* **number** *i* 
 
 ### Return:
 
-* **object** 
+* **array** [leftArray, rightArray]
 
-<!-- End lib/omit.js -->
+## getRandomItem
 
-<!-- Start lib/pick.js -->
-
-## pick
-
-Picks props from an object.
-
-### Params:
-
-* **object** *obj* 
-* **string|array|function** *props* 
-
-### Return:
-
-* **object** 
-
-<!-- End lib/pick.js -->
-
-<!-- Start lib/shallowEqual.js -->
-
-## shallowEqual
-
-Compares two objects shallowly.
-
-### Params:
-
-* **object** *objA* 
-* **object** *objB* 
-
-### Return:
-
-* **boolean** 
-
-<!-- End lib/shallowEqual.js -->
-
-<!-- Start lib/sortBy.js -->
-
-## sortBy
-
-Sorts a list of objects by a specific key and returns a new list.
-
-### Params:
-
-* **array** *list* 
-* **string** *key* 
-
-### Return:
-
-* **array** 
-
-<!-- End lib/sortBy.js -->
-
-<!-- Start lib/throttle.js -->
-
-## throttle
-
-Limits a function to be called at most N times/second
-
-### Params:
-
-* **function** *fn* 
-* **int** *ms* 
-
-### Return:
-
-* **function** 
-
-<!-- End lib/throttle.js -->
-
-<!-- Start lib/times.js -->
-
-## times
-
-Calls a function N times. @fn is called with the current iteration
-starting from 0.
-
-### Params:
-
-* **int** *n* 
-* **function|value** *fn* 
-
-### Return:
-
-* **array** The result of the callbacks
-
-<!-- End lib/times.js -->
-
-<!-- Start lib/toList.js -->
-
-## toList
-
-Converts an object to an array of the form [{key: value}, ...]
-
-### Params:
-
-* **object** *hash* 
-
-### Return:
-
-* **array** 
-
-<!-- End lib/toList.js -->
-
-<!-- Start lib/uniq.js -->
-
-## uniq
-
-Retains only unique values from an array.
+Gets a random item from an array.
 
 ### Params:
 
 * **array** *array* 
 
+SECTION: Object
+
+Iterates over an object.
+
+### Params:
+
+* **object** *obj* 
+* **function** *fn* 
+
 ### Return:
 
 * **array** 
-
-<!-- End lib/uniq.js -->
-
-<!-- Start lib/uniqueId.js -->
-
-## uniqueId
-
-Generates a unique id.
-
-### Return:
-
-* **string** 
-
-<!-- End lib/uniqueId.js -->
-
-<!-- Start lib/values.js -->
 
 ## values
 
@@ -381,22 +145,198 @@ Gets the values from an object.
 
 * **array** 
 
-<!-- End lib/values.js -->
+## pick
 
-<!-- Start lib/without.js -->
-
-## without
-
-Returns an array with items filtered out.
+Picks props from an object.
 
 ### Params:
 
-* **array** *array* 
-* **values** *values* 
+* **object** *obj* 
+* **string** *keys* 
+
+### Return:
+
+* **object** 
+
+## omit
+
+Omits props from an object.
+
+### Params:
+
+* **object** *obj* 
+* **string** *props* 
+
+### Return:
+
+* **object** 
+
+## objectMap
+
+Similar to Array.map, but for objects. Maps each value in an object
+and returns a new object, maintaining its {key: value} structure.
+
+### Params:
+
+* **object** *obj* 
+* **function** *fn* 
+
+### Return:
+
+* **object** 
+
+## toArray
+
+Converts an object to an array of the form
+[{key: value}, {key: value}, ...]
+
+### Params:
+
+* **object** *obj* 
 
 ### Return:
 
 * **array** 
 
-<!-- End lib/without.js -->
+SECTION: String
+
+## capitalize
+
+Capitalizes the first letter of a string.
+
+### Params:
+
+* **string** *s* 
+
+### Return:
+
+* **string** 
+
+SECTION: Values
+
+## isEmpty
+
+Checks if a value is empty. A value is considered empty if it
+either has no enumerabale properties or length 0.
+
+### Params:
+
+* **array|object|string** *col* 
+
+### Return:
+
+* **boolean** 
+
+## isNil
+
+Checks if a value is undefined or null.
+
+### Params:
+
+* **value** *value* 
+
+### Return:
+
+* **boolean** 
+
+SECTION: Math
+
+## constrain
+
+Constrains a value between [min, max]
+
+### Params:
+
+* *value* 
+* **array** *[min,* max]
+
+### Return:
+
+* constrained value
+
+SECTION: Timing
+
+## throttled
+
+Limits a function to be called at most N times/second.
+
+### Params:
+
+* **function** *fn* 
+* **number** *ms* 
+
+### Return:
+
+* **function** 
+
+SECTION: Sorting
+
+## sortByKey
+
+Sorts an array of objects by a specific key and returns a new array.
+
+### Params:
+
+* **array** *array* 
+* **string** *key* 
+
+### Return:
+
+* **array** 
+
+SECTION: Functions
+
+## noop
+
+Returns undefined.
+
+## identity
+
+Returns the given value.
+
+### Params:
+
+* **any** *value* 
+
+### Return:
+
+* **any** value
+
+## compose
+
+Composes multiple functions against a value.
+
+### Params:
+
+* **functions** *...fns* 
+* **any** *value* 
+
+### Return:
+
+* **any** The result of the function composition.
+
+## repeat
+
+Repeats a value or calls a function N times.
+
+### Params:
+
+* **int** *n* 
+* **value|function** *value* 
+
+### Return:
+
+* **array** The result of the callbacks
+
+SECTION: Misc
+
+## uniqId
+
+Generates a unique id.
+
+### Return:
+
+* **string** 
+
+<!-- End src/qwux.ts -->
 
