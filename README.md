@@ -1,15 +1,14 @@
 [![npm version](https://badge.fury.io/js/stateful-router.svg)](https://badge.fury.io/js/qwux)
 
-SECTION: Array
+# qwux
+Minimal set of utility functions written in TypeScript. Mostly for personal use. I only include the functions I actually need here. Does not duplicate native javascript functions.
 
-## after
+## Array functions
 
+#### `after <T>(array:T[], value:T) => T | undefined`
 Gets the item after an item in an array.
-
-### Params:
-
-* **array** *array*
-* **value** *value*
+> `array` array
+> `value` any
 
 ### Return:
 
