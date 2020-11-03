@@ -257,8 +257,10 @@ const capitalize = (s:string): string => (
 const isEmpty = (value:unknown): boolean => {
   if (typeof value === 'string' || Array.isArray(value))
     return value.length === 0
-  else if (isTrueObject(value))
-    return Object.keys(value as Obj<unknown>).length === 0
+  else if (value == null)
+    return true
+  else if (typeof value === 'object')
+    return Object.keys(value as object).length === 0
   else
     return true
 }

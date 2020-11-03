@@ -313,6 +313,7 @@ isEmpty({a:1}) => false
 isEmpty(42) => true
 isEmpty(null) => true
 isEmpty('foobar') => false
+isEmpty(function () {}) => true
 ```
 
 #### `isNil`
