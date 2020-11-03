@@ -215,7 +215,7 @@ each({a:1, b:2, c:3}, (v, k) => {k: v}) => [{a:1}, {b:2}, {c:3}]
 ```
 
 #### `pick`
-* Picks props from an objecta and returns a new object.
+* Picks props from an object and returns a new object.
 ```js
 pick (obj, ...keys) => object
 /*
