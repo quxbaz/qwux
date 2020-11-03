@@ -5,9 +5,9 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
 
 ## Table of contents
 - [Arrays](#arrays)
-   - [`after`](#after) [`before`](#before) [`last`](#last) [`without`](#without) [`uniq`](#uniq) [`insert`](#insert) [`move`](#move) [`divide`](#divide) [`getRandomItem`](#getRandomItem)
+   - [`after`](#after) [`before`](#before) [`last`](#last) [`without`](#without) [`uniq`](#uniq) [`insert`](#insert) [`move`](#move) [`divide`](#divide) [`getRandomItem`](#getrandomitem)
 - [Objects](#objects)
-   - [`isTrueObject`](#isTrueObject) [`values`](#values) [`each`](#each) [`picks`](#picks) [`omit`](#omit) [`objectMap`](#objectMap) [`toArray`](#toArray)
+   - [`isTrueObject`](#istrueobject) [`values`](#values) [`each`](#each) [`picks`](#picks) [`omit`](#omit) [`objectMap`](#objectmap) [`toArray`](#toarray)
 - [Strings](#strings)
    - [`capitalize`](#capitalize)
 - [Values](#values)
@@ -19,7 +19,7 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
 - [Timing](#timing)
    - [`throttled`](#throttled)
 - [Sorting](#sorting)
-   - [`sortByKey`](#sortByKey)
+   - [`sortByKey`](#sortbykey)
 - [Misc](#misc)
    - [`uniqId`](#uniqId)
 
