@@ -296,7 +296,8 @@ capitalize(' foo') => ' foo'
 ## Values
 
 #### `isEmpty`
-* Checks if a value is empty. A value is considered empty if it has zero length or is non-enumerable.
+* Checks if a value is empty.
+* Values are considered empty if they have zero length or are non-enumerable.
 ```js
 isEmpty (value) => boolean
 /*
@@ -351,8 +352,10 @@ identity(myVar) => myVar
 ```
 
 #### `compose`
-* Composes multiple functions against a value with the return value of each call being used as the argument to the next. Functions are called from right to left.
-* It takes the form `f(g(h(x)))` and allows you to use the prettier form `(f∘g∘h)(x)`
+* Composes multiple functions against a value.
+* The return value of each call is provided as the argument to the subsequent call.
+* Functions are called from right to left.
+* It takes the form `f(g(h(x)))` and allows you to use the prettier form `(f∘g∘h)(x)`.
 ```js
 const compose = (...fns) => (value) => result
 /*
