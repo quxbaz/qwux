@@ -224,3 +224,18 @@ omit (obj, ...keys) => object
 omit({a:1}, 'a') => {}
 omit({a:1, b:2, c:3}, 'a', 'b') => {c:3}
 ```
+
+#### `objectMap`
+* Similar to array map, but for objects. Maps each value in an object and returns a new object, maintaining its {key: value} structure.
+```js
+objectMap (obj, fn) => object
+/*
+@obj The object to map over.
+@fn (value, key) The function to call over each property of object. Its return value will be used to form the new object.
+@return The new object.
+*/
+```
+```js
+// Example
+objectMap({a:1, b:2}, (v, k) => v * 2) => {a:2, b:4}
+```

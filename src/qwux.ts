@@ -188,7 +188,7 @@ const omit = <T>(obj:Obj<T>, ...keys:Key[]): typeof obj => {
 }
 
 /**
- * Similar to Array.map, but for objects. Maps each value in an object
+ * Similar to array map, but for objects. Maps each value in an object
  * and returns a new object, maintaining its {key: value} structure.
  *
  * @param {object} obj
