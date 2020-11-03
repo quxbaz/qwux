@@ -177,3 +177,17 @@ each (obj, fn) => results
 // Example
 each({a:1, b:2, c:3}, v => v * 2) => [2, 4, 6]
 ```
+
+#### `values`
+* Gets the values from an object.
+```js
+values (obj) => array
+/*
+@obj The object to act on.
+@return The values of the object.
+*/
+```
+```js
+// Example
+values({a:1, b:2} => [1, 2]
+```
