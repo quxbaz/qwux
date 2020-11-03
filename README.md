@@ -163,18 +163,17 @@ getRandomItem([a, b, 4]) => 4
 
 ## Objects
 
-#### `TITLE`
-* DESCRIPTION
+#### `each`
+* Iterates over an object.
 ```js
-DECLARATION
+each (obj, fn) => results
 /*
-@
-@
-@
-@return
+@obj The object to iterate over.
+@fn (value, key) Called over each member of the object.
+@return An array of return values from @fn.
 */
 ```
 ```js
 // Example
-EXAMPLE
+each({a:1, b:2, c:3}, v => v * 2) => [2, 4, 6]
 ```
