@@ -267,7 +267,8 @@ capitalize (str) => string
 */
 ```
 ```js
-// Example
+// Examples
 capitalize('foo') => 'Foo'
-capitalize('foo bar') => 'Foo bar'
+capitalize('foo bar') => 'Foo bar'  // Only changes the first letter.
+capitalize(' foo') => ' foo'
 ```
