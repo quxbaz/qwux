@@ -80,7 +80,7 @@ without (array, ...items) => array
 */
 ```
 ```js
-// Example
+// Examples
 without([a, b, c], c) => [a, b]
 without([a, b, c], b, c) => [a]
 ```
@@ -95,7 +95,7 @@ uniq (array) => array
 */
 ```
 ```js
-// Example
+// Examples
 uniq([a, a, b]) => [a, b]
 uniq([a, a, b, b, c, c]) => [a, b, c]
 ```
