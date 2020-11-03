@@ -331,3 +331,18 @@ isNil(null) => true
 isNil(undefined) => true
 isNil([]) => false
 ```
+
+## Functions
+
+#### `noop`
+* Returns undefined.
+```js
+<DECLARATION>
+/*
+@return undefined
+*/
+```
+```js
+// Example
+noop() => undefined
+```
