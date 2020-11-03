@@ -113,3 +113,19 @@ insert (array, i, ...items) => array
 // Example
 insert(['a', 'c'], 1, 'b') => ['a', 'b', 'c']
 ```
+
+#### `move`
+* Moves an item in an array to another position and returns the new array.
+```js
+const move = (array, from, to) => array
+/*
+@array The array to act on.
+@from The source position.
+@to The destination position.
+@return New array with item moved.
+*/
+```
+```js
+// Example
+move(['a', 'b', 'c'], 0, 2) => ['b', 'c', 'a']
+```
