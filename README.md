@@ -129,3 +129,18 @@ const move = (array, from, to) => array
 // Example
 move(['a', 'b', 'c'], 0, 2) => ['b', 'c', 'a']
 ```
+
+#### `divide`
+* Divides an array into two parts at a position.
+```js
+divide (array, i) => [array, array]
+/*
+@array The array to act on.
+@i The position to divide the array.
+@return The divided array.
+*/
+```
+```js
+// Example
+divide([a, b, c], 1) => [[a], [b, c]]
+```
