@@ -4,7 +4,7 @@ import {
   divide, getRandomItem,
 
   // Objects
-  each, values, pick, omit, objectMap, toArray,
+  isTrueObject, values, each, pick, omit, objectMap, toArray,
 
   // Strings
   capitalize,
@@ -167,6 +167,37 @@ describe("getRandomItem", () => {
 
 /* SECTION: Objects */
 
+describe("isTrueObject", () => {
+  test("Tests if a value is a true object.", () => {
+    expect(isTrueObject({})).toBe(true)
+    expect(isTrueObject({a:1})).toBe(true)
+    expect(isTrueObject([])).toBe(false)
+    expect(isTrueObject(0)).toBe(false)
+    expect(isTrueObject(42)).toBe(false)
+    expect(isTrueObject(-1)).toBe(false)
+    expect(isTrueObject([1])).toBe(false)
+    expect(isTrueObject(function () {})).toBe(false)
+    expect(isTrueObject(() => {})).toBe(false)
+    expect(isTrueObject(null)).toBe(false)
+    expect(isTrueObject(undefined)).toBe(false)
+    expect(isTrueObject(Array)).toBe(false)
+    expect(isTrueObject('string')).toBe(false)
+    expect(isTrueObject(Object)).toBe(false)
+    expect(isTrueObject(Function)).toBe(false)
+    expect(isTrueObject(Number)).toBe(false)
+    expect(isTrueObject(String)).toBe(false)
+  })
+})
+
+describe("values", () => {
+  test("Gets the values from an object.", () => {
+    expect(values({})).toEqual([])
+    expect(values({a:1})).toEqual([1])
+    expect(values({a:1, b:2})).toEqual([1, 2])
+    expect(values({1:'a', 2:'b'})).toEqual(['a', 'b'])
+  })
+})
+
 describe("each", () => {
   test("Iterates over an object.", () => {
     let i = ''
@@ -180,15 +211,6 @@ describe("each", () => {
     expect(
       each(obj, (v, k) => k + v)
     ).toEqual(['a1', 'b2', 'c3'])
-  })
-})
-
-describe("values", () => {
-  test("Gets the values from an object.", () => {
-    expect(values({})).toEqual([])
-    expect(values({a:1})).toEqual([1])
-    expect(values({a:1, b:2})).toEqual([1, 2])
-    expect(values({1:'a', 2:'b'})).toEqual(['a', 'b'])
   })
 })
 
@@ -265,6 +287,8 @@ describe("isEmpty", () => {
     expect(isEmpty('')).toBe(true)
     expect(isEmpty([])).toBe(true)
     expect(isEmpty({})).toBe(true)
+    expect(isEmpty(null)).toBe(true)
+    expect(isEmpty(undefined)).toBe(true)
   })
   test("Checks if a value is not empty.", () => {
     expect(isEmpty('foo')).toBe(false)
@@ -272,6 +296,8 @@ describe("isEmpty", () => {
     expect(isEmpty([1, 2])).toBe(false)
     expect(isEmpty([{a: 1}])).toBe(false)
     expect(isEmpty([{a: 1, b: 2}])).toBe(false)
+    expect(isEmpty(() => {})).toBe(false)
+    expect(isEmpty(function () {})).toBe(false)
   })
 })
 

@@ -153,7 +153,7 @@ divide([a, b, c], 1) => [[a], [b, c]]
 getRandomItem (array) => item
 /*
 @array The array to act on.
-@return A random item in the array.
+@return A random item from the array.
 */
 ```
 ```js
@@ -162,6 +162,39 @@ getRandomItem([a, b, 4]) => 4
 ```
 
 ## Objects
+
+#### `isTrueObject`
+* Determines if a value is a true object.
+```js
+isTrueObject (value) => boolean
+/*
+@value Any value.
+@return True if the object is a true object.
+*/
+```
+```js
+// Examples
+isTrueObject({}) => true
+isTrueObject([]) => false
+isTrueObject(null) => false
+isTrueObject(undefined) => false
+isTrueObject(function () {}) => false
+isTrueObject('string') => false
+```
+
+#### `values`
+* Gets the values from an object.
+```js
+values (obj) => array
+/*
+@obj The object to act on.
+@return The values of the object.
+*/
+```
+```js
+// Example
+values({a:1, b:2} => [1, 2]
+```
 
 #### `each`
 * Iterates over an object.
@@ -177,20 +210,6 @@ each (obj, fn) => results
 // Examples
 each({a:1, b:2, c:3}, v => v * 2) => [2, 4, 6]
 each({a:1, b:2, c:3}, (v, k) => {k: v}) => [{a:1}, {b:2}, {c:3}]
-```
-
-#### `values`
-* Gets the values from an object.
-```js
-values (obj) => array
-/*
-@obj The object to act on.
-@return The values of the object.
-*/
-```
-```js
-// Example
-values({a:1, b:2} => [1, 2]
 ```
 
 #### `pick`

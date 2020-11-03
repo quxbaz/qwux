@@ -116,6 +116,8 @@ const divide = <T>(array:T[], i:number): [T[], T[]] => (
  * Gets a random item from an array.
  *
  * @param {array} array
+ *
+ * @return A random item from the array.
  */
 const getRandomItem = <T>(array:T[]): T => (
   array[Math.floor(Math.random() * array.length)]
@@ -123,6 +125,26 @@ const getRandomItem = <T>(array:T[]): T => (
 
 
 /* SECTION: Objects */
+
+/**
+ * Determines if a value is a true object.
+ *
+ * @param {value} value
+ */
+const isTrueObject = (value:unknown): boolean => (
+  Object.prototype.toString.call(value) === '[object Object]'
+)
+
+/**
+ * Gets the values from an object.
+ *
+ * @param {object} obj
+ *
+ * @return {array}
+ */
+const values = <T>(obj:Obj<T>): T[] => (
+  Object.keys(obj).map(k => obj[k])
+)
 
 interface each {
   <T>(obj:Obj<T>, fn:(value:T, key:string) => any): unknown[]
@@ -144,17 +166,6 @@ const each:each = (obj, fn) => {
   }
   return results
 }
-
-/**
- * Gets the values from an object.
- *
- * @param {object} obj
- *
- * @return {array}
- */
-const values = <T>(obj:Obj<T>): T[] => (
-  Object.keys(obj).map(k => obj[k])
-)
 
 /**
  * Picks props from an objecta and returns a new object.
@@ -396,7 +407,7 @@ export {
   divide, getRandomItem,
 
   // Object
-  each, values, pick, omit, objectMap, toArray,
+  isTrueObject, values, each, pick, omit, objectMap, toArray,
 
   // String
   capitalize,
