@@ -349,3 +349,22 @@ identity (value) => value
 // Example
 identity(myVar) => myVar
 ```
+
+#### `compose`
+* Composes multiple functions against a value with the return value of each call being used as the argument to the next. Functions are called from right to left.
+```js
+const compose = (...fns) => (value) => result
+/*
+@fns Called from right to left.
+@value
+@return The final value after all functions are applied.
+*/
+```
+```js
+// Example
+compose(
+  sumArray,
+  array => map(x => x * 2)  // [4, 6, 8]
+  array => map(x => x + 1)  // [2, 3, 4]
+)([1, 2, 3]) => 18
+```
