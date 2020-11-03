@@ -192,3 +192,19 @@ values (obj) => array
 // Example
 values({a:1, b:2} => [1, 2]
 ```
+
+#### `pick`
+* Picks props from an object.
+```js
+pick (obj, ...keys) => object
+/*
+@obj The object to act on.
+@keys The keys to pick from object.
+@return The new object formed from the picked keys.
+*/
+```
+```js
+// Examples
+pick({a:1, b:2}, 'b') => {b:2}
+pick({a:1, b:2, c:3}, 'a', 'b') => {a:1, b:2}
+```
