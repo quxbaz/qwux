@@ -352,6 +352,7 @@ identity(myVar) => myVar
 
 #### `compose`
 * Composes multiple functions against a value with the return value of each call being used as the argument to the next. Functions are called from right to left.
+* It takes the form `f(g(h(x)))` and allows you to use the prettier form `(f∘g∘h)(x)`
 ```js
 const compose = (...fns) => (value) => result
 /*
@@ -370,7 +371,7 @@ compose(
 ```
 
 #### `repeat`
-* Repeats a value or calls a function N times.
+* Repeats a value or calls a function `n` times.
 ```js
 repeat (n, value) => results
 /*
