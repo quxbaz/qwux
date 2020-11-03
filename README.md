@@ -97,6 +97,7 @@ uniq (array) => array
 ```js
 // Example
 uniq([a, a, b]) => [a, b]
+uniq([a, a, b, b, c, c]) => [a, b, c]
 ```
 
 #### `insert`
