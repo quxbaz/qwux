@@ -250,8 +250,10 @@ describe("capitalize()", () => {
   test("Capitalizes a string.", () => {
     expect(capitalize('foo')).toEqual('Foo')
   })
-  test("Capitalizes only the first character of a multi-word string.", () => {
+  test("Capitalizes only the first character of a longer string.", () => {
     expect(capitalize('foo foo')).toEqual('Foo foo')
+    expect(capitalize(' foo')).toEqual(' foo')
+    expect(capitalize('  foo')).toEqual('  foo')
   })
 })
 
