@@ -194,12 +194,12 @@ values({a:1, b:2} => [1, 2]
 ```
 
 #### `pick`
-* Picks props from an object.
+* Picks props from an objecta and returns a new object.
 ```js
 pick (obj, ...keys) => object
 /*
 @obj The object to act on.
-@keys The keys to pick from object.
+@keys The keys to pick from the object.
 @return The new object formed from the picked keys.
 */
 ```

@@ -157,7 +157,7 @@ const values = <T>(obj:Obj<T>): T[] => (
 )
 
 /**
- * Picks props from an object.
+ * Picks props from an objecta and returns a new object.
  *
  * @param {object} obj
  * @param {...string} keys
