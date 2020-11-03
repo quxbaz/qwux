@@ -388,7 +388,7 @@ repeat(5, () => a) => [a, a, a, a, a]
 ## Math
 
 #### `constrain`
-* Constrains a value between a min and max value.
+* Constrains a value between a `min` and `max` value.
 ```js
 constrain (value, [min, max]) => number
 /*
