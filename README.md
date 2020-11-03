@@ -314,3 +314,19 @@ isEmpty(42) => true
 isEmpty(null) => true
 isEmpty('foobar') => false
 ```
+
+#### `isNil`
+* Checks if a value is undefined or null.
+```js
+isNil = (value) => boolean
+/*
+@value Any value.
+@return True if the value is undefined or null.
+*/
+```
+```js
+// Examples
+isNil(null) => true
+isNil(undefined) => true
+isNil([]) => false
+```

@@ -289,6 +289,8 @@ describe("isEmpty", () => {
     expect(isEmpty({})).toBe(true)
     expect(isEmpty(null)).toBe(true)
     expect(isEmpty(undefined)).toBe(true)
+    expect(isEmpty(() => {})).toBe(true)
+    expect(isEmpty(function () {})).toBe(true)
   })
   test("Checks if a value is not empty.", () => {
     expect(isEmpty('foo')).toBe(false)
@@ -296,8 +298,6 @@ describe("isEmpty", () => {
     expect(isEmpty([1, 2])).toBe(false)
     expect(isEmpty([{a: 1}])).toBe(false)
     expect(isEmpty([{a: 1, b: 2}])).toBe(false)
-    expect(isEmpty(() => {})).toBe(false)
-    expect(isEmpty(function () {})).toBe(false)
   })
 })
 
@@ -311,6 +311,7 @@ describe("isNil", () => {
     expect(isNil(d)).toBe(false)
     expect(isNil(1)).toBe(false)
     expect(isNil('a')).toBe(false)
+    expect(isNil({})).toBe(false)
     expect(isNil('undefined')).toBe(false)
     expect(isNil(0)).toBe(false)
   })

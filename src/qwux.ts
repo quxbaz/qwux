@@ -250,15 +250,15 @@ const capitalize = (s:string): string => (
  * Checks if a value is empty. A value is considered empty if it has
  * zero length or is non-enumerable.
  *
- * @param {array | object | string}  col
+ * @param {array | object | string}  value
  *
  * @return {boolean}
  */
-const isEmpty = <T>(col: Collection<T> | string): boolean => {
-  if (typeof col === 'string' || Array.isArray(col))
-    return col.length === 0
-  else if (typeof col === 'object')
-    return Object.keys(col).length === 0
+const isEmpty = (value:unknown): boolean => {
+  if (typeof value === 'string' || Array.isArray(value))
+    return value.length === 0
+  else if (isTrueObject(value))
+    return Object.keys(value as Obj<unknown>).length === 0
   else
     return true
 }
