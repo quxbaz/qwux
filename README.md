@@ -165,6 +165,7 @@ getRandomItem([a, b, 4]) => 4
 
 #### `isTrueObject`
 * Determines if a value is a true object.
+* Only `{}` or `{v: k, ...etc}` values are considered true objects.
 ```js
 isTrueObject (value) => boolean
 /*
@@ -184,7 +185,7 @@ isTrueObject(42) => false
 ```
 
 #### `values`
-* Gets the values from an object.
+* Gets the values of an object.
 ```js
 values (obj) => array
 /*
@@ -246,7 +247,7 @@ omit({a:1, b:2, c:3}, 'a', 'b') => {c:3}
 ```
 
 #### `objectMap`
-* Similar to array map, but for objects. Maps each value in an object and returns a new object.
+* Maps each value in an object and returns a new object. Similar to array map, but for objects.
 ```js
 objectMap (obj, fn) => object
 /*
@@ -318,7 +319,7 @@ isEmpty(function () {}) => true
 ```
 
 #### `isNil`
-* Checks if a value is undefined or null.
+* Returns true if a value is undefined or null.
 ```js
 isNil = (value) => boolean
 /*
@@ -355,7 +356,7 @@ identity(myVar) => myVar
 * Composes multiple functions against a value.
 * The return value of each call is provided as the argument to the subsequent call.
 * Functions are called from right to left.
-* It takes the form `f(g(h(x)))` and allows you to use the prettier form `(f∘g∘h)(x)`.
+* It takes the form `f(g(h(x)))` and allows you to use the prettier `(f∘g∘h)(x)` form.
 ```js
 const compose = (...fns) => (value) => result
 /*
