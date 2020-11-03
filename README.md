@@ -240,3 +240,17 @@ objectMap (obj, fn) => object
 // Example
 objectMap({a:1, b:2}, (v, k) => v * 2) => {a:2, b:4}
 ```
+
+#### `toArray`
+* Converts an object to an array of the form [{k: v}, ...].
+```js
+toArray (obj) => array
+/*
+@obj The object to convert.
+@return An array of {key: value} objects.
+*/
+```
+```js
+// Example
+toArray({a:1, b:2}) => [{a:1}, {b:2}]
+```
