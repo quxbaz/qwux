@@ -144,3 +144,17 @@ divide (array, i) => [array, array]
 // Example
 divide([a, b, c], 1) => [[a], [b, c]]
 ```
+
+#### `getRandomItem`
+* Gets a random item from an array.
+```js
+getRandomItem (array) => item
+/*
+@array The array to act on.
+@return A random item in the array.
+*/
+```
+```js
+// Example
+getRandomItem([a, b, 4]) => 4
+```
