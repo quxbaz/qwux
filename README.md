@@ -356,7 +356,7 @@ identity(myVar) => myVar
 const compose = (...fns) => (value) => result
 /*
 @fns Called from right to left.
-@value
+@value The value to call against.
 @return The final value after all functions are applied.
 */
 ```
