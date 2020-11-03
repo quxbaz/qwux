@@ -37,7 +37,7 @@ after (array, item) => item
 ```
 ```js
 // Example
-after(['a', 'b', 'c'], 'b') => 'b'
+after([a, b, c], b) => b
 ```
 
 #### `before`
@@ -52,7 +52,7 @@ before (array, item) => item
 ```
 ```js
 // Example
-before(['a', 'b', 'c'], 'b') => 'a'
+before([a, b, c], b) => a
 ```
 
 #### `last`
@@ -66,7 +66,7 @@ last (array) => item
 ```
 ```js
 // Example
-last(['a', 'b', 'c'], 'b') => 'c'
+last([a, b, c], b) => c
 ```
 
 #### `without`
@@ -81,7 +81,7 @@ without (array, ...items) => array
 ```
 ```js
 // Example
-without(['a', 'b', 'c'], 'c') => ['a', 'b']
+without([a, b, c], c) => [a, b]
 ```
 
 #### `uniq`
@@ -95,7 +95,7 @@ uniq (array) => array
 ```
 ```js
 // Example
-uniq(['a', 'a', 'b'], 'c') => ['a', 'b']
+uniq([a, a, b], c) => [a, b]
 ```
 
 #### `insert`
@@ -111,7 +111,7 @@ insert (array, i, ...items) => array
 ```
 ```js
 // Example
-insert(['a', 'c'], 1, 'b') => ['a', 'b', 'c']
+insert([a, c], 1, b) => [a, b, c]
 ```
 
 #### `move`
@@ -127,7 +127,7 @@ const move = (array, from, to) => array
 ```
 ```js
 // Example
-move(['a', 'b', 'c'], 0, 2) => ['b', 'c', 'a']
+move([a, b, c], 0, 2) => [b, c, a]
 ```
 
 #### `divide`
