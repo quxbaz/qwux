@@ -357,7 +357,7 @@ const compose = (...fns) => (value) => result
 /*
 @fns Called from right to left.
 @value The value to call against.
-@return The final value after all functions are applied.
+@return The final return value after all functions are applied.
 */
 ```
 ```js
@@ -367,4 +367,20 @@ compose(
   array => map(x => x * 2)  // [4, 6, 8]
   array => map(x => x + 1)  // [2, 3, 4]
 )([1, 2, 3]) => 18
+```
+
+#### `repeat`
+* Repeats a value or calls a function N times.
+```js
+repeat (n, value) => results
+/*
+@n The number of times to repeat the value or function.
+@value A value or function to repeat.
+@return An array of results.
+*/
+```
+```js
+// Examples
+repeat(5, a) => [a, a, a, a, a]
+repeat(5, () => a) => [a, a, a, a, a]
 ```
