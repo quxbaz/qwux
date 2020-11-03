@@ -335,14 +335,7 @@ isNil([]) => false
 ## Functions
 
 #### `noop`
-* Returns undefined.
+* Returns `undefined`.
 ```js
-<DECLARATION>
-/*
-@return undefined
-*/
-```
-```js
-// Example
-noop() => undefined
+noop () => undefined
 ```
