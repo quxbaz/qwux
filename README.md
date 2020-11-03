@@ -226,7 +226,7 @@ omit({a:1, b:2, c:3}, 'a', 'b') => {c:3}
 ```
 
 #### `objectMap`
-* Similar to array map, but for objects. Maps each value in an object and returns a new object, maintaining its {key: value} structure.
+* Similar to array map, but for objects. Maps each value in an object and returns a new object.
 ```js
 objectMap (obj, fn) => object
 /*
