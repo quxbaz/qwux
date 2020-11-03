@@ -339,3 +339,13 @@ isNil([]) => false
 ```js
 noop () => undefined
 ```
+
+#### `identity`
+* Returns the given value.
+```js
+identity (value) => value
+```
+```js
+// Example
+identity(myVar) => myVar
+```
