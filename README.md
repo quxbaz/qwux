@@ -82,6 +82,7 @@ without (array, ...items) => array
 ```js
 // Example
 without([a, b, c], c) => [a, b]
+without([a, b, c], b, c) => [a]
 ```
 
 #### `uniq`
