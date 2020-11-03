@@ -158,3 +158,21 @@ getRandomItem (array) => item
 // Example
 getRandomItem([a, b, 4]) => 4
 ```
+
+## Objects
+
+#### `TITLE`
+* DESCRIPTION
+```js
+DECLARATION
+/*
+@
+@
+@
+@return
+*/
+```
+```js
+// Example
+EXAMPLE
+```
