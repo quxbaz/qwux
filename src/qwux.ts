@@ -2,7 +2,6 @@
 
 type Key = string | number
 type Obj<T> = Record<Key, T>;
-type Collection<T> = T[] | Obj<T>
 
 
 /* SECTION: Arrays */
