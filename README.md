@@ -180,6 +180,7 @@ isTrueObject(null) => false
 isTrueObject(undefined) => false
 isTrueObject(function () {}) => false
 isTrueObject('string') => false
+isTrueObject(42) => false
 ```
 
 #### `values`
