@@ -174,7 +174,7 @@ const pick = <T>(obj:Obj<T>, ...keys:Key[]): typeof obj => {
 }
 
 /**
- * Omits props from an object.
+ * Omits props from an object and returns a new object.
  *
  * @param {object} obj
  * @param {...string} props

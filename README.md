@@ -208,3 +208,19 @@ pick (obj, ...keys) => object
 pick({a:1, b:2}, 'b') => {b:2}
 pick({a:1, b:2, c:3}, 'a', 'b') => {a:1, b:2}
 ```
+
+#### `omit`
+* Omits props from an object and returns a new object.
+```js
+omit (obj, ...keys) => object
+/*
+@obj The object to act on.
+@keys The keys to omit from @obj.
+@return The new object without @keys.
+*/
+```
+```js
+// Examples
+omit({a:1}, 'a') => {}
+omit({a:1, b:2, c:3}, 'a', 'b') => {c:3}
+```
