@@ -231,7 +231,8 @@ omit({a:1, b:2, c:3}, 'a', 'b') => {c:3}
 objectMap (obj, fn) => object
 /*
 @obj The object to map over.
-@fn (value, key) The function to call over each property of object. Its return value will be used to form the new object.
+@fn (value, key) The function to call over each property of object.
+                 Its return value will be used to form the new object.
 @return The new object.
 */
 ```
