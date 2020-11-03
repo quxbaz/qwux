@@ -272,3 +272,25 @@ capitalize('foo') => 'Foo'
 capitalize('foo bar') => 'Foo bar'  // Only affects the first character.
 capitalize(' foo') => ' foo'
 ```
+
+## Values
+
+#### `isEmpty`
+* Checks if a value is empty. A value is considered empty if it has zero length or is non-enumerable.
+```js
+isEmpty (value) => boolean
+/*
+@value Any value of any type.
+@return True if the value is empty, otherwise false.
+*/
+```
+```js
+// Examples
+isEmpty([]) => true
+isEmpty([a]) => false
+isEmpty({}) => true
+isEmpty({a:1}) => false
+isEmpty(42) => true
+isEmpty(null) => true
+isEmpty('foobar') => false
+```

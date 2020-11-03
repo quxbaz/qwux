@@ -236,8 +236,8 @@ const capitalize = (s:string): string => (
 /* SECTION: Values */
 
 /**
- * Checks if a value is empty. A value is considered empty if it
- * either has no enumerabale properties or length 0.
+ * Checks if a value is empty. A value is considered empty if it has
+ * zero length or is non-enumerable.
  *
  * @param {array | object | string}  col
  *
