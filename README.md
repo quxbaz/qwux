@@ -254,3 +254,20 @@ toArray (obj) => array
 // Example
 toArray({a:1, b:2}) => [{a:1}, {b:2}]
 ```
+
+## Strings
+
+#### `capitalize`
+* Capitalizes the first letter of a string.
+```js
+capitalize (str) => string
+/*
+@str The string to capitalize.
+@return The capitalized string.
+*/
+```
+```js
+// Example
+capitalize('foo') => 'Foo'
+capitalize('foo bar') => 'Foo bar'
+```
