@@ -37,7 +37,7 @@ after (array, item) => item
 ```
 ```js
 // Example
-after([a, b, c], b) => b
+after([a, b, c], b) => c
 ```
 
 #### `before`
@@ -66,7 +66,7 @@ last (array) => item
 ```
 ```js
 // Example
-last([a, b, c], b) => c
+last([a, b, c]) => c
 ```
 
 #### `without`
@@ -95,7 +95,7 @@ uniq (array) => array
 ```
 ```js
 // Example
-uniq([a, a, b], c) => [a, b]
+uniq([a, a, b]) => [a, b]
 ```
 
 #### `insert`
