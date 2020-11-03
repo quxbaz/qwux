@@ -384,3 +384,23 @@ repeat (n, value) => results
 repeat(5, a) => [a, a, a, a, a]
 repeat(5, () => a) => [a, a, a, a, a]
 ```
+
+## Math
+
+#### `constrain`
+* Constrains a value between a min and max value.
+```js
+constrain (value, [min, max]) => number
+/*
+@value The value to constrain.
+@min The lower bound.
+@max The upper bound.
+@return The constrained value.
+*/
+```
+```js
+// Examples
+constrain(15, [10, 20]) => 15
+constrain(0, [10, 20]) => 10
+constrain(100, [10, 20]) => 20
+```
