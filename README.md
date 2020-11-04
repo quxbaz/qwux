@@ -1,4 +1,4 @@
-[![build status](https://img.shields.io/travis/quxbaz/qwux/master.svg)](https://travis-ci.org/quxbaz/qwux)
+[![build status](https://img.shields.io/travis/quxbaz/qwux/master.svg)](https://travis-ci.com/github/quxbaz/qwux)
 [![npm version](https://img.shields.io/npm/v/qwux.svg)](https://www.npmjs.com/package/qwux)
 
 # qwux
