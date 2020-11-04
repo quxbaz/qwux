@@ -367,7 +367,7 @@ const throttled = (fn:Function, ms:number) => {
 /* SECTION: Sorting */
 
 /**
- * Sorts an array of objects by a specific key and returns a new array.
+ * Sorts an array of objects by key and returns the new array.
  *
  * @param {array} array
  * @param {string} key

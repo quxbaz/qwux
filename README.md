@@ -422,5 +422,22 @@ throttled (fn, ms) => function
 ```
 ```js
 // Example
-onChange = throttled(onChange, 1000)  // Only process change events at most once per second.
+onChange = throttled(onChange, 1000)  // Process change events at most once per second.
+```
+
+## Sorting
+
+#### `sortByKey`
+* Sorts an array of objects by key and returns the new array.
+```js
+sortByKey (array, key) => array
+/*
+@array The array of objects to sort.
+@key The key to sort by.
+@return The new sorted array.
+*/
+```
+```js
+// Example
+sortByKey([{name: 'foo'}, {name: 'bar'}], 'name') => [{name: 'bar', name: 'foo'}]
 ```
