@@ -1,7 +1,7 @@
 import {
   // Arrays
   after, before, last, without, uniq, insert, move,
-  divide, getRandomItem,
+  divide,
 
   // Objects
   isTrueObject, values, each, pick, omit, objectMap, toArray,
@@ -148,22 +148,6 @@ describe("divide", () => {
     expect(divide([1, 2, 3], 3)).toEqual([[1, 2, 3], []])
     expect(divide([1, 2, 3], 4)).toEqual([[1, 2, 3], []])
     expect(divide([1, 2, 3], 5)).toEqual([[1, 2, 3], []])
-  })
-})
-
-describe("getRandomItem", () => {
-  test("Gets a random item from an array.", () => {
-    const arr = [0, 0, 0, 0]
-    const iter = 10000
-    const normal = iter / 4
-    for (let i=0; i < iter; i++) {
-      const i = getRandomItem([0, 1, 2, 3])
-      arr[i]++
-    }
-    expect(Math.abs(1 - arr[0] / normal)).toBeLessThan(0.05)
-    expect(Math.abs(1 - arr[1] / normal)).toBeLessThan(0.05)
-    expect(Math.abs(1 - arr[2] / normal)).toBeLessThan(0.05)
-    expect(Math.abs(1 - arr[3] / normal)).toBeLessThan(0.05)
   })
 })
 

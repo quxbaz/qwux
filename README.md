@@ -7,7 +7,7 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
 
 ## API
 - [Arrays](#arrays)
-   - [`after`](#after) [`before`](#before) [`last`](#last) [`without`](#without) [`uniq`](#uniq) [`insert`](#insert) [`move`](#move) [`divide`](#divide) [`getRandomItem`](#getrandomitem)
+   - [`after`](#after) [`before`](#before) [`last`](#last) [`without`](#without) [`uniq`](#uniq) [`insert`](#insert) [`move`](#move) [`divide`](#divide)
 - [Objects](#objects)
    - [`isTrueObject`](#istrueobject) [`values`](#values) [`each`](#each) [`pick`](#pick) [`omit`](#omit) [`objectMap`](#objectmap) [`toArray`](#toarray)
 - [Strings](#strings)
@@ -147,20 +147,6 @@ divide (array, i) => [array, array]
 ```js
 // Example
 divide([a, b, c], 1) => [[a], [b, c]]
-```
-
-#### `getRandomItem`
-* Gets a random item from an array.
-```js
-getRandomItem (array) => item
-/*
-@array The array to act on.
-@return A random item from the array.
-*/
-```
-```js
-// Example
-getRandomItem([a, b, 4]) => 4
 ```
 
 ## Objects
