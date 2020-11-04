@@ -409,3 +409,18 @@ constrain(15, [10, 20]) => 15
 constrain(0, [10, 20]) => 10
 constrain(100, [10, 20]) => 20
 ```
+
+#### `throttled`
+* Limits a function to be called at most N times/second.
+```js
+throttled (fn, ms) => function
+/*
+@fn The function to throttle.
+@ms How much time (in milliseconds) must elapse before calling this function again.
+@return The throttled function.
+*/
+```
+```js
+// Example
+onChange = throttled(onChange, 1000)  // Only process change events at most once per second.
+```
