@@ -437,7 +437,7 @@ sortByKey([{name: 'foo'}, {name: 'bar'}], 'name') => [{name: 'bar', name: 'foo'}
 throttled (fn, ms) => function
 /*
 @fn The function to throttle.
-@ms How much time (in milliseconds) must elapse before calling this function again.
+@ms How many milliseconds must elapse before this function can run again.
 @return The throttled function.
 */
 ```

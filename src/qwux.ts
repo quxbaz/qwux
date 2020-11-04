@@ -366,7 +366,7 @@ const sortByKey = <T>(array:Obj<T>[], key:Key): typeof array => {
 /* SECTION: Timing */
 
 /**
- * Limits how soon a function may be called relative to its previous call.
+ * How many milliseconds must elapse before this function can run again.
  *
  * @param {function} fn
  * @param {number} ms
