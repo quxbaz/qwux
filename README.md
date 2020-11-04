@@ -16,10 +16,10 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
    - [`noop`](#noop) [`identity`](#identity) [`compose`](#compose) [`repeat`](#repeat)
 - [Math](#math)
    - [`constrain`](#constrain)
-- [Timing](#timing)
-   - [`throttled`](#throttled)
 - [Sorting](#sorting)
    - [`sortByKey`](#sortbykey)
+- [Timing](#timing)
+   - [`throttled`](#throttled)
 - [Misc](#misc)
    - [`uniqId`](#uniqId)
 
@@ -410,21 +410,6 @@ constrain(0, [10, 20]) => 10
 constrain(100, [10, 20]) => 20
 ```
 
-#### `throttled`
-* Limits how soon a function may be called relative to its previous call.
-```js
-throttled (fn, ms) => function
-/*
-@fn The function to throttle.
-@ms How much time (in milliseconds) must elapse before calling this function again.
-@return The throttled function.
-*/
-```
-```js
-// Example
-onChange = throttled(onChange, 1000)  // Process change events at most once per second.
-```
-
 ## Sorting
 
 #### `sortByKey`
@@ -440,4 +425,21 @@ sortByKey (array, key) => array
 ```js
 // Example
 sortByKey([{name: 'foo'}, {name: 'bar'}], 'name') => [{name: 'bar', name: 'foo'}]
+```
+
+## Timing
+
+#### `throttled`
+* Limits how soon a function may be called relative to its previous call.
+```js
+throttled (fn, ms) => function
+/*
+@fn The function to throttle.
+@ms How much time (in milliseconds) must elapse before calling this function again.
+@return The throttled function.
+*/
+```
+```js
+// Example
+onChange = throttled(onChange, 1000)  // Process change events at most once per second.
 ```

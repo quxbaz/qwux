@@ -18,11 +18,11 @@ import {
   // Math
   constrain,
 
-  // Timing
-  throttled,
-
   // Sorting
   sortByKey,
+
+  // Timing
+  throttled,
 
   // Misc
   uniqId,
@@ -397,20 +397,6 @@ describe("constrain()", () => {
 })
 
 
-/* SECTION: Timing */
-
-describe("throttled", () => {
-  test("Calls a function twice in succession, but only executes it once.", () => {
-    let spy = 0
-    let fn = () => spy++
-    let fn2 = throttled(fn, 100)
-    fn2()
-    fn2()
-    expect(spy).toEqual(1)
-  })
-})
-
-
 /* SECTION: Sorting */
 
 describe("sortBykey", () => {
@@ -431,6 +417,20 @@ describe("sortBykey", () => {
     const list = [{a:1}, {b:2}]
     expect(sortByKey(list, 'none')).toEqual([{a:1}, {b:2}])
     expect(sortByKey(list, 'none')).not.toBe(list)
+  })
+})
+
+
+/* SECTION: Timing */
+
+describe("throttled", () => {
+  test("Calls a function twice in succession, but only executes it once.", () => {
+    let spy = 0
+    let fn = () => spy++
+    let fn2 = throttled(fn, 100)
+    fn2()
+    fn2()
+    expect(spy).toEqual(1)
   })
 })
 

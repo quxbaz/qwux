@@ -338,6 +338,31 @@ const constrain = (value:number, [min, max]:[number, number]): number => (
 )
 
 
+/* SECTION: Sorting */
+
+/**
+ * Sorts an array of objects by key and returns the new array.
+ *
+ * @param {array} array
+ * @param {string} key
+ *
+ * @return {array}
+ */
+const sortByKey = <T>(array:Obj<T>[], key:Key): typeof array => {
+  if (array.length === 0)
+    return []
+  else if (array.length === 1)
+    return [...array]
+  return [...array].sort((a:Obj<T>, b:Obj<T>) => {
+    if (a[key] < b[key])
+      return -1
+    else if (a[key] > b[key])
+      return 1
+    return 0
+  })
+}
+
+
 /* SECTION: Timing */
 
 /**
@@ -361,31 +386,6 @@ const throttled = (fn:Function, ms:number) => {
     }
     return undefined
   }
-}
-
-
-/* SECTION: Sorting */
-
-/**
- * Sorts an array of objects by key and returns the new array.
- *
- * @param {array} array
- * @param {string} key
- *
- * @return {array}
- */
-const sortByKey = <T>(array:Obj<T>[], key:Key): typeof array => {
-  if (array.length === 0)
-    return []
-  else if (array.length === 1)
-    return [...array]
-  return [...array].sort((a:Obj<T>, b:Obj<T>) => {
-    if (a[key] < b[key])
-      return -1
-    else if (a[key] > b[key])
-      return 1
-    return 0
-  })
 }
 
 
@@ -422,11 +422,11 @@ export {
   // Math
   constrain,
 
-  // Timing
-  throttled,
-
   // Sorting
   sortByKey,
+
+  // Timing
+  throttled,
 
   // Misc
   uniqId,
