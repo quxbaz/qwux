@@ -9,7 +9,7 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
 - [Arrays](#arrays)
    - [`after`](#after) [`before`](#before) [`last`](#last) [`without`](#without) [`uniq`](#uniq) [`insert`](#insert) [`move`](#move) [`divide`](#divide) [`getRandomItem`](#getrandomitem)
 - [Objects](#objects)
-   - [`isTrueObject`](#istrueobject) [`values`](#values) [`each`](#each) [`picks`](#picks) [`omit`](#omit) [`objectMap`](#objectmap) [`toArray`](#toarray)
+   - [`isTrueObject`](#istrueobject) [`values`](#values) [`each`](#each) [`pick`](#pick) [`omit`](#omit) [`objectMap`](#objectmap) [`toArray`](#toarray)
 - [Strings](#strings)
    - [`capitalize`](#capitalize)
 - [Values](#values)
