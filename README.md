@@ -165,7 +165,7 @@ getRandomItem([a, b, 4]) => 4
 
 #### `isTrueObject`
 * Determines if a value is a true object.
-* Only `{}` or `{v: k, ...etc}` values are considered true objects.
+* Only `{}` or `{v: k, ...}` values are considered true objects.
 ```js
 isTrueObject (value) => boolean
 /*
