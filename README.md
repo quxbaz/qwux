@@ -119,7 +119,7 @@ insert([a, c], 1, b) => [a, b, c]
 #### `move`
 * Moves an item in an array to another position and returns the new array.
 ```js
-const move = (array, from, to) => array
+move (array, from, to) => array
 /*
 @array The array to act on.
 @from The source position.
@@ -321,7 +321,7 @@ isEmpty(function () {}) => true
 #### `isNil`
 * Returns true if a value is undefined or null.
 ```js
-isNil = (value) => boolean
+isNil (value) => boolean
 /*
 @value Any value.
 @return True if the value is undefined or null.
@@ -358,7 +358,7 @@ identity(myVar) => myVar
 * Functions are called from right to left.
 * It takes the form `f(g(h(x)))` and allows you to use the prettier `(f∘g∘h)(x)` form.
 ```js
-const compose = (...fns) => (value) => result
+compose = (...fns) => (value) => result
 /*
 @fns Called from right to left.
 @value The value to call against.
