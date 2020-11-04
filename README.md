@@ -460,3 +460,6 @@ uniqId() => '0'
 uniqId() => '1'
 uniqId() => '2'
 ```
+
+## License
+[MIT](https://www.mit.edu/~amini/LICENSE.md)
