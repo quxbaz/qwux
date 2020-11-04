@@ -374,14 +374,11 @@ const sortByKey = <T>(array:Obj<T>[], key:Key): typeof array => {
  * @return {function}
  */
 const throttled = (fn:Function, ms:number) => {
-  let lastCalled = 0
+  let prevTime = 0
   return (...args:unknown[]) => {
-    const time = typeof performance !== 'undefined'
-          ? performance.now()
-          : Date.now()
-    if (time - lastCalled > ms) {
+    if (Date.now() - prevTime > ms) {
       const ret = fn(...args)
-      lastCalled = time
+      prevTime = Date.now()
       return ret
     }
     return undefined
