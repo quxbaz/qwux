@@ -443,3 +443,20 @@ throttled (fn, ms) => function
 // Example
 onChange = throttled(onChange, 1000)  // Process change events at most once per second.
 ```
+
+## Misc
+
+#### `uniqid`
+* Generates a unique id.
+```js
+uniqId () => id
+/*
+@return A unique string id
+*/
+```
+```js
+// Example
+uniqId() => '0'
+uniqId() => '1'
+uniqId() => '2'
+```
