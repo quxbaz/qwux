@@ -1,5 +1,4 @@
-[![npm version](https://badge.fury.io/js/qwux.svg)](https://badge.fury.io/js/qwux)
-[![npm version](https://img.shields.io/npm/v/qwux.svg?style=flat-square)](https://www.npmjs.com/package/qwux)
+[![build status](https://img.shields.io/travis/quxbaz/qwux/master.svg)](https://travis-ci.org/quxbaz/qwux)
 [![npm version](https://img.shields.io/npm/v/qwux.svg)](https://www.npmjs.com/package/qwux)
 
 # qwux
