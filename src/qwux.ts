@@ -141,13 +141,7 @@ const isTrueObject = (value:unknown): boolean => (
  *
  * @return {array}
  */
-const values = <T>(obj:Obj<T>): T[] =>
-  Object.values(obj)
-)
-
-interface each {
-  <T>(obj:Obj<T>, fn:(value:T, key:string) => any): unknown[]
-}
+const values = <T>(obj:Obj<T>): T[] => Object.values(obj)
 
 /**
  * Iterates over an object.
@@ -157,14 +151,14 @@ interface each {
  *
  * @return {array}
  */
-const each:each = (obj, fn) => {
-  const results = []
-  for (let key in obj) {
-    if (obj.hasOwnProperty(key))
-      results.push(fn(obj[key], key))
-  }
-  return results
+
+interface each {
+  <T>(obj:Obj<T>, fn:(value:T, key:string) => any): unknown[]
 }
+
+const each:each = (obj, fn) => (
+  Object.entries(obj).map(([k, v]) => fn(v, k))
+)
 
 /**
  * Picks props from an objecta and returns a new object.
