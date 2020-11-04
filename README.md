@@ -1,5 +1,6 @@
 [![npm version](https://badge.fury.io/js/qwux.svg)](https://badge.fury.io/js/qwux)
 [![npm version](https://img.shields.io/npm/v/qwux.svg?style=flat-square)](https://www.npmjs.com/package/qwux)
+[![npm version](https://img.shields.io/npm/v/qwux.svg)](https://www.npmjs.com/package/qwux)
 
 # qwux
 Minimal set of utility functions written in TypeScript. Mostly for personal use. I only include the functions I actually need here. Does not duplicate native javascript functions.
