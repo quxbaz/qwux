@@ -341,7 +341,7 @@ const constrain = (value:number, [min, max]:[number, number]): number => (
 /* SECTION: Timing */
 
 /**
- * Limits a function to be called at most N times/second.
+ * Limits how soon a function may be called relative to its previous call.
  *
  * @param {function} fn
  * @param {number} ms

@@ -411,7 +411,7 @@ constrain(100, [10, 20]) => 20
 ```
 
 #### `throttled`
-* Limits a function to be called at most N times/second.
+* Limits how soon a function may be called relative to its previous call.
 ```js
 throttled (fn, ms) => function
 /*
