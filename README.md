@@ -455,7 +455,7 @@ uniqId () => id
 */
 ```
 ```js
-// Example
+// Examples
 uniqId() => '0'
 uniqId() => '1'
 uniqId() => '2'
