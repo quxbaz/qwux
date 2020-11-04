@@ -28,6 +28,7 @@
     "type-check-tsc": "tsc --watch --noEmit",
     "type-check-wds": "webpack-dev-server --env=development --port 5000",
     "test": "jest --watch",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   }
 }
