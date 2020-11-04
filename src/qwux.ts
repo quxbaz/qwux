@@ -7,7 +7,7 @@ type Obj<T> = Record<Key, T>;
 /* SECTION: Arrays */
 
 /**
- * Gets the item afterr an item in an array.
+ * Gets the item after an item in an array.
  *
  * @param {array} array
  * @param {value} item
