@@ -27,7 +27,7 @@
     "type-check": "npm run type-check-tsc",
     "type-check-tsc": "tsc --watch --noEmit",
     "type-check-wds": "webpack-dev-server --env=development --port 5000",
-    "test": "jest --watch",
+    "test": "jest --watchAll --coverage --no-cache",
     "build": "tsc",
     "prepublishOnly": "npm run build",
     "postpublish": "rm -r lib"
