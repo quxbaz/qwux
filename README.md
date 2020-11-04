@@ -1,5 +1,5 @@
 # qwux
-[![npm package][npm-badge]][npm]
+https://badge.fury.io/js/qwux.svg
 
 Minimal set of utility functions written in TypeScript. Mostly for personal use. I only include the functions I actually need here. Does not duplicate native javascript functions.
 
