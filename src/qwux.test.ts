@@ -135,6 +135,8 @@ describe("move", () => {
     expect(move(['a', 'b', 'c'], 2, 1)).toEqual(['a', 'c', 'b'])
     expect(move(['a', 'b', 'c'], 0, 2)).toEqual(['b', 'c', 'a'])
     expect(move(['a', 'b', 'c'], 2, 0)).toEqual(['c', 'a', 'b'])
+    expect(move(['a', 'b', 'c'], 0, 0)).toEqual(['a', 'b', 'c'])
+    expect(move(['a', 'b', 'c'], 1, 1)).toEqual(['a', 'b', 'c'])
   })
 })
 
