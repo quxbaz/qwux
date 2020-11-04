@@ -29,6 +29,7 @@
     "type-check-wds": "webpack-dev-server --env=development --port 5000",
     "test": "jest --watch",
     "build": "tsc",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "postpublish": "rm -r lib"
   }
 }
