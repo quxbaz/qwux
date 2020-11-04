@@ -7,6 +7,5 @@ package-lock.json
 webpack.config.js
 tsconfig.json
 jest.config.js
-src/
 test/
 /Todo.org
