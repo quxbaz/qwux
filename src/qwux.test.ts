@@ -124,6 +124,7 @@ describe("insert", () => {
     expect(insert([0, 4], 1, 1, 2, 3)).toEqual([0, 1, 2, 3, 4])
     expect(insert([] as number[], 4, 1, 2)).toEqual([1, 2])
     expect(insert([0], 4, 1, 2)).toEqual([0, 1, 2])
+    expect(false).toBe(true)
   })
 })
 
