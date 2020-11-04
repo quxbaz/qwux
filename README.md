@@ -1,4 +1,4 @@
-![Travis (.com)](https://img.shields.io/travis/com/quxbaz/qwux)
+[![Travis (.com)](https://img.shields.io/travis/com/quxbaz/qwux)](https://travis-ci.com/github/quxbaz/qwux)
 [![npm version](https://img.shields.io/npm/v/qwux.svg)](https://www.npmjs.com/package/qwux)
 
 # qwux
