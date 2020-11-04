@@ -141,8 +141,8 @@ const isTrueObject = (value:unknown): boolean => (
  *
  * @return {array}
  */
-const values = <T>(obj:Obj<T>): T[] => (
-  Object.keys(obj).map(k => obj[k])
+const values = <T>(obj:Obj<T>): T[] =>
+  Object.values(obj)
 )
 
 interface each {
