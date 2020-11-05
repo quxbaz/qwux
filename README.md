@@ -1,5 +1,6 @@
 [![Travis (.com)](https://img.shields.io/travis/com/quxbaz/qwux)](https://travis-ci.com/github/quxbaz/qwux)
 [![npm version](https://img.shields.io/npm/v/qwux.svg)](https://www.npmjs.com/package/qwux)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://www.mit.edu/~amini/LICENSE.md)
 
 # qwux
 Minimal set of utility functions written in TypeScript. Mostly for personal use. I only include the functions I actually need here. Does not duplicate native javascript functions.
