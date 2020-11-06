@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.15",
+    "codecov": "^3.8.1",
     "jest": "^26.6.1",
     "ts-jest": "^26.4.3",
     "ts-loader": "^8.0.7",
@@ -28,7 +29,7 @@
     "type-check-tsc": "tsc --watch --noEmit",
     "type-check-wds": "webpack-dev-server --env=development --port 5000",
     "test": "jest --watchAll --coverage --no-cache",
-    "test-ci": "jest --no-cache",
+    "test-ci": "jest --coverage --no-cache",
     "build": "tsc",
     "prepublishOnly": "npm run build",
     "postpublish": "rm -r lib"
