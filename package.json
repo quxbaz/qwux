@@ -27,6 +27,6 @@
     "test-ci": "jest --coverage --no-cache",
     "build": "tsc",
     "prepublishOnly": "npm run build",
-    "postpublish": "rm -r lib"
+    "postpublish": "rm -r lib/"
   }
 }
