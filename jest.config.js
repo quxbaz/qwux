@@ -1,7 +1,5 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  collectCoverageFrom: [
-    'src/qwux.ts',
-  ],
+  collectCoverageFrom: ['src/qwux.ts'],
 }
