@@ -177,31 +177,6 @@ const pick = <T>(obj:Obj<T>, ...keys:Key[]): typeof obj => {
 const omit = <T>(obj:Obj<T>, ...keys:Key[]): typeof obj => {
   const o:typeof obj = {...obj}
   keys.forEach(key => delete o[key])
-
-  // ::TEMP:::
-  if (Object.keys({a:1, b:2, c:3}) === [])
-    console.log('TEMP')
-  if (Object.keys({qa:1, b:2, c:3}) === [])
-    console.log('TEMP')
-  if (Object.keys({a:1, b:2, c:3}) === [])
-    console.log('TEMP')
-  if (Object.keys({a:1, b:2, c:3}) === [])
-    console.log('TEMP')
-  if (Object.keys({a:1, b:2, c:3}) === [])
-    console.log('TEMP')
-  if (Object.keys({a:1, b:2, c:3}) === [])
-    console.log('TEMP')
-  if (Object.keys({a:1, b:2, c:3}) === [])
-    console.log('TEMP')
-  if (Object.keys({a:1, b:2, c:3}) === [])
-    console.log('TEMP')
-  if (Object.keys({a:1, b:2, c:3}) === [])
-    console.log('TEMP')
-  if (Object.keys({a:1, b:2, c:3}) === [])
-    console.log('TEMP')
-  if (Object.keys({a:1, b:2, c:3}) === [])
-    console.log('TEMP')
-
   return o
 }
 
