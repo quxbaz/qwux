@@ -14,7 +14,7 @@ type Obj<T> = Record<Key, T>;
  *
  * @return {value}
  */
-const after = <T>(array:T[], item:T): T | undefined => {
+const after = <T>(array: T[], item: T): T | undefined => {
   const index = array.indexOf(item)
   if (index === -1)
     return undefined
@@ -29,7 +29,7 @@ const after = <T>(array:T[], item:T): T | undefined => {
  *
  * @return {value}
  */
-const before = <T>(array:T[], item:T): T | undefined => {
+const before = <T>(array: T[], item: T): T | undefined => {
   const index = array.indexOf(item)
   if (index === -1)
     return undefined
@@ -41,7 +41,7 @@ const before = <T>(array:T[], item:T): T | undefined => {
  * @param {array} array
  * @return {value}
  */
-const last = <T>(array:T[]): T | undefined => array[array.length - 1]
+const last = <T>(array: T[]): T | undefined => array[array.length - 1]
 
 /**
  * Returns an array with items filtered out.
@@ -51,7 +51,7 @@ const last = <T>(array:T[]): T | undefined => array[array.length - 1]
  *
  * @return {array}
  */
-const without = <T>(array:T[], ...items:T[]): T[] => (
+const without = <T>(array: T[], ...items: T[]): T[] => (
   array.filter(item => !items.includes(item))
 )
 
@@ -62,7 +62,7 @@ const without = <T>(array:T[], ...items:T[]): T[] => (
  *
  * @return {array}
  */
-const uniq = <T>(array:T[]): T[] => Array.from(new Set(array))
+const uniq = <T>(array: T[]): T[] => Array.from(new Set(array))
 
 /**
  * Inserts an item into the array at a position. If the position
@@ -74,7 +74,7 @@ const uniq = <T>(array:T[]): T[] => Array.from(new Set(array))
  *
  * @return {array}
  */
-const insert = <T>(array:T[], i:number, ...items:T[]): T[] => ([
+const insert = <T>(array: T[], i: number, ...items: T[]): T[] => ([
   ...array.slice(0, i),
   ...items,
   ...array.slice(i),
@@ -90,7 +90,7 @@ const insert = <T>(array:T[], i:number, ...items:T[]): T[] => ([
  *
  * @return {array}
  */
-const move = <T>(array:T[], from:number, to:number): T[] => {
+const move = <T>(array: T[], from: number, to: number): T[] => {
   const copy = [...array]
   if (from === to)
     return copy
@@ -107,7 +107,7 @@ const move = <T>(array:T[], from:number, to:number): T[] => {
  *
  * @return {array} [leftArray, rightArray]
  */
-const divide = <T>(array:T[], i:number): [T[], T[]] => (
+const divide = <T>(array: T[], i: number): [T[], T[]] => (
   [array.slice(0, i), array.slice(i)]
 )
 
@@ -119,7 +119,7 @@ const divide = <T>(array:T[], i:number): [T[], T[]] => (
  *
  * @param {value} value
  */
-const isTrueObject = (value:unknown): boolean => (
+const isTrueObject = (value: unknown): boolean => (
   Object.prototype.toString.call(value) === '[object Object]'
 )
 
@@ -130,7 +130,7 @@ const isTrueObject = (value:unknown): boolean => (
  *
  * @return {array}
  */
-const values = <T>(obj:Obj<T>): T[] => Object.values(obj)
+const values = <T>(obj: Obj<T>): T[] => Object.values(obj)
 
 /**
  * Iterates over an object.
@@ -142,10 +142,10 @@ const values = <T>(obj:Obj<T>): T[] => Object.values(obj)
  */
 
 interface each {
-  <T>(obj:Obj<T>, fn:(value:T, key:string) => any): unknown[]
+  <T>(obj: Obj<T>, fn: (value: T, key: string) => any): unknown[]
 }
 
-const each:each = (obj, fn) => (
+const each: each = (obj, fn) => (
   Object.entries(obj).map(([k, v]) => fn(v, k))
 )
 
@@ -157,8 +157,8 @@ const each:each = (obj, fn) => (
  *
  * @return {object}
  */
-const pick = <T>(obj:Obj<T>, ...keys:Key[]): typeof obj => {
-  const o:typeof obj = {}
+const pick = <T>(obj: Obj<T>, ...keys: Key[]): typeof obj => {
+  const o: typeof obj = {}
   keys.forEach((k) => {
     if (obj.hasOwnProperty(k))
       o[k] = obj[k]
@@ -174,8 +174,8 @@ const pick = <T>(obj:Obj<T>, ...keys:Key[]): typeof obj => {
  *
  * @return {object}
  */
-const omit = <T>(obj:Obj<T>, ...keys:Key[]): typeof obj => {
-  const o:typeof obj = {...obj}
+const omit = <T>(obj: Obj<T>, ...keys: Key[]): typeof obj => {
+  const o: typeof obj = {...obj}
   keys.forEach(key => delete o[key])
   return o
 }
@@ -189,8 +189,8 @@ const omit = <T>(obj:Obj<T>, ...keys:Key[]): typeof obj => {
  *
  * @return {object}
  */
-const objectMap = <T, R>(obj:Obj<T>, fn:(value:T, key:Key) => R): Obj<R> => {
-  const o:Obj<R> = {}
+const objectMap = <T, R>(obj: Obj<T>, fn: (value: T, key: Key) => R): Obj<R> => {
+  const o: Obj<R> = {}
   each(obj, (v, k) => {
     o[k] = (fn(v, k))
   })
@@ -205,7 +205,7 @@ const objectMap = <T, R>(obj:Obj<T>, fn:(value:T, key:Key) => R): Obj<R> => {
  *
  * @return {array}
  */
-const toArray =<T>(obj:Obj<T>): Obj<T>[] => (
+const toArray =<T>(obj: Obj<T>): Obj<T>[] => (
   Object.keys(obj).map(key => ({
     [key]: obj[key],
   }))
@@ -221,7 +221,7 @@ const toArray =<T>(obj:Obj<T>): Obj<T>[] => (
  *
  * @return {string}
  */
-const capitalize = (s:string): string => (
+const capitalize = (s: string): string => (
   s.substring(0, 1).toUpperCase() + s.substring(1)
 )
 
@@ -236,7 +236,7 @@ const capitalize = (s:string): string => (
  *
  * @return {boolean}
  */
-const isEmpty = (value:unknown): boolean => {
+const isEmpty = (value: unknown): boolean => {
   if (typeof value === 'string' || Array.isArray(value))
     return value.length === 0
   else if (value == null)
@@ -254,7 +254,7 @@ const isEmpty = (value:unknown): boolean => {
  *
  * @return {boolean}
  */
-const isNil = (value:unknown): boolean => value === undefined || value === null
+const isNil = (value: unknown): boolean => value === undefined || value === null
 
 
 /* SECTION: Functions */
@@ -271,7 +271,7 @@ const noop = () => {}
  *
  * @return {any} value
  */
-const identity = <T>(value:T) => value
+const identity = <T>(value: T) => value
 
 /**
  * Composes multiple functions against a value.
@@ -281,7 +281,7 @@ const identity = <T>(value:T) => value
  *
  * @return {any} The result of the function composition.
  */
-const compose = (...fns:Function[]) => (value:unknown): unknown => (
+const compose = (...fns: Function[]) => (value: unknown): unknown => (
   fns.reduceRight((acc, fn) => fn(acc), value)
 )
 
@@ -293,7 +293,7 @@ const compose = (...fns:Function[]) => (value:unknown): unknown => (
  *
  * @return {array} The result of the callbacks
  */
-const repeat = (n:number, value:unknown): unknown[] => {
+const repeat = (n: number, value: unknown): unknown[] => {
   const results = []
   if (typeof value === 'function') {
     for (let i=0; i < n; i++)
@@ -316,7 +316,7 @@ const repeat = (n:number, value:unknown): unknown[] => {
  *
  * @return constrained value
  */
-const constrain = (value:number, [min, max]:[number, number]): number => (
+const constrain = (value: number, [min, max]: [number, number]): number => (
   Math.min(Math.max(value, min), max)
 )
 
@@ -331,12 +331,12 @@ const constrain = (value:number, [min, max]:[number, number]): number => (
  *
  * @return {array}
  */
-const sortByKey = <T>(array:Obj<T>[], key:Key): typeof array => {
+const sortByKey = <T>(array: Obj<T>[], key: Key): typeof array => {
   if (array.length === 0)
     return []
   else if (array.length === 1)
     return [...array]
-  return [...array].sort((a:Obj<T>, b:Obj<T>) => {
+  return [...array].sort((a: Obj<T>, b: Obj<T>) => {
     if (a[key] < b[key])
       return -1
     else if (a[key] > b[key])
@@ -356,9 +356,9 @@ const sortByKey = <T>(array:Obj<T>[], key:Key): typeof array => {
  *
  * @return {function}
  */
-const throttled = (fn:Function, ms:number) => {
+const throttled = (fn: Function, ms: number) => {
   let prevTime = 0
-  return (...args:unknown[]) => {
+  return (...args: unknown[]) => {
     if (Date.now() - prevTime > ms) {
       const ret = fn(...args)
       prevTime = Date.now()
