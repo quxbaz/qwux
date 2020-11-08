@@ -3,6 +3,8 @@
 [![npm version](https://img.shields.io/npm/v/qwux.svg)](https://www.npmjs.com/package/qwux)
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://www.mit.edu/~amini/LICENSE.md)
 
+test
+
 # qwux
 Minimal set of utility functions written in TypeScript. Mostly for personal use. I only include the functions I actually need here. Tried to not duplicate native javascript functions.
 
