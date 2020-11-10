@@ -155,7 +155,7 @@ divide([a, b, c], 1) => [[a], [b, c]]
 #### `zip`
 * Zips respective indices of multiple arrays into a single array.
 ```js
-zip (...arrays): ...arrays
+zip (...arrays) => ...arrays
 /*
 @arrays The arrays to zip together.
 @return The zipped arrays.
