@@ -48,7 +48,7 @@ after([a, b, c], b) -> c
 #### `before`
 * Gets the item before an item in an array.
 ```js
-before (array, item) -> item
+before :: (array, item) -> item
 /*
 @array The array to act on.
 @item An item in the array.
@@ -63,7 +63,7 @@ before([a, b, c], b) -> a
 #### `last`
 * Gets the last item in an array.
 ```js
-last (array) -> item
+last :: (array) -> item
 /*
 @array The array to act on.
 @return The last item.
@@ -77,7 +77,7 @@ last([a, b, c]) -> c
 #### `without`
 * Returns an array with items filtered out.
 ```js
-without (array, ...items) -> array
+without :: (array, ...items) -> array
 /*
 @array The array to act on.
 @items The items to filter out.
@@ -93,7 +93,7 @@ without([a, b, c], b, c) -> [a]
 #### `uniq`
 * Retains only unique values from an array.
 ```js
-uniq (array) -> array
+uniq :: (array) -> array
 /*
 @array The array to act on.
 @return The array with unique values only.
@@ -108,7 +108,7 @@ uniq([a, a, b, b, c, c]) -> [a, b, c]
 #### `insert`
 * Inserts an item into the array at a position. If the position exceeds the length of the array, append the item.
 ```js
-insert (array, i, ...items) -> array
+insert :: (array, i, ...items) -> array
 /*
 @array The array to act on.
 @i The position to insert the item(s).
@@ -124,7 +124,7 @@ insert([a, c], 1, b) -> [a, b, c]
 #### `move`
 * Moves an item in an array to another position and returns the new array.
 ```js
-move (array, from, to) -> array
+move :: (array, from, to) -> array
 /*
 @array The array to act on.
 @from The source position.
@@ -140,7 +140,7 @@ move([a, b, c], 0, 2) -> [b, c, a]
 #### `divide`
 * Divides an array into two parts at a position.
 ```js
-divide (array, i) -> [array, array]
+divide :: (array, i) -> [array, array]
 /*
 @array The array to act on.
 @i The position to divide the array.
@@ -155,7 +155,7 @@ divide([a, b, c], 1) -> [[a], [b, c]]
 #### `zip`
 * Zips respective indices of multiple arrays into a single array.
 ```js
-zip (...arrays) -> ...arrays
+zip :: (...arrays) -> ...arrays
 /*
 @arrays The arrays to zip together.
 @return The zipped arrays.
@@ -174,7 +174,7 @@ zip([a, b], [1]) -> [[a, 1], [b, undefined]]
 * Determines if a value is a true object.
 * Only `{}` or `{v: k, ...}` values are considered true objects.
 ```js
-isTrueObject (value) -> boolean
+isTrueObject :: (value) -> boolean
 /*
 @value Any value.
 @return True if the object is a true object.
@@ -194,7 +194,7 @@ isTrueObject(42) -> false
 #### `values`
 * Gets the values of an object.
 ```js
-values (obj) -> array
+values :: (obj) -> array
 /*
 @obj The object to act on.
 @return The values of the object.
@@ -208,7 +208,7 @@ values({a:1, b:2} -> [1, 2]
 #### `each`
 * Iterates over an object.
 ```js
-each (obj, fn) -> results
+each :: (obj, fn) -> results
 /*
 @obj The object to iterate over.
 @fn (value, key) Called over each member of the object.
@@ -224,7 +224,7 @@ each({a:1, b:2, c:3}, (v, k) => {k: v}) -> [{a:1}, {b:2}, {c:3}]
 #### `pick`
 * Picks props from an object and returns a new object.
 ```js
-pick (obj, ...keys) -> object
+pick :: (obj, ...keys) -> object
 /*
 @obj The object to act on.
 @keys The keys to pick from the object.
@@ -240,7 +240,7 @@ pick({a:1, b:2, c:3}, 'a', 'b') -> {a:1, b:2}
 #### `omit`
 * Omits props from an object and returns a new object.
 ```js
-omit (obj, ...keys) -> object
+omit :: (obj, ...keys) -> object
 /*
 @obj The object to act on.
 @keys The keys to omit from @obj.
@@ -256,7 +256,7 @@ omit({a:1, b:2, c:3}, 'a', 'b') -> {c:3}
 #### `objectMap`
 * Maps each value in an object and returns a new object. Similar to array map, but for objects.
 ```js
-objectMap (obj, fn) -> object
+objectMap :: (obj, fn) -> object
 /*
 @obj The object to map over.
 @fn (value, key) The function to call over each property of object. Its return
@@ -272,7 +272,7 @@ objectMap({a:1, b:2}, (v, k) => v * 2) -> {a:2, b:4}
 #### `toArray`
 * Converts an object to an array of the form `[{key: value}, ...]`.
 ```js
-toArray (obj) -> array
+toArray :: (obj) -> array
 /*
 @obj The object to convert.
 @return An array of {key: value} objects.
@@ -288,7 +288,7 @@ toArray({a:1, b:2}) -> [{a:1}, {b:2}]
 #### `capitalize`
 * Capitalizes the first letter of a string.
 ```js
-capitalize (str) -> string
+capitalize :: (str) -> string
 /*
 @str The string to capitalize.
 @return The capitalized string.
@@ -307,7 +307,7 @@ capitalize(' foo') -> ' foo'
 * Checks if a value is empty.
 * Values are considered empty if they have zero length or are non-enumerable.
 ```js
-isEmpty (value) -> boolean
+isEmpty :: (value) -> boolean
 /*
 @value Any value of any type.
 @return True if the value is empty, otherwise false.
@@ -328,7 +328,7 @@ isEmpty(function () {}) -> true
 #### `isNil`
 * Returns true if a value is undefined or null.
 ```js
-isNil (value) -> boolean
+isNil :: (value) -> boolean
 /*
 @value Any value.
 @return True if the value is undefined or null.
@@ -346,17 +346,13 @@ isNil([]) -> false
 #### `noop`
 * Returns `undefined`.
 ```js
-noop () -> undefined
+noop :: () -> undefined
 ```
 
 #### `identity`
 * Returns the given value.
 ```js
-identity (value) -> value
-```
-```js
-// Example
-identity(myVar) -> myVar
+identity :: (value) -> value
 ```
 
 #### `compose`
@@ -365,7 +361,7 @@ identity(myVar) -> myVar
 * Functions are called from right to left.
 * It takes the form `f(g(h(x)))` and allows you to use the prettier `(f∘g∘h)(x)` form.
 ```js
-compose = (...fns) => (value) -> result
+compose :: (...fns) => (value) -> result
 /*
 @fns Called from right to left.
 @value The value to call against.
@@ -384,7 +380,7 @@ compose(
 #### `repeat`
 * Repeats a value or calls a function `n` times.
 ```js
-repeat (n, value) -> results
+repeat :: (n, value) -> results
 /*
 @n The number of times to repeat the value or function.
 @value A value or function to repeat.
@@ -402,7 +398,7 @@ repeat(5, () => a) -> [a, a, a, a, a]
 #### `constrain`
 * Constrains a value between a `min` and `max` value.
 ```js
-constrain (value, [min, max]) -> number
+constrain :: (value, [min, max]) -> number
 /*
 @value The value to constrain.
 @min The lower bound.
@@ -422,7 +418,7 @@ constrain(100, [10, 20]) -> 20
 #### `sortByKey`
 * Sorts an array of objects by key and returns the new array.
 ```js
-sortByKey (array, key) -> array
+sortByKey :: (array, key) -> array
 /*
 @array The array of objects to sort.
 @key The key to sort by.
@@ -439,7 +435,7 @@ sortByKey([{name: 'foo'}, {name: 'bar'}], 'name') -> [{name: 'bar', name: 'foo'}
 #### `throttled`
 * Limits how soon a function may be called relative to its previous call.
 ```js
-throttled (fn, ms) -> function
+throttled :: (fn, ms) -> function
 /*
 @fn The function to throttle.
 @ms How many milliseconds must elapse before this function can run again.
@@ -456,7 +452,7 @@ onChange = throttled(onChange, 1000)  // Process change events at most once per 
 #### `uniqid`
 * Generates a unique id.
 ```js
-uniqId () -> id
+uniqId :: () -> id
 /*
 @return A unique string id
 */
