@@ -1,7 +1,7 @@
 import {
   // Arrays
   after, before, last, without, uniq, insert, move,
-  divide,
+  divide, zip,
 
   // Objects
   isTrueObject, values, each, pick, omit, objectMap, toArray,
@@ -150,6 +150,26 @@ describe("divide", () => {
     expect(divide([1, 2, 3], 5)).toEqual([[1, 2, 3], []])
   })
 })
+
+describe("zip", () => {
+  test("Zips respective indices of multiple arrays into a single array.", () => {
+    expect(zip([], [])).toEqual([])
+    expect(zip([1], ['a'])).toEqual([[1, 'a']])
+    expect(zip([1, 2], ['a'])).toEqual([[1, 'a'], [2, undefined]])
+    expect(zip([1], ['a', 'b'])).toEqual([[1, 'a'], [undefined, 'b']])
+    expect(zip([1, 2], [])).toEqual([[1, undefined], [2, undefined]])
+    expect(zip([], ['a', 'b'])).toEqual([[undefined, 'a'], [undefined, 'b']])
+    expect(zip([1, 2], ['a', 'b'])).toEqual([[1, 'a'], [2, 'b']])
+    expect(zip([1, 2, 3], ['a', 'b', 'c'])).toEqual([[1, 'a'], [2, 'b'], [3, 'c']])
+    expect(zip([1], ['a'], ['#'])).toEqual([[1, 'a', '#']])
+    expect(zip([1, 2], ['a', 'b'], ['#', '##'])).toEqual([[1, 'a', '#'], [2, 'b', '##']])
+    expect(zip([1, 2, 3], ['a', 'b', 'c'], ['#', '##', '###'])).toEqual([[1, 'a', '#'], [2, 'b', '##'], [3, 'c', '###']])
+    expect(zip([1], ['a'], ['#', '##'])).toEqual([[1, 'a', '#'], [undefined, undefined, '##']])
+    expect(zip([1], ['a'], ['#', '##', '###'])).toEqual([[1, 'a', '#'], [undefined, undefined, '##'], [undefined, undefined, '###']])
+    expect(zip([1], ['a', 'b'], ['#', '##', '###'])).toEqual([[1, 'a', '#'], [undefined, 'b', '##'], [undefined, undefined, '###']])
+  })
+})
+
 
 /* SECTION: Objects */
 
@@ -343,6 +363,10 @@ describe("repeat", () => {
     const fn = () => i++
     repeat(5, fn)
     expect(i).toEqual(5)
+  })
+  test("Calls a function that returns a string type.", () => {
+    const fn = () => 'x'
+    expect(repeat(3, fn)).toEqual(['x', 'x', 'x'])
   })
   test("Calls the function with the current iteration.", () => {
     let i = 0
