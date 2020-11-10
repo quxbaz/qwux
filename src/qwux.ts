@@ -111,6 +111,23 @@ const divide = <T>(array: T[], i: number): [T[], T[]] => (
   [array.slice(0, i), array.slice(i)]
 )
 
+/**
+ * Zips respective indices of multiple arrays into a single array.
+ *
+ * @param {...arrays} arrays
+ *
+ * @return {array}
+ */
+// const zip =<T> (...arrays: T[][]): T[][] => {
+//   const maxLength = Math.max(...arrays.map(arr => arr.length))
+//   const zippedArray: T[][] = repeat(maxLength, new Array(maxLength))
+//   for (let i=0; i < maxLength; i++) {
+//     for (let n=0; n < arrays.length; n++) {
+//       zippedArray[n].push(arrays[n][i])
+//     }
+//   }
+//   return zippedArray
+// }
 
 /* SECTION: Objects */
 
@@ -150,7 +167,7 @@ const each: each = (obj, fn) => (
 )
 
 /**
- * Picks props from an objecta and returns a new object.
+ * Picks props from an objects and returns a new object.
  *
  * @param {object} obj
  * @param {...string} keys
@@ -293,8 +310,8 @@ const compose = (...fns: Function[]) => (value: unknown): unknown => (
  *
  * @return {array} The result of the callbacks
  */
-const repeat = (n: number, value: unknown): unknown[] => {
-  const results = []
+const repeat = <T>(n: number, value: T): T[] => {
+  const results: T[] = []
   if (typeof value === 'function') {
     for (let i=0; i < n; i++)
       results.push(value(i))
@@ -385,7 +402,7 @@ const uniqId = (() => {
 export {
   // Array
   after, before, last, without, uniq, insert, move,
-  divide,
+  divide, /*zip,*/
 
   // Object
   isTrueObject, values, each, pick, omit, objectMap, toArray,
