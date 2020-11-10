@@ -157,7 +157,7 @@ divide([a, b, c], 1) => [[a], [b, c]]
 ```js
 zip (...arrays): ...arrays
 /*
-@arrays The array to zip together.
+@arrays The arrays to zip together.
 @return The zipped arrays.
 */
 ```
