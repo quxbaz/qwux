@@ -118,16 +118,18 @@ const divide = <T>(array: T[], i: number): [T[], T[]] => (
  *
  * @return {array}
  */
-// const zip =<T> (...arrays: T[][]): T[][] => {
-//   const maxLength = Math.max(...arrays.map(arr => arr.length))
-//   const zippedArray: T[][] = repeat(maxLength, new Array(maxLength))
-//   for (let i=0; i < maxLength; i++) {
-//     for (let n=0; n < arrays.length; n++) {
-//       zippedArray[n].push(arrays[n][i])
-//     }
-//   }
-//   return zippedArray
-// }
+const zip = (...arrays: any[][]): any[][] => {
+  const maxLength = Math.max(...arrays.map(arr => arr.length))
+  const zipped: any[][] = []
+  for (let i=0; i < maxLength; i++) {
+    let buffer = []
+    for (let n=0; n < arrays.length; n++)
+      buffer.push(arrays[n][i])
+    zipped.push(buffer)
+    buffer = []
+  }
+  return zipped
+}
 
 /* SECTION: Objects */
 
@@ -402,7 +404,7 @@ const uniqId = (() => {
 export {
   // Array
   after, before, last, without, uniq, insert, move,
-  divide, /*zip,*/
+  divide, zip,
 
   // Object
   isTrueObject, values, each, pick, omit, objectMap, toArray,
