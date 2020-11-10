@@ -10,7 +10,7 @@ Minimal set of utility functions written in TypeScript. Mostly for personal use.
 
 ## API
 - [Arrays](#arrays)
-   - [`after`](#after) [`before`](#before) [`last`](#last) [`without`](#without) [`uniq`](#uniq) [`insert`](#insert) [`move`](#move) [`divide`](#divide)
+   - [`after`](#after) [`before`](#before) [`last`](#last) [`without`](#without) [`uniq`](#uniq) [`insert`](#insert) [`move`](#move) [`divide`](#divide) [`zip`](#zip)
 - [Objects](#objects)
    - [`isTrueObject`](#istrueobject) [`values`](#values) [`each`](#each) [`pick`](#pick) [`omit`](#omit) [`objectMap`](#objectmap) [`toArray`](#toarray)
 - [Strings](#strings)
@@ -150,6 +150,22 @@ divide (array, i) => [array, array]
 ```js
 // Example
 divide([a, b, c], 1) => [[a], [b, c]]
+```
+
+#### `zip`
+* Zips respective indices of multiple arrays into a single array.
+```js
+zip (...arrays): ...arrays
+/*
+@arrays The array to zip together.
+@return The zipped arrays.
+*/
+```
+```js
+// Examples
+zip([a, b], [1, 2]) => [[a, 1], [b, 2]]
+zip([a, b, c], [1, 2, 3]) => [[a, 1], [b, 2], [c, 3]]
+zip([a, b], [1]) => [[a, 1], [b, undefined]]
 ```
 
 ## Objects
