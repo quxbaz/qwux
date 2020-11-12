@@ -188,6 +188,7 @@ describe("isTrueObject", () => {
     expect(isTrueObject(undefined)).toBe(false)
     expect(isTrueObject(Array)).toBe(false)
     expect(isTrueObject('string')).toBe(false)
+    expect(isTrueObject('[object Object]')).toBe(false)
     expect(isTrueObject(Object)).toBe(false)
     expect(isTrueObject(Function)).toBe(false)
     expect(isTrueObject(Number)).toBe(false)
