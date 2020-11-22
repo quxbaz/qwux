@@ -138,7 +138,7 @@ const zip = (...arrays: any[][]): any[][] => {
  *
  * @param {value} value
  */
-const isTrueObject = (value: unknown): boolean => (
+const isTrueObject = (value: any): boolean => (
   Object.prototype.toString.call(value) === '[object Object]'
 )
 
@@ -255,7 +255,7 @@ const capitalize = (s: string): string => (
  *
  * @return {boolean}
  */
-const isEmpty = (value: unknown): boolean => {
+const isEmpty = (value: any): boolean => {
   if (typeof value === 'string' || Array.isArray(value))
     return value.length === 0
   else if (value == null)
@@ -273,7 +273,7 @@ const isEmpty = (value: unknown): boolean => {
  *
  * @return {boolean}
  */
-const isNil = (value: unknown): boolean => value === undefined || value === null
+const isNil = (value: any): boolean => value === undefined || value === null
 
 
 /* SECTION: Functions */
@@ -300,7 +300,7 @@ const identity = <T>(value: T) => value
  *
  * @return {any} The result of the function composition.
  */
-const compose = (...fns: Function[]) => (value: unknown): unknown => (
+const compose = (...fns: Function[]) => (value: any): unknown => (
   fns.reduceRight((acc, fn) => fn(acc), value)
 )
 
@@ -377,7 +377,7 @@ const sortByKey = <T>(array: Obj<T>[], key: Key): typeof array => {
  */
 const throttled = (fn: Function, ms: number) => {
   let prevTime = 0
-  return (...args: unknown[]) => {
+  return (...args: any[]) => {
     if (Date.now() - prevTime > ms) {
       const ret = fn(...args)
       prevTime = Date.now()
